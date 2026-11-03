@@ -117,8 +117,8 @@ function openSec(secId){const o=SEC_OF[secId];if(!o)return;go("review",{ch:o.t.k
 
 // ---------- TODAY ----------
 const PLAN=[
-{d:"2026-11-02",lbl:"Mon 2 Nov",x:"Started: Chapters 0, 1, 3 and 4 (exam method, Intro & Art. 1, Art. 2, Art. 3). Codal cloze: Arts. 1–3.",ch:"a2"},
-{d:"2026-11-03",lbl:"Tue 3 Nov",x:"Read the <b>updated Chapter 0</b> (Sir's format, IRAC, the confusable pairs) and the <b>new Chapter 2, Introductory readings</b>. Then finish Art. 2 and Art. 3. Elements deck: the readings lists.",ch:"method"},
+{d:"2026-11-02",lbl:"Mon 2 Nov",x:"Started: Chapters 0, 2, 3 and 4 (exam method, Intro & Art. 1, Art. 2, Art. 3). Codal cloze: Arts. 1–3.",ch:"a2"},
+{d:"2026-11-03",lbl:"Tue 3 Nov",x:"Read the <b>updated Chapter 0</b> (Sir's format, IRAC, the confusable pairs) and the <b>new Chapter 1, Introductory readings</b>. Then finish Art. 2 and Art. 3. Elements deck: the readings lists.",ch:"method"},
 {d:"2026-11-04",lbl:"Wed 4 Nov",x:"Chapters 5–8: Art. 4(1), Art. 4(2), Art. 5 and <b>Art. 6</b> (12 cases). Gates for Arts. 4 and 6. Cases drill: Facts → ruling & why.",ch:"a4a"},
 {d:"2026-11-05",lbl:"Thu 5 Nov",x:"Chapters 9–12 (Arts. 7–10), then Chapter 13, <b>Art. 11</b> (20 cases). Codal cloze: Art. 11, word for word. Practice writing on the right-hand pages only.",ch:"a11"},
 {d:"2026-11-06",lbl:"Fri 6 Nov",x:"<b>Mock exam A under exam conditions</b>: 5 questions, 2 hours, IRAC, right-hand pages only. Check against the model answers, then Mock B's problems. Clear the fix list. Pack the exam kit. Sleep by 1:00 a.m.",go:"samplex"},
