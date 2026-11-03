@@ -204,3 +204,12 @@ body.focus .fx-bar{display:flex;justify-content:space-between;align-items:center
 .vz-cyc{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:6px;align-items:center}.vz-loop{grid-column:1/-1;text-align:center;border:1.5px dashed var(--pri);border-radius:999px;padding:4px;font-weight:600;color:var(--pri);font-size:.82rem}
 .vz-kin2{display:grid;gap:8px}.vz-kg{display:grid;grid-template-columns:210px 1fr;gap:8px;align-items:center;border-bottom:1px dashed var(--line);padding-bottom:6px}.vz-kh{font-weight:600;font-size:.84rem}
 @media (max-width:760px){.vz-cyc{grid-template-columns:1fr}.vz-cyc .vz-arrow{transform:rotate(90deg);justify-self:center}.vz-kg{grid-template-columns:1fr}}
+
+.kit{border-color:var(--pri);background:var(--pri-ss)}.kit-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px;margin-top:10px}
+.kit-list label{display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.92rem;cursor:pointer}.kit-list input{accent-color:var(--pri);width:18px;height:18px}
+.sx-part{font:700 .78rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--pri);border-bottom:1px solid var(--pri-s);padding-bottom:2px;margin-top:4px}
+.vz-time{display:flex;border-radius:10px;overflow:hidden;font-weight:600;font-size:.8rem;margin-top:8px}.vz-time>div{padding:8px 6px;text-align:center;border:1px solid var(--line)}
+.vz-tl{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.vz-tl .vz-st small{text-align:left}
+@media (max-width:760px){.vz-tl{grid-template-columns:1fr}}
+
+.sx-part+br,.sx-part+br+br{display:none}.sx-part{margin:12px 0 8px}

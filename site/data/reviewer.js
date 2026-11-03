@@ -1,36 +1,73 @@
 (()=>{const {CH,S,P,K,TR,DS,EX,C,V,CO,RQ,UL,TB,EXAM,DR,G}=window.RH;
 
 // ═══════════════════════ 0 · HOW TO ANSWER ═══════════════════════
-CH("method","0","How to answer his exam","Start here",
-"Sir Barry's midterm is <b>written, blue-book, about 7–8 bar-type problems</b> in two hours. The facts are usually the facts of the syllabus cases, <b>mixed and switched</b>. This chapter is the method; every later chapter ends with an “On the exam, write” line built on it.",
-["Know the exam's shape and time budget","Use a fixed answer skeleton (IRAC/CLEAR)","Run every fact pattern through the same nine checks"],
+CH("method","0","Sir's exam: format and method","Start here · updated after class, 3 Nov",
+"What Sir said in class on 3 November: <b>5 questions in 2 hours</b>. Four are <b>problems</b> whose facts mix concepts from Arts. 1–11, and one is an <b>objective or enumeration</b> question. The articles <b>and the introductory readings</b> are covered. He wants <b>IRAC</b>, and above all he wants to know <b>why</b> you chose one element, requisite or stage and <b>why not</b> the one next to it.",
+["Know the format, the rules, the grading and what to bring","Write every answer in IRAC, with a “why, and why not” analysis","Tell apart the pairs of concepts that his problems are built to confuse","Run every fact pattern through the same checks so no issue is missed"],
 [
 S("m1","The exam at a glance",
- P("Saturday, <b>7 November 2026, 2:00–4:00 p.m.</b>, covering <b>Arts. 1–11</b> (up to justifying circumstances). Sir will give details on Tuesday, 3 November; update this page after class."),
- P("Block intel from your outline: he <b>reuses questions</b>, he expects <b>IRAC</b>, and he is fussy about facts. Two hours for eight questions is about <mark>14 minutes per question</mark>: 3 minutes to spot issues, 10 to write, 1 to check. Answer the questions you are sure of first."),
- V("examclock")),
-S("m2","The answer skeleton",
- P("Your Consti training used CLEAR; Sir calls it IRAC. They are the same moves: answer first, state the rule, apply it fact by fact, then close. Write it like this:"),
- TB(["Step","What to write","Example (an Ah Chong-type problem)"],[
-  ["<b>C</b>onclusion","Answer the question in the first line.","No, A is not criminally liable."],
-  ["<b>L</b>egal basis","The codal, then Reyes's elements or requisites.","Under Art. 3, a felony by dolo needs freedom, intelligence and intent. Mistake of fact negates intent when (1)…(2)…(3)…"],
-  ["<b>E</b>xception","The rule that could flip the answer.","Unless the mistake was due to his own fault or carelessness (Oanis)."],
-  ["<b>A</b>nalysis","Match each element to a fact. Name the case whose facts match.","As in Ah Chong, the room was dark and the intruder forced the door…"],
-  ["<b>R</b>estatement","Restate the conclusion and its consequence.","Hence A incurs no criminal (and no civil) liability."]]),
- K("Doctrine beats citation","Write the doctrine every time. Cite the case name only when you are sure of it; the doctrine alone earns the points.")),
-S("m3","The nine-check combination list",
- P("His problems combine issues. Run every fact pattern through these checks, in this order, and you will not miss one:"),
+ TB(["","What Sir said"],[
+  ["When","Saturday, 7 November 2026, 2:00–4:00 p.m. (2 hours)"],
+  ["Format","<b>5 questions</b>: <b>4 problems</b> + <b>1 objective and/or enumeration</b> question"],
+  ["Coverage","Arts. 1–11 <b>and the introductory readings</b>. The problems are sets of facts that combine concepts from different articles"],
+  ["Time","Sir suggests about <b>24 minutes per question</b>"],
+  ["Answer format","<b>IRAC</b>: Issue, Rule, Analysis, Conclusion"],
+  ["Citations","<b>Not required.</b> Cite the article or the case name only if you know it"],
+  ["Writing","Write <b>only on the right side of each page</b> of the blue book or inserts"],
+  ["Questionnaire","You may write on it, but you must return it"],
+  ["Grading","Passing is <b>50</b> (= 3.0); <b>90 and above</b> = 1.0. The midterm is <b>30%</b> of the final grade"]]),
+ V("examclock"),
+ K("What “rarely straightforward” means","Sir said the problems are rarely straightforward and apply several principles at once. Expect one set of facts to raise, say, a mistake of fact, a stage-of-execution question <b>and</b> a justifying circumstance, with at least one fact placed there to make two concepts look alike.")),
+S("m2","What to bring",
+ V("kit"),
+ TR("Two easy points to lose","Write your name on the index card <b>surname first</b>. Write <b>only on the right-hand pages</b>; practice this in your mocks so it feels natural on Saturday.")),
+S("m3","Writing in IRAC, the way Sir reads it",
+ P("Sir does not need every exception. He wants to see <b>why the element is present</b> (or absent) on these facts, and <b>why the neighboring concept does not fit</b>. Build each answer like this:"),
+ TB(["Step","What to write","Example (a mistake-of-fact problem)"],[
+  ["<b>I</b>ssue","One sentence: the precise question the facts raise.","Is A criminally liable for killing B, whom he mistook for a robber?"],
+  ["<b>R</b>ule","The principle and its elements or requisites, in your own words. Article number and case name are optional.","A felony by dolo needs intent. Mistake of fact removes intent if (1) the act would have been lawful had the facts been as he believed, (2) his intent was lawful, and (3) the mistake was without fault."],
+  ["<b>A</b>nalysis","Go element by element: <b>this fact satisfies it, because…</b> Then add the <b>why not</b>: the fact that rules out the nearby alternative.","Requisite 3 is met because the room was dark and he was struck as the door was forced open; he had no time to verify. This is <b>not</b> like a case where the victim was asleep and there was time to check identity, where the mistake would be his fault."],
+  ["<b>C</b>onclusion","Answer the question and give the consequence.","A is not criminally liable, and incurs no civil liability either."]]),
+ K("★ The “why, and why not” move","For every element you decide, write two sentences: <b>“It is X because [fact].”</b> and <b>“It is not Y because [fact].”</b> Example: “The crime is <b>frustrated</b>, not attempted, because the wound to the liver was mortal and he walked away believing her dead, so the subjective phase was complete. It is <b>not an impossible crime</b>, because the killing was possible; she survived only because of the surgery.”"),
+ K("When to say “it depends”","Only when the facts are <b>genuinely</b> ambiguous. Then name the fact it turns on and answer both ways: “If the wound was mortal, frustrated; if not, attempted.” Don't hedge on issues the facts settle."),
+ TR("Don't spend time on","Exceptions the facts don't raise; long recitals of article text; case names you're unsure of (the doctrine is enough). Spend the time on the analysis.")),
+S("m4","The confusable pairs",
+ P("Since Sir asks “why this and not that,” these are the pairs his problems are built around. For each one, learn the <b>one question</b> that separates them."),
+ TB(["Looks like…","…but could be","The deciding question"],[
+  ["Preparatory act","Attempt (overt act)","Does the act have a <b>direct connection</b> to a <b>specific</b> crime, so that it would logically ripen into it? (Lamahang)"],
+  ["Attempted","Frustrated","Did he perform <b>all</b> the acts of execution (subjective phase complete; in homicide, a mortal wound)? (Sy Pio vs. Eduave)"],
+  ["Frustrated","Impossible crime","Could the crime have happened? Adequate means that failed → frustrated; inherently impossible or ineffectual means → impossible."],
+  ["Attempted","Impossible crime","Did it fail because of an outside cause (an alert clerk) or because it could never succeed (an empty room)? (Balmores vs. Intod)"],
+  ["Spontaneous desistance","Stopped by others","Did he stop of his own will, before all the acts of execution? If he was grabbed or interrupted, it is not desistance."],
+  ["Mistake of fact","Error in personae","Would the act have been <b>lawful</b> under the facts as he believed (mistake of fact), or a felony against anyone (error in personae)?"],
+  ["Error in personae","Aberratio ictus","Did he hit the person he aimed at, who turned out to be someone else (personae), or did the blow land on a different person (ictus)?"],
+  ["Dolo","Culpa","Was the harmful act <b>deliberate</b> (dolo; a mistake in identity is still dolo) or careless (culpa)? (Oanis)"],
+  ["Proximate cause","Efficient intervening cause","Did a <b>foreign</b> force or the victim's <b>deliberate</b> act break the chain? Illness, complications and medical error don't."],
+  ["Praeter intentionem","Intent to kill","Do the means used (weapon, wound, part of the body) show intent to kill? A fist blow → praeter; a knife to the chest → no."],
+  ["Conspiracy as a crime","Conspiracy as a mode","Was the crime agreed upon actually committed? No → a crime only if the law punishes it (treason, rebellion, coup d'état, sedition). Yes → the act of one is the act of all."],
+  ["Self-defense","Retaliation","Was the aggression <b>still going on</b> when he struck? (Alconga)"],
+  ["Complete justification","Incomplete justification","Is unlawful aggression present, and how many of the other requisites? All → acquittal; the majority → privileged mitigating (Art. 69); fewer → ordinary mitigating."],
+  ["Self-defense","Fulfillment of duty","Is he an officer acting in his duty? Duty does not need unlawful aggression, but the injury must be its necessary consequence. (Delima)"],
+  ["Defense of a relative","Defense of a stranger","Is the person within ¶2's list? If not (e.g., a wife's first cousin), ¶3 applies, and motive now matters."],
+  ["Avoidance of greater evil","Self-defense","Is the harm done to an <b>aggressor</b> (self-defense) or to a <b>third person or thing</b> to avoid a different evil (¶4)?"],
+  ["Territoriality","Art. 2 exception","Was the crime committed inside the Philippines (including its waters)? If outside, is it one of the five cases?"],
+  ["Light felony attempted","Not punishable","Is it against persons or property? Only then is an attempted or frustrated light felony punished (Art. 7)."]])),
+S("m5","The checklist: run every problem through it",
+ P("Read the facts once, then go down this list in order and circle the facts that raise each issue on the questionnaire (you may write on it):"),
  V("checklist"),
  TR("The trap in combined problems","Students answer only the obvious issue (e.g., self-defense) and miss the earlier ones: jurisdiction (Art. 2), whether there is a felony at all (Art. 3), or what stage it reached (Art. 6). Check them in order.")),
-S("m4","All the decision gates",
- P("These are click-through versions of the core tests. Use them to rehearse the order of questions."),
- G("g-4a"),G("g-imp"),G("g-stage"),G("g-sd"))
+S("m6","The objective / enumeration question",
+ P("One of the five questions is objective and/or enumeration. Expect “give the requisites of…”, “enumerate the cases where…”, “distinguish…”, or a question on the <b>introductory readings</b> (e.g., the justifications of punishment). These are easy points if your lists are exact."),
+ K("How to prepare","Use the <b>Reyes elements</b> deck in the Codal drill tab (it now includes the readings) and practice the enumeration questions in Samplex → Mock exams. Do this question <b>first</b> on Saturday: it should take less than 24 minutes and leaves more time for the problems.")),
+S("m7","All the decision gates",
+ P("Click-through versions of the core tests. Use them to rehearse the order of questions."),
+ G("g-mof"),G("g-4a"),G("g-imp"),G("g-stage"),G("g-sd"))
 ]);
 
 // ═══════════════════════ 1 · INTRODUCTION & ART. 1 ═══════════════════════
 CH("intro","1","Introduction & Art. 1","Criminal law, its theories and limits",
 "Before the articles: what criminal law is, the two theories the Code is built on, the three characteristics of penal laws (<b>generality, territoriality, prospectivity</b>), and the limits the Constitution puts on Congress. These ideas come back as reasons in later chapters.",
-["Define criminal law and give the two theories","State and apply generality, territoriality and prospectivity, with their exceptions","List the constitutional limits on penal laws","Summarize the four introductory readings"],
+["Define criminal law and give the two theories","State and apply generality, territoriality and prospectivity, with their exceptions","List the constitutional limits on penal laws","Know where the readings fit: see Chapter 2"],
 [
 S("i1","What criminal law is",
  P("<b>Criminal law</b> is the branch of public law that <mark>defines crimes, treats of their nature, and provides for their punishment</mark>. The State alone may define and punish crimes; this power flows from its police power. There are <b>no common-law crimes</b> in the Philippines: an act is a crime only if a statute says so (<i>nullum crimen, nulla poena sine lege</i>)."),
@@ -49,21 +86,60 @@ S("i4","Generality",
  TR("Consuls are not immune","Consuls, vice-consuls and commercial representatives are <b>not</b> diplomatic agents, so they are subject to our criminal laws (San Beda MCQ 1: a commercial attaché is not exempt)."),
  C("vanwilsem","Generality and territoriality applied to a foreigner who lives here.")),
 S("i5","Territoriality and prospectivity",
- P("<b>Territoriality</b>: penal laws apply only within Philippine territory. The exceptions are the five cases in Art. 2 (Chapter 2). <b>Prospectivity</b>: a penal law looks forward. It cannot punish an act that was innocent when done or make the penalty heavier after the fact."),
+ P("<b>Territoriality</b>: penal laws apply only within Philippine territory. The exceptions are the five cases in Art. 2 (Chapter 3). <b>Prospectivity</b>: a penal law looks forward. It cannot punish an act that was innocent when done or make the penalty heavier after the fact."),
  K("Art. 22: the exception to prospectivity","A penal law is retroactive when it is <b>favorable to the accused</b>, unless he is a <b>habitual criminal</b> (Art. 62). The favorable law applies even if he is already serving sentence.")),
 S("i6","Constitutional limits on penal laws",
  P("Congress may define crimes, but the Bill of Rights limits how:"),
  UL(["<b>No ex post facto law</b> (Art. III § 22): no law that makes criminal an act innocent when done, aggravates a crime, increases its penalty, or changes the rules of evidence to the accused's disadvantage, applied to past acts.","<b>No bill of attainder</b>: a legislative act that inflicts punishment without a judicial trial.","<b>Due process and equal protection</b> (§ 1): the law must be general, and it must be clear enough to tell people what is forbidden (void-for-vagueness).","<b>No cruel, degrading or inhuman punishment and no excessive fines</b> (§ 19)."]),
- K("Pro reo","When a penal law is doubtful, it is construed <b>strictly against the State and liberally in favor of the accused</b> (<i>in dubio pro reo</i>). This follows from the presumption of innocence and is a 2010 and 2012 bar favorite.")),
-S("i7","The four introductory readings (summary)",
- UL(["<b>Shavell, “Criminal Law”</b> (economic analysis). Why use criminal law and not just fines? Because offenders may be too poor to pay, may escape detection, or may gain too much for any fine to deter. Imprisonment deters and also <b>incapacitates</b>.","<b>Cavanaugh, “The Justification of Punishment.”</b> <b>Reductivism</b> punishes to prevent future crime (deterrence, incapacitation, reform). <b>Retributivism</b> punishes because the offender deserves it, in proportion to the crime. <b>Denunciation</b> expresses society's condemnation. The first matches the positivist school; the second matches the classical school, the basis of the RPC.","<b>Restorative justice</b> (Gilman; Marshall). Those with a stake in an offense resolve its aftermath together, focusing on <b>repairing harm</b> and reintegrating the offender (victim-offender mediation, family group conferencing). Philippine examples: diversion under RA 9344, barangay conciliation.","<b>Rossabi, “Colonial Roots of Criminal Procedure.”</b> Philippine criminal law blends indigenous, Spanish (the Penal Code of 1887; church and state united) and American (General Order No. 58; common-law procedure) sources. The RPC replaced the Spanish code in 1932."]))
+ K("Pro reo","When a penal law is doubtful, it is construed <b>strictly against the State and liberally in favor of the accused</b> (<i>in dubio pro reo</i>). This follows from the presumption of innocence and is a 2010 and 2012 bar favorite."))
 ],[
  EXAM("“The RPC is based mainly on the classical theory: the basis of liability is free will, and the penalty is retribution proportionate to the act. It has positivist features, such as Art. 4(2), which punishes an impossible crime because of the offender's criminal tendency even though no felony is produced.”"),
  DR([["A law passed today raises the penalty for an act done last year. Does it apply to that act?","No. It is an ex post facto law."],["A new law lowers the penalty, and the accused is a habitual criminal. Does he benefit?","No. Art. 22 excludes habitual criminals from retroactive favorable laws."],["A foreign consul stabs someone in Makati. Is he immune?","No. Consuls are not covered by the public-international-law exception."]])
 ]);
 
+// ═══════════════════════ 2 · INTRODUCTORY READINGS ═══════════════════════
+CH("readings","2","The introductory readings","Shavell · Cavanaugh · Restorative justice · Rossabi",
+"Sir said the introductory readings are <b>part of the exam</b>. They answer the questions behind every article: <b>why</b> the State punishes, <b>what</b> punishment is for, and <b>where</b> our criminal law came from. Expect them in the objective or enumeration question, or as a “what theory explains this rule?” part of a problem.",
+["Explain Shavell's economic case for criminal law and imprisonment","Give and evaluate the justifications of punishment in Cavanaugh","Define restorative justice and give its principles, objectives and practices","Trace the colonial roots of Philippine criminal procedure (Rossabi)","Connect each theory to a provision of the RPC"],
+[
+S("r0","How to use this chapter",
+ P("The four readings were assigned before Art. 1 in the syllabus. On an exam they work in two ways: as <b>objective questions</b> (“enumerate the justifications of punishment”) and as the <b>reason</b> behind a rule in a problem (“why does the Code punish an impossible crime when no harm was done?”)."),
+ TR("Source note","The reading texts themselves are not in your uploads. This chapter is built from your block's Midterms Reviewer summaries, RA 9344, and standard accounts of these theories. If you have time, skim each original's headings before Saturday.")),
+S("r1","Shavell, “Criminal Law” (economic analysis)",
+ P("Shavell asks an economist's question: <b>if the law already lets victims sue for damages and lets the State impose fines, why do we need criminal law and prison at all?</b> His answer is that money sanctions alone cannot deter certain harmful acts."),
+ RQ("Why fines alone fail to deter",[["Offenders often lack wealth","A fine larger than what a person owns cannot be collected, so it cannot deter him."],["Offenders may escape detection","If the chance of being caught is low, the sanction must be very large to keep the expected penalty high. Such large fines exceed what offenders can pay."],["Some crimes bring large private gains","When the gain is high, the fine needed to outweigh it would be enormous."]]),
+ P("So the law turns to <b>non-monetary sanctions</b>, chiefly imprisonment, which works in two ways: it <b>deters</b> (the threat discourages the act), and it <b>incapacitates</b> (a person in prison cannot commit more crimes outside). Imprisonment is costly to society, so it is reserved for the most harmful acts, typically intentional violent crimes such as murder and rape."),
+ P("<b>What criminal acts look like.</b> They usually involve <b>deliberate</b> harm. They remain criminal even when the intended harm does not happen, which is the logic of punishing attempts. Accidental harm is generally <b>not</b> criminal unless it involves negligence or an attempt to conceal it. Criminal law also targets conduct that tries to <b>evade responsibility</b>, such as concealment."),
+ K("Link to the RPC","Shavell's logic explains why the RPC punishes <b>attempts and frustrations</b> (Art. 6) even without harm, why <b>intent</b> generally separates crimes from mere civil wrongs (Art. 3), and why <b>culpa</b> is punished more lightly (Art. 365).")),
+S("r2","Cavanaugh, “The Justification of Punishment”",
+ P("Punishment deliberately inflicts suffering, so it needs a justification. Cavanaugh surveys the main answers:"),
+ V("punish"),
+ RQ("Justifications of punishment",[["Reductivism","Punishment is justified by its future effects: it <b>reduces crime</b>. Its three mechanisms are <b>deterrence</b> (discouraging the offender and others), <b>incapacitation</b> (physically preventing further crimes), and <b>reform</b> (rehabilitating the offender)."],["Retributivism","Punishment is justified because the offender <b>deserves</b> it for what he has already done. The penalty must be <b>proportionate</b> to the gravity of the crime."],["Denunciation","Punishment expresses <b>society's condemnation</b> of the act and reaffirms its values."],["Restorative justice","The focus moves from punishing the offender to <b>repairing the harm</b> and reintegrating him (see the next section)."]]),
+ P("<b>The weaknesses each answer must face.</b> Reductivism looks only forward, so in theory it could justify punishing the innocent or punishing excessively if that deterred others. Retributivism insists on desert and proportion, but critics call it institutionalized vengeance that produces no social good. Reform depends on treatment that may not work and on sentences tied to the person, not the act. Most systems, including ours, <b>mix</b> them."),
+ TB(["School","Core claim","Echo in our law"],[["<b>Classical</b>","Free will; clear laws; punishment proportionate to the act","The RPC's fixed penalties and the basis of liability (Ch. 1)"],["<b>Positivist</b>","Crime comes from social or psychological causes; focus on the offender and rehabilitation","Art. 4(2) impossible crimes; juvenile justice; the Indeterminate Sentence Law"],["<b>Justice model</b>","“Just deserts”: punishment proportionate to the crime, with due process; rejects the positivist emphasis on rehabilitation","Proportionality behind Art. 5 ¶2 (clearly excessive penalties)"]]),
+ K("A likely exam angle","“Which theory justifies punishing an impossible crime?” Positivist and reductivist (incapacitation and deterrence of a dangerous person), because no harm was done that would deserve retribution. “Which theory underlies Art. 5 ¶2?” Retributive proportionality (the penalty should fit the malice and the injury).")),
+S("r3","Restorative justice (Gilman; Marshall)",
+ P("Retributive justice asks: <b>what law was broken, who did it, and what does he deserve?</b> Restorative justice asks: <b>who was hurt, what do they need, and whose obligation is it to repair the harm?</b> Crime is seen first as harm to people and relationships, not just a violation of the State's law."),
+ K("Definitions","<b>Marshall</b> (the overview your block summarized): a process in which all the parties with a stake in a specific offense come together to resolve <b>collectively</b> how to deal with its aftermath and its implications for the future. <b>RA 9344, § 4(q)</b>: a principle that requires a process of resolving conflicts with the <b>maximum involvement of the victim, the offender and the community</b>. It seeks <b>reparation</b> for the victim, <b>reconciliation</b> of the offender, the offended and the community, and <b>reassurance</b> to the offender that he can be reintegrated into society."),
+ RQ("Principles",[["Personal involvement of those mainly concerned","The victim, the offender and the community, not just the State."],["Seeing crime problems in their social context",""],["A forward-looking, preventive, problem-solving orientation",""],["Flexibility and creativity of practice",""]]),
+ RQ("Objectives",[["Attend fully to the victim's needs","Material, financial, emotional and social."],["Prevent re-offending by reintegrating offenders into the community",""],["Enable offenders to take active responsibility for their actions",""],["Recreate a working community that supports the rehabilitation of offenders and victims and helps prevent crime",""],["Avoid the escalation of legal justice and its costs and delays",""]]),
+ TB(["Practice","Who takes part","Example"],[["Victim–offender mediation","Victim and offender","Direct or indirect dialogue; apology, explanation, reparation"],["Victim–community","Victim and support groups","Practical and emotional support for victims"],["Offender–community","Offender and community programs","Job search, retraining, counseling, housing; school programs on bullying and truancy"],["Victim, offender and community","Families and community contacts","Family group conferencing"]]),
+ P("<b>Philippine examples</b>: diversion and intervention for children in conflict with the law under RA 9344; barangay conciliation (Katarungang Pambarangay); probation."),
+ DS("Restorative vs. retributive","Retributive justice centers on the State and the offender's desert; restorative justice centers on the victim and the community and on repairing harm. The RPC is mainly retributive (classical), with restorative elements in civil liability (Arts. 100–113) and in special laws.")),
+S("r4","Rossabi, “The Colonial Roots of Criminal Procedure in the Philippines”",
+ P("Rossabi's point is that Philippine criminal law and procedure are a <b>synthesis</b> of indigenous, Spanish (civil-law) and American (common-law) sources, imposed in layers by colonizers. The tensions in our system make more sense once you see the layers."),
+ V("colonial"),
+ UL(["<b>Spanish period (1521–1898).</b> Built on the union of Church and State. Indigenous (“pagan”) customs were tolerated if they did not conflict with Spanish ways, then gradually nullified. The <b>Laws of the Indies</b> (Recopilación, 1680); a local court system in which the <b>gobernadorcillo</b>, a Filipino, settled minor conflicts; the <b>Penal Code of 1887</b>, a list of crimes and penalties that gave the accused few rights; trials before Spanish judges under the Governor-General. The <b>ilustrados</b> pressed for individual rights and the separation of Church and State; Spain responded by creating justices of the peace (<i>juez de paz</i>).","<b>American period (1898–1946).</b> A “trusteeship”; a shift toward the <b>common law</b>, built on precedent. The Schurman Commission; the separation of Church and State; <b>General Order No. 58</b> (1900), which remade criminal procedure (complaints, jurisdiction, preliminary examination, rights of the accused); the <b>Philippine Organic Act of 1902</b> (civil rule). Filipino justices were appointed, but Americans held the key posts.","<b>After independence.</b> The American-style procedure largely stayed, revised over time; the 1985 Rules on Criminal Procedure strengthened the rights of the accused within the same structure. The substantive law, the RPC (1932), remains Spanish-rooted."]),
+ K("Why it matters for this course","It explains why we read <b>Spanish</b> doctrine (Viada, decisions of the Supreme Court of Spain) for the RPC's substantive rules, and <b>American</b> doctrine for procedure and constitutional rights. It is also why early cases such as <i>Bull</i> and <i>Ah Chong</i> are decisions of an American-era Supreme Court applying Spanish-based penal law.")),
+S("r5","Putting the readings together",
+ TB(["Question","Shavell","Cavanaugh","Restorative justice","Rossabi"],[["Why punish?","To deter acts that money sanctions cannot","Reduction, desert, or denunciation","To repair harm and restore relationships","(Historical) the colonizers' models of order"],["Key mechanism","Deterrence and incapacitation; imprisonment","Proportionate penalty (retributive) or reform (positivist)","Mediation, conferencing, reintegration","Spanish code + American procedure"],["RPC link","Arts. 3, 6 (intent, attempts)","Classical basis; Art. 4(2) positivist; Art. 5 proportionality","Civil liability; RA 9344 diversion","The RPC (1932) replacing the 1887 Code"]]))
+],[
+ EXAM("“The RPC rests mainly on the classical theory, which justifies punishment retributively by the offender's free choice and the gravity of his act. Some provisions, such as Art. 4(2) on impossible crimes, are justified instead on reductivist and positivist grounds: the offender is punished for the danger he poses, though no harm resulted.”"),
+ DR([["Enumerate three reasons why fines alone cannot deter crime (Shavell).","Limited wealth of offenders; a low probability of detection; large private gains from the crime."],["Give the three mechanisms of reductivism.","Deterrence, incapacitation, reform."],["Define restorative justice under RA 9344.","A principle that resolves conflicts with the maximum involvement of the victim, the offender and the community, seeking reparation, reconciliation and reassurance of reintegration."],["What was General Order No. 58?","The 1900 American military order that remade Philippine criminal procedure (complaints, jurisdiction, preliminary examination, rights of the accused)."]])
+]);
+
 // ═══════════════════════ 2 · ART. 2 ═══════════════════════
-CH("a2","2","Art. 2 · Where the Code applies","Territoriality and its five exceptions",
+CH("a2","3","Art. 2 · Where the Code applies","Territoriality and its five exceptions",
 "Art. 2 answers one question: <b>can a Philippine court try this crime?</b> Inside the territory, yes (with the usual exceptions to generality). Outside it, <b>only in the five cases listed</b>. Foreign merchant ships in our waters have their own rule, taught through four opium-and-cattle cases.",
 ["Draw what “Philippine territory” covers","Apply the English rule to foreign merchant vessels (Bull, Wong Cheng, Look Chaw, Ah Sing)","Recite and apply the five extraterritorial cases, including piracy (Lol-lo)"],
 [
@@ -95,7 +171,7 @@ S("a2-4","The five extraterritorial cases",
 ]);
 
 // ═══════════════════════ 3 · ART. 3 ═══════════════════════
-CH("a3","3","Art. 3 · Felonies","Act, punishability, dolo and culpa; mistake of fact",
+CH("a3","4","Art. 3 · Felonies","Act, punishability, dolo and culpa; mistake of fact",
 "Art. 3 defines the building block of the whole Code: the <b>felony</b>. Every later article assumes you can say whether there is a felony at all, whether it was committed with <b>dolo</b> (intent) or <b>culpa</b> (fault), and whether a <b>mistake of fact</b> wiped out the intent. Ah Chong, the case Sir loves, lives here.",
 ["Give the three elements of a felony and explain each","State the requisites of dolo and of culpa, and what negates each","Apply the three requisites of mistake of fact (Ah Chong vs. Oanis)","Distinguish intent from motive, and mala in se from mala prohibita"],
 [
@@ -107,7 +183,7 @@ S("a3-2","Element 1 · An act or omission",
  P("An <b>act</b> is any bodily movement that tends to produce some effect in the external world. Reyes stresses that <mark>only the external act is punished</mark>; criminal thoughts, however evil, are not. An <b>omission</b> is the failure to perform a positive duty that the <b>law</b> requires, e.g., failing to help a person in danger (Art. 275), failing to render accounts (Art. 218), or failing to report a conspiracy to commit treason (Art. 116)."),
  K("Omission needs a legal duty","No legal duty to act, no felony by omission. A moral duty alone is not enough.")),
 S("a3-3","Element 2 · Punishable by law",
- P("The act must be <b>punishable</b>. This is where Art. 5 comes in: if the court thinks an act deserves punishment but no law punishes it, the court must <b>acquit</b> (Chapter 6). An act covered by a <b>justifying circumstance</b> (Art. 11) is also not a felony, because the law makes it lawful.")),
+ P("The act must be <b>punishable</b>. This is where Art. 5 comes in: if the court thinks an act deserves punishment but no law punishes it, the court must <b>acquit</b> (Chapter 7). An act covered by a <b>justifying circumstance</b> (Art. 11) is also not a felony, because the law makes it lawful.")),
 S("a3-4","Element 3 · Dolo: freedom, intelligence, intent",
  P("A felony by dolo must be <b>voluntary</b>, and voluntariness has three parts. Learn what <mark>takes each part away</mark>, because those are the defenses later in the Code:"),
  TB(["Requisite","Meaning","What negates it"],[

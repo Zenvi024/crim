@@ -214,6 +214,15 @@ body.focus .fx-bar{display:flex;justify-content:space-between;align-items:center
 .vz-cyc{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:6px;align-items:center}.vz-loop{grid-column:1/-1;text-align:center;border:1.5px dashed var(--pri);border-radius:999px;padding:4px;font-weight:600;color:var(--pri);font-size:.82rem}
 .vz-kin2{display:grid;gap:8px}.vz-kg{display:grid;grid-template-columns:210px 1fr;gap:8px;align-items:center;border-bottom:1px dashed var(--line);padding-bottom:6px}.vz-kh{font-weight:600;font-size:.84rem}
 @media (max-width:760px){.vz-cyc{grid-template-columns:1fr}.vz-cyc .vz-arrow{transform:rotate(90deg);justify-self:center}.vz-kg{grid-template-columns:1fr}}
+
+.kit{border-color:var(--pri);background:var(--pri-ss)}.kit-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px;margin-top:10px}
+.kit-list label{display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.92rem;cursor:pointer}.kit-list input{accent-color:var(--pri);width:18px;height:18px}
+.sx-part{font:700 .78rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--pri);border-bottom:1px solid var(--pri-s);padding-bottom:2px;margin-top:4px}
+.vz-time{display:flex;border-radius:10px;overflow:hidden;font-weight:600;font-size:.8rem;margin-top:8px}.vz-time>div{padding:8px 6px;text-align:center;border:1px solid var(--line)}
+.vz-tl{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.vz-tl .vz-st small{text-align:left}
+@media (max-width:760px){.vz-tl{grid-template-columns:1fr}}
+
+.sx-part+br,.sx-part+br+br{display:none}.sx-part{margin:12px 0 8px}
 </style>
 </head>
 <body>
@@ -227,7 +236,7 @@ body.focus .fx-bar{display:flex;justify-content:space-between;align-items:center
   <nav class="cd-tabs">
     <button class="cd-tab" data-tab="today">Today</button>
     <button class="cd-tab" data-tab="review">Reviewer</button>
-    <button class="cd-tab" data-tab="codal">Codal drill</button>
+    <button class="cd-tab" data-tab="codal">Codal & lists</button>
     <button class="cd-tab" data-tab="cases">Cases</button>
     <button class="cd-tab" data-tab="samplex">Samplex</button>
   </nav>
@@ -766,6 +775,16 @@ window.ELEMENTS = [
 {id:"e-necess",t:"a11",n:"Avoidance of greater evil (Art. 11(4)): requisites",o:true,i:["The evil sought to be avoided actually exists","The injury feared is greater than that done to avoid it","There is no other practical and less harmful means of preventing it"]},
 {id:"e-duty",t:"a11",n:"Fulfillment of duty / lawful exercise of a right or office: requisites",o:true,i:["The accused acted in the performance of a duty or in the lawful exercise of a right or office","The injury caused or offense committed is the necessary consequence of the due performance of the duty or lawful exercise of the right or office"]},
 {id:"e-obey",t:"a11",n:"Obedience to a superior's order: requisites",o:true,i:["An order has been issued by a superior","The order is for some lawful purpose","The means used by the subordinate to carry it out are lawful"]}
+,{id:"r-shavell",t:"readings",n:"Shavell: why fines alone cannot deter crime",o:false,i:["Offenders often lack the wealth to pay","Offenders may escape detection, so the fine would have to be very large","Some crimes bring large private gains that a fine cannot outweigh"]},
+{id:"r-prison",t:"readings",n:"Shavell: the two ways imprisonment prevents crime",o:false,i:["Deterrence (the threat discourages the act)","Incapacitation (a person in prison cannot commit crimes outside)"]},
+{id:"r-justif",t:"readings",n:"Cavanaugh: justifications of punishment",o:false,i:["Reductivism: punish to reduce future crime","Retributivism: punish because it is deserved, in proportion to the crime","Denunciation: punishment expresses society's condemnation","Restorative justice: repair the harm and reintegrate the offender"]},
+{id:"r-reduct",t:"readings",n:"The three mechanisms of reductivism",o:false,i:["Deterrence","Incapacitation","Reform (rehabilitation)"]},
+{id:"r-schools",t:"readings",n:"Schools of thought on punishment",o:false,i:["Classical: free will; clear laws; proportionate punishment (basis of the RPC)","Positivist: crime from social or psychological causes; focus on the offender; rehabilitation","Justice model: just deserts with due process; rejects the positivist emphasis on rehabilitation"]},
+{id:"r-rjdef",t:"readings",n:"RA 9344 § 4(q): what restorative justice seeks",o:false,i:["Reparation for the victim","Reconciliation of the offender, the offended and the community","Reassurance to the offender that he can be reintegrated into society"]},
+{id:"r-rjprin",t:"readings",n:"Restorative justice: principles",o:false,i:["Personal involvement of those mainly concerned","Seeing crime problems in their social context","A forward-looking, preventive, problem-solving orientation","Flexibility and creativity of practice"]},
+{id:"r-rjobj",t:"readings",n:"Restorative justice: objectives",o:false,i:["Attend fully to the victim's needs (material, financial, emotional, social)","Prevent re-offending by reintegrating offenders into the community","Enable offenders to take active responsibility for their actions","Recreate a working community that supports rehabilitation and prevents crime","Avoid the escalation of legal justice and its costs and delays"]},
+{id:"r-rjprac",t:"readings",n:"Restorative justice: forms of practice",o:false,i:["Victim–offender mediation","Victim–community support","Offender–community programs","Victim, offender and community: family group conferencing"]},
+{id:"r-colonial",t:"readings",n:"Rossabi: the layers of Philippine criminal law",o:true,i:["Indigenous law (tolerated, then nullified)","Spanish period, 1521–1898: Laws of the Indies (1680), gobernadorcillo, Penal Code of 1887, Church–State union","American period, 1898–1946: common law; General Order No. 58 (1900); Organic Act of 1902","After independence: American-style procedure kept; 1985 Rules on Criminal Procedure"]}
 ];
 
 // Reviewer helpers (textbook schema). A chapter = {k,num,n,s,lead,goals,sec:[sections],end:[blocks]}; a section = {id,t,b:[blocks]}.
@@ -792,36 +811,73 @@ window.RH = {
 (()=>{const {CH,S,P,K,TR,DS,EX,C,V,CO,RQ,UL,TB,EXAM,DR,G}=window.RH;
 
 // ═══════════════════════ 0 · HOW TO ANSWER ═══════════════════════
-CH("method","0","How to answer his exam","Start here",
-"Sir Barry's midterm is <b>written, blue-book, about 7–8 bar-type problems</b> in two hours. The facts are usually the facts of the syllabus cases, <b>mixed and switched</b>. This chapter is the method; every later chapter ends with an “On the exam, write” line built on it.",
-["Know the exam's shape and time budget","Use a fixed answer skeleton (IRAC/CLEAR)","Run every fact pattern through the same nine checks"],
+CH("method","0","Sir's exam: format and method","Start here · updated after class, 3 Nov",
+"What Sir said in class on 3 November: <b>5 questions in 2 hours</b>. Four are <b>problems</b> whose facts mix concepts from Arts. 1–11, and one is an <b>objective or enumeration</b> question. The articles <b>and the introductory readings</b> are covered. He wants <b>IRAC</b>, and above all he wants to know <b>why</b> you chose one element, requisite or stage and <b>why not</b> the one next to it.",
+["Know the format, the rules, the grading and what to bring","Write every answer in IRAC, with a “why, and why not” analysis","Tell apart the pairs of concepts that his problems are built to confuse","Run every fact pattern through the same checks so no issue is missed"],
 [
 S("m1","The exam at a glance",
- P("Saturday, <b>7 November 2026, 2:00–4:00 p.m.</b>, covering <b>Arts. 1–11</b> (up to justifying circumstances). Sir will give details on Tuesday, 3 November; update this page after class."),
- P("Block intel from your outline: he <b>reuses questions</b>, he expects <b>IRAC</b>, and he is fussy about facts. Two hours for eight questions is about <mark>14 minutes per question</mark>: 3 minutes to spot issues, 10 to write, 1 to check. Answer the questions you are sure of first."),
- V("examclock")),
-S("m2","The answer skeleton",
- P("Your Consti training used CLEAR; Sir calls it IRAC. They are the same moves: answer first, state the rule, apply it fact by fact, then close. Write it like this:"),
- TB(["Step","What to write","Example (an Ah Chong-type problem)"],[
-  ["<b>C</b>onclusion","Answer the question in the first line.","No, A is not criminally liable."],
-  ["<b>L</b>egal basis","The codal, then Reyes's elements or requisites.","Under Art. 3, a felony by dolo needs freedom, intelligence and intent. Mistake of fact negates intent when (1)…(2)…(3)…"],
-  ["<b>E</b>xception","The rule that could flip the answer.","Unless the mistake was due to his own fault or carelessness (Oanis)."],
-  ["<b>A</b>nalysis","Match each element to a fact. Name the case whose facts match.","As in Ah Chong, the room was dark and the intruder forced the door…"],
-  ["<b>R</b>estatement","Restate the conclusion and its consequence.","Hence A incurs no criminal (and no civil) liability."]]),
- K("Doctrine beats citation","Write the doctrine every time. Cite the case name only when you are sure of it; the doctrine alone earns the points.")),
-S("m3","The nine-check combination list",
- P("His problems combine issues. Run every fact pattern through these checks, in this order, and you will not miss one:"),
+ TB(["","What Sir said"],[
+  ["When","Saturday, 7 November 2026, 2:00–4:00 p.m. (2 hours)"],
+  ["Format","<b>5 questions</b>: <b>4 problems</b> + <b>1 objective and/or enumeration</b> question"],
+  ["Coverage","Arts. 1–11 <b>and the introductory readings</b>. The problems are sets of facts that combine concepts from different articles"],
+  ["Time","Sir suggests about <b>24 minutes per question</b>"],
+  ["Answer format","<b>IRAC</b>: Issue, Rule, Analysis, Conclusion"],
+  ["Citations","<b>Not required.</b> Cite the article or the case name only if you know it"],
+  ["Writing","Write <b>only on the right side of each page</b> of the blue book or inserts"],
+  ["Questionnaire","You may write on it, but you must return it"],
+  ["Grading","Passing is <b>50</b> (= 3.0); <b>90 and above</b> = 1.0. The midterm is <b>30%</b> of the final grade"]]),
+ V("examclock"),
+ K("What “rarely straightforward” means","Sir said the problems are rarely straightforward and apply several principles at once. Expect one set of facts to raise, say, a mistake of fact, a stage-of-execution question <b>and</b> a justifying circumstance, with at least one fact placed there to make two concepts look alike.")),
+S("m2","What to bring",
+ V("kit"),
+ TR("Two easy points to lose","Write your name on the index card <b>surname first</b>. Write <b>only on the right-hand pages</b>; practice this in your mocks so it feels natural on Saturday.")),
+S("m3","Writing in IRAC, the way Sir reads it",
+ P("Sir does not need every exception. He wants to see <b>why the element is present</b> (or absent) on these facts, and <b>why the neighboring concept does not fit</b>. Build each answer like this:"),
+ TB(["Step","What to write","Example (a mistake-of-fact problem)"],[
+  ["<b>I</b>ssue","One sentence: the precise question the facts raise.","Is A criminally liable for killing B, whom he mistook for a robber?"],
+  ["<b>R</b>ule","The principle and its elements or requisites, in your own words. Article number and case name are optional.","A felony by dolo needs intent. Mistake of fact removes intent if (1) the act would have been lawful had the facts been as he believed, (2) his intent was lawful, and (3) the mistake was without fault."],
+  ["<b>A</b>nalysis","Go element by element: <b>this fact satisfies it, because…</b> Then add the <b>why not</b>: the fact that rules out the nearby alternative.","Requisite 3 is met because the room was dark and he was struck as the door was forced open; he had no time to verify. This is <b>not</b> like a case where the victim was asleep and there was time to check identity, where the mistake would be his fault."],
+  ["<b>C</b>onclusion","Answer the question and give the consequence.","A is not criminally liable, and incurs no civil liability either."]]),
+ K("★ The “why, and why not” move","For every element you decide, write two sentences: <b>“It is X because [fact].”</b> and <b>“It is not Y because [fact].”</b> Example: “The crime is <b>frustrated</b>, not attempted, because the wound to the liver was mortal and he walked away believing her dead, so the subjective phase was complete. It is <b>not an impossible crime</b>, because the killing was possible; she survived only because of the surgery.”"),
+ K("When to say “it depends”","Only when the facts are <b>genuinely</b> ambiguous. Then name the fact it turns on and answer both ways: “If the wound was mortal, frustrated; if not, attempted.” Don't hedge on issues the facts settle."),
+ TR("Don't spend time on","Exceptions the facts don't raise; long recitals of article text; case names you're unsure of (the doctrine is enough). Spend the time on the analysis.")),
+S("m4","The confusable pairs",
+ P("Since Sir asks “why this and not that,” these are the pairs his problems are built around. For each one, learn the <b>one question</b> that separates them."),
+ TB(["Looks like…","…but could be","The deciding question"],[
+  ["Preparatory act","Attempt (overt act)","Does the act have a <b>direct connection</b> to a <b>specific</b> crime, so that it would logically ripen into it? (Lamahang)"],
+  ["Attempted","Frustrated","Did he perform <b>all</b> the acts of execution (subjective phase complete; in homicide, a mortal wound)? (Sy Pio vs. Eduave)"],
+  ["Frustrated","Impossible crime","Could the crime have happened? Adequate means that failed → frustrated; inherently impossible or ineffectual means → impossible."],
+  ["Attempted","Impossible crime","Did it fail because of an outside cause (an alert clerk) or because it could never succeed (an empty room)? (Balmores vs. Intod)"],
+  ["Spontaneous desistance","Stopped by others","Did he stop of his own will, before all the acts of execution? If he was grabbed or interrupted, it is not desistance."],
+  ["Mistake of fact","Error in personae","Would the act have been <b>lawful</b> under the facts as he believed (mistake of fact), or a felony against anyone (error in personae)?"],
+  ["Error in personae","Aberratio ictus","Did he hit the person he aimed at, who turned out to be someone else (personae), or did the blow land on a different person (ictus)?"],
+  ["Dolo","Culpa","Was the harmful act <b>deliberate</b> (dolo; a mistake in identity is still dolo) or careless (culpa)? (Oanis)"],
+  ["Proximate cause","Efficient intervening cause","Did a <b>foreign</b> force or the victim's <b>deliberate</b> act break the chain? Illness, complications and medical error don't."],
+  ["Praeter intentionem","Intent to kill","Do the means used (weapon, wound, part of the body) show intent to kill? A fist blow → praeter; a knife to the chest → no."],
+  ["Conspiracy as a crime","Conspiracy as a mode","Was the crime agreed upon actually committed? No → a crime only if the law punishes it (treason, rebellion, coup d'état, sedition). Yes → the act of one is the act of all."],
+  ["Self-defense","Retaliation","Was the aggression <b>still going on</b> when he struck? (Alconga)"],
+  ["Complete justification","Incomplete justification","Is unlawful aggression present, and how many of the other requisites? All → acquittal; the majority → privileged mitigating (Art. 69); fewer → ordinary mitigating."],
+  ["Self-defense","Fulfillment of duty","Is he an officer acting in his duty? Duty does not need unlawful aggression, but the injury must be its necessary consequence. (Delima)"],
+  ["Defense of a relative","Defense of a stranger","Is the person within ¶2's list? If not (e.g., a wife's first cousin), ¶3 applies, and motive now matters."],
+  ["Avoidance of greater evil","Self-defense","Is the harm done to an <b>aggressor</b> (self-defense) or to a <b>third person or thing</b> to avoid a different evil (¶4)?"],
+  ["Territoriality","Art. 2 exception","Was the crime committed inside the Philippines (including its waters)? If outside, is it one of the five cases?"],
+  ["Light felony attempted","Not punishable","Is it against persons or property? Only then is an attempted or frustrated light felony punished (Art. 7)."]])),
+S("m5","The checklist: run every problem through it",
+ P("Read the facts once, then go down this list in order and circle the facts that raise each issue on the questionnaire (you may write on it):"),
  V("checklist"),
  TR("The trap in combined problems","Students answer only the obvious issue (e.g., self-defense) and miss the earlier ones: jurisdiction (Art. 2), whether there is a felony at all (Art. 3), or what stage it reached (Art. 6). Check them in order.")),
-S("m4","All the decision gates",
- P("These are click-through versions of the core tests. Use them to rehearse the order of questions."),
- G("g-4a"),G("g-imp"),G("g-stage"),G("g-sd"))
+S("m6","The objective / enumeration question",
+ P("One of the five questions is objective and/or enumeration. Expect “give the requisites of…”, “enumerate the cases where…”, “distinguish…”, or a question on the <b>introductory readings</b> (e.g., the justifications of punishment). These are easy points if your lists are exact."),
+ K("How to prepare","Use the <b>Reyes elements</b> deck in the Codal drill tab (it now includes the readings) and practice the enumeration questions in Samplex → Mock exams. Do this question <b>first</b> on Saturday: it should take less than 24 minutes and leaves more time for the problems.")),
+S("m7","All the decision gates",
+ P("Click-through versions of the core tests. Use them to rehearse the order of questions."),
+ G("g-mof"),G("g-4a"),G("g-imp"),G("g-stage"),G("g-sd"))
 ]);
 
 // ═══════════════════════ 1 · INTRODUCTION & ART. 1 ═══════════════════════
 CH("intro","1","Introduction & Art. 1","Criminal law, its theories and limits",
 "Before the articles: what criminal law is, the two theories the Code is built on, the three characteristics of penal laws (<b>generality, territoriality, prospectivity</b>), and the limits the Constitution puts on Congress. These ideas come back as reasons in later chapters.",
-["Define criminal law and give the two theories","State and apply generality, territoriality and prospectivity, with their exceptions","List the constitutional limits on penal laws","Summarize the four introductory readings"],
+["Define criminal law and give the two theories","State and apply generality, territoriality and prospectivity, with their exceptions","List the constitutional limits on penal laws","Know where the readings fit: see Chapter 2"],
 [
 S("i1","What criminal law is",
  P("<b>Criminal law</b> is the branch of public law that <mark>defines crimes, treats of their nature, and provides for their punishment</mark>. The State alone may define and punish crimes; this power flows from its police power. There are <b>no common-law crimes</b> in the Philippines: an act is a crime only if a statute says so (<i>nullum crimen, nulla poena sine lege</i>)."),
@@ -840,21 +896,60 @@ S("i4","Generality",
  TR("Consuls are not immune","Consuls, vice-consuls and commercial representatives are <b>not</b> diplomatic agents, so they are subject to our criminal laws (San Beda MCQ 1: a commercial attaché is not exempt)."),
  C("vanwilsem","Generality and territoriality applied to a foreigner who lives here.")),
 S("i5","Territoriality and prospectivity",
- P("<b>Territoriality</b>: penal laws apply only within Philippine territory. The exceptions are the five cases in Art. 2 (Chapter 2). <b>Prospectivity</b>: a penal law looks forward. It cannot punish an act that was innocent when done or make the penalty heavier after the fact."),
+ P("<b>Territoriality</b>: penal laws apply only within Philippine territory. The exceptions are the five cases in Art. 2 (Chapter 3). <b>Prospectivity</b>: a penal law looks forward. It cannot punish an act that was innocent when done or make the penalty heavier after the fact."),
  K("Art. 22: the exception to prospectivity","A penal law is retroactive when it is <b>favorable to the accused</b>, unless he is a <b>habitual criminal</b> (Art. 62). The favorable law applies even if he is already serving sentence.")),
 S("i6","Constitutional limits on penal laws",
  P("Congress may define crimes, but the Bill of Rights limits how:"),
  UL(["<b>No ex post facto law</b> (Art. III § 22): no law that makes criminal an act innocent when done, aggravates a crime, increases its penalty, or changes the rules of evidence to the accused's disadvantage, applied to past acts.","<b>No bill of attainder</b>: a legislative act that inflicts punishment without a judicial trial.","<b>Due process and equal protection</b> (§ 1): the law must be general, and it must be clear enough to tell people what is forbidden (void-for-vagueness).","<b>No cruel, degrading or inhuman punishment and no excessive fines</b> (§ 19)."]),
- K("Pro reo","When a penal law is doubtful, it is construed <b>strictly against the State and liberally in favor of the accused</b> (<i>in dubio pro reo</i>). This follows from the presumption of innocence and is a 2010 and 2012 bar favorite.")),
-S("i7","The four introductory readings (summary)",
- UL(["<b>Shavell, “Criminal Law”</b> (economic analysis). Why use criminal law and not just fines? Because offenders may be too poor to pay, may escape detection, or may gain too much for any fine to deter. Imprisonment deters and also <b>incapacitates</b>.","<b>Cavanaugh, “The Justification of Punishment.”</b> <b>Reductivism</b> punishes to prevent future crime (deterrence, incapacitation, reform). <b>Retributivism</b> punishes because the offender deserves it, in proportion to the crime. <b>Denunciation</b> expresses society's condemnation. The first matches the positivist school; the second matches the classical school, the basis of the RPC.","<b>Restorative justice</b> (Gilman; Marshall). Those with a stake in an offense resolve its aftermath together, focusing on <b>repairing harm</b> and reintegrating the offender (victim-offender mediation, family group conferencing). Philippine examples: diversion under RA 9344, barangay conciliation.","<b>Rossabi, “Colonial Roots of Criminal Procedure.”</b> Philippine criminal law blends indigenous, Spanish (the Penal Code of 1887; church and state united) and American (General Order No. 58; common-law procedure) sources. The RPC replaced the Spanish code in 1932."]))
+ K("Pro reo","When a penal law is doubtful, it is construed <b>strictly against the State and liberally in favor of the accused</b> (<i>in dubio pro reo</i>). This follows from the presumption of innocence and is a 2010 and 2012 bar favorite."))
 ],[
  EXAM("“The RPC is based mainly on the classical theory: the basis of liability is free will, and the penalty is retribution proportionate to the act. It has positivist features, such as Art. 4(2), which punishes an impossible crime because of the offender's criminal tendency even though no felony is produced.”"),
  DR([["A law passed today raises the penalty for an act done last year. Does it apply to that act?","No. It is an ex post facto law."],["A new law lowers the penalty, and the accused is a habitual criminal. Does he benefit?","No. Art. 22 excludes habitual criminals from retroactive favorable laws."],["A foreign consul stabs someone in Makati. Is he immune?","No. Consuls are not covered by the public-international-law exception."]])
 ]);
 
+// ═══════════════════════ 2 · INTRODUCTORY READINGS ═══════════════════════
+CH("readings","2","The introductory readings","Shavell · Cavanaugh · Restorative justice · Rossabi",
+"Sir said the introductory readings are <b>part of the exam</b>. They answer the questions behind every article: <b>why</b> the State punishes, <b>what</b> punishment is for, and <b>where</b> our criminal law came from. Expect them in the objective or enumeration question, or as a “what theory explains this rule?” part of a problem.",
+["Explain Shavell's economic case for criminal law and imprisonment","Give and evaluate the justifications of punishment in Cavanaugh","Define restorative justice and give its principles, objectives and practices","Trace the colonial roots of Philippine criminal procedure (Rossabi)","Connect each theory to a provision of the RPC"],
+[
+S("r0","How to use this chapter",
+ P("The four readings were assigned before Art. 1 in the syllabus. On an exam they work in two ways: as <b>objective questions</b> (“enumerate the justifications of punishment”) and as the <b>reason</b> behind a rule in a problem (“why does the Code punish an impossible crime when no harm was done?”)."),
+ TR("Source note","The reading texts themselves are not in your uploads. This chapter is built from your block's Midterms Reviewer summaries, RA 9344, and standard accounts of these theories. If you have time, skim each original's headings before Saturday.")),
+S("r1","Shavell, “Criminal Law” (economic analysis)",
+ P("Shavell asks an economist's question: <b>if the law already lets victims sue for damages and lets the State impose fines, why do we need criminal law and prison at all?</b> His answer is that money sanctions alone cannot deter certain harmful acts."),
+ RQ("Why fines alone fail to deter",[["Offenders often lack wealth","A fine larger than what a person owns cannot be collected, so it cannot deter him."],["Offenders may escape detection","If the chance of being caught is low, the sanction must be very large to keep the expected penalty high. Such large fines exceed what offenders can pay."],["Some crimes bring large private gains","When the gain is high, the fine needed to outweigh it would be enormous."]]),
+ P("So the law turns to <b>non-monetary sanctions</b>, chiefly imprisonment, which works in two ways: it <b>deters</b> (the threat discourages the act), and it <b>incapacitates</b> (a person in prison cannot commit more crimes outside). Imprisonment is costly to society, so it is reserved for the most harmful acts, typically intentional violent crimes such as murder and rape."),
+ P("<b>What criminal acts look like.</b> They usually involve <b>deliberate</b> harm. They remain criminal even when the intended harm does not happen, which is the logic of punishing attempts. Accidental harm is generally <b>not</b> criminal unless it involves negligence or an attempt to conceal it. Criminal law also targets conduct that tries to <b>evade responsibility</b>, such as concealment."),
+ K("Link to the RPC","Shavell's logic explains why the RPC punishes <b>attempts and frustrations</b> (Art. 6) even without harm, why <b>intent</b> generally separates crimes from mere civil wrongs (Art. 3), and why <b>culpa</b> is punished more lightly (Art. 365).")),
+S("r2","Cavanaugh, “The Justification of Punishment”",
+ P("Punishment deliberately inflicts suffering, so it needs a justification. Cavanaugh surveys the main answers:"),
+ V("punish"),
+ RQ("Justifications of punishment",[["Reductivism","Punishment is justified by its future effects: it <b>reduces crime</b>. Its three mechanisms are <b>deterrence</b> (discouraging the offender and others), <b>incapacitation</b> (physically preventing further crimes), and <b>reform</b> (rehabilitating the offender)."],["Retributivism","Punishment is justified because the offender <b>deserves</b> it for what he has already done. The penalty must be <b>proportionate</b> to the gravity of the crime."],["Denunciation","Punishment expresses <b>society's condemnation</b> of the act and reaffirms its values."],["Restorative justice","The focus moves from punishing the offender to <b>repairing the harm</b> and reintegrating him (see the next section)."]]),
+ P("<b>The weaknesses each answer must face.</b> Reductivism looks only forward, so in theory it could justify punishing the innocent or punishing excessively if that deterred others. Retributivism insists on desert and proportion, but critics call it institutionalized vengeance that produces no social good. Reform depends on treatment that may not work and on sentences tied to the person, not the act. Most systems, including ours, <b>mix</b> them."),
+ TB(["School","Core claim","Echo in our law"],[["<b>Classical</b>","Free will; clear laws; punishment proportionate to the act","The RPC's fixed penalties and the basis of liability (Ch. 1)"],["<b>Positivist</b>","Crime comes from social or psychological causes; focus on the offender and rehabilitation","Art. 4(2) impossible crimes; juvenile justice; the Indeterminate Sentence Law"],["<b>Justice model</b>","“Just deserts”: punishment proportionate to the crime, with due process; rejects the positivist emphasis on rehabilitation","Proportionality behind Art. 5 ¶2 (clearly excessive penalties)"]]),
+ K("A likely exam angle","“Which theory justifies punishing an impossible crime?” Positivist and reductivist (incapacitation and deterrence of a dangerous person), because no harm was done that would deserve retribution. “Which theory underlies Art. 5 ¶2?” Retributive proportionality (the penalty should fit the malice and the injury).")),
+S("r3","Restorative justice (Gilman; Marshall)",
+ P("Retributive justice asks: <b>what law was broken, who did it, and what does he deserve?</b> Restorative justice asks: <b>who was hurt, what do they need, and whose obligation is it to repair the harm?</b> Crime is seen first as harm to people and relationships, not just a violation of the State's law."),
+ K("Definitions","<b>Marshall</b> (the overview your block summarized): a process in which all the parties with a stake in a specific offense come together to resolve <b>collectively</b> how to deal with its aftermath and its implications for the future. <b>RA 9344, § 4(q)</b>: a principle that requires a process of resolving conflicts with the <b>maximum involvement of the victim, the offender and the community</b>. It seeks <b>reparation</b> for the victim, <b>reconciliation</b> of the offender, the offended and the community, and <b>reassurance</b> to the offender that he can be reintegrated into society."),
+ RQ("Principles",[["Personal involvement of those mainly concerned","The victim, the offender and the community, not just the State."],["Seeing crime problems in their social context",""],["A forward-looking, preventive, problem-solving orientation",""],["Flexibility and creativity of practice",""]]),
+ RQ("Objectives",[["Attend fully to the victim's needs","Material, financial, emotional and social."],["Prevent re-offending by reintegrating offenders into the community",""],["Enable offenders to take active responsibility for their actions",""],["Recreate a working community that supports the rehabilitation of offenders and victims and helps prevent crime",""],["Avoid the escalation of legal justice and its costs and delays",""]]),
+ TB(["Practice","Who takes part","Example"],[["Victim–offender mediation","Victim and offender","Direct or indirect dialogue; apology, explanation, reparation"],["Victim–community","Victim and support groups","Practical and emotional support for victims"],["Offender–community","Offender and community programs","Job search, retraining, counseling, housing; school programs on bullying and truancy"],["Victim, offender and community","Families and community contacts","Family group conferencing"]]),
+ P("<b>Philippine examples</b>: diversion and intervention for children in conflict with the law under RA 9344; barangay conciliation (Katarungang Pambarangay); probation."),
+ DS("Restorative vs. retributive","Retributive justice centers on the State and the offender's desert; restorative justice centers on the victim and the community and on repairing harm. The RPC is mainly retributive (classical), with restorative elements in civil liability (Arts. 100–113) and in special laws.")),
+S("r4","Rossabi, “The Colonial Roots of Criminal Procedure in the Philippines”",
+ P("Rossabi's point is that Philippine criminal law and procedure are a <b>synthesis</b> of indigenous, Spanish (civil-law) and American (common-law) sources, imposed in layers by colonizers. The tensions in our system make more sense once you see the layers."),
+ V("colonial"),
+ UL(["<b>Spanish period (1521–1898).</b> Built on the union of Church and State. Indigenous (“pagan”) customs were tolerated if they did not conflict with Spanish ways, then gradually nullified. The <b>Laws of the Indies</b> (Recopilación, 1680); a local court system in which the <b>gobernadorcillo</b>, a Filipino, settled minor conflicts; the <b>Penal Code of 1887</b>, a list of crimes and penalties that gave the accused few rights; trials before Spanish judges under the Governor-General. The <b>ilustrados</b> pressed for individual rights and the separation of Church and State; Spain responded by creating justices of the peace (<i>juez de paz</i>).","<b>American period (1898–1946).</b> A “trusteeship”; a shift toward the <b>common law</b>, built on precedent. The Schurman Commission; the separation of Church and State; <b>General Order No. 58</b> (1900), which remade criminal procedure (complaints, jurisdiction, preliminary examination, rights of the accused); the <b>Philippine Organic Act of 1902</b> (civil rule). Filipino justices were appointed, but Americans held the key posts.","<b>After independence.</b> The American-style procedure largely stayed, revised over time; the 1985 Rules on Criminal Procedure strengthened the rights of the accused within the same structure. The substantive law, the RPC (1932), remains Spanish-rooted."]),
+ K("Why it matters for this course","It explains why we read <b>Spanish</b> doctrine (Viada, decisions of the Supreme Court of Spain) for the RPC's substantive rules, and <b>American</b> doctrine for procedure and constitutional rights. It is also why early cases such as <i>Bull</i> and <i>Ah Chong</i> are decisions of an American-era Supreme Court applying Spanish-based penal law.")),
+S("r5","Putting the readings together",
+ TB(["Question","Shavell","Cavanaugh","Restorative justice","Rossabi"],[["Why punish?","To deter acts that money sanctions cannot","Reduction, desert, or denunciation","To repair harm and restore relationships","(Historical) the colonizers' models of order"],["Key mechanism","Deterrence and incapacitation; imprisonment","Proportionate penalty (retributive) or reform (positivist)","Mediation, conferencing, reintegration","Spanish code + American procedure"],["RPC link","Arts. 3, 6 (intent, attempts)","Classical basis; Art. 4(2) positivist; Art. 5 proportionality","Civil liability; RA 9344 diversion","The RPC (1932) replacing the 1887 Code"]]))
+],[
+ EXAM("“The RPC rests mainly on the classical theory, which justifies punishment retributively by the offender's free choice and the gravity of his act. Some provisions, such as Art. 4(2) on impossible crimes, are justified instead on reductivist and positivist grounds: the offender is punished for the danger he poses, though no harm resulted.”"),
+ DR([["Enumerate three reasons why fines alone cannot deter crime (Shavell).","Limited wealth of offenders; a low probability of detection; large private gains from the crime."],["Give the three mechanisms of reductivism.","Deterrence, incapacitation, reform."],["Define restorative justice under RA 9344.","A principle that resolves conflicts with the maximum involvement of the victim, the offender and the community, seeking reparation, reconciliation and reassurance of reintegration."],["What was General Order No. 58?","The 1900 American military order that remade Philippine criminal procedure (complaints, jurisdiction, preliminary examination, rights of the accused)."]])
+]);
+
 // ═══════════════════════ 2 · ART. 2 ═══════════════════════
-CH("a2","2","Art. 2 · Where the Code applies","Territoriality and its five exceptions",
+CH("a2","3","Art. 2 · Where the Code applies","Territoriality and its five exceptions",
 "Art. 2 answers one question: <b>can a Philippine court try this crime?</b> Inside the territory, yes (with the usual exceptions to generality). Outside it, <b>only in the five cases listed</b>. Foreign merchant ships in our waters have their own rule, taught through four opium-and-cattle cases.",
 ["Draw what “Philippine territory” covers","Apply the English rule to foreign merchant vessels (Bull, Wong Cheng, Look Chaw, Ah Sing)","Recite and apply the five extraterritorial cases, including piracy (Lol-lo)"],
 [
@@ -886,7 +981,7 @@ S("a2-4","The five extraterritorial cases",
 ]);
 
 // ═══════════════════════ 3 · ART. 3 ═══════════════════════
-CH("a3","3","Art. 3 · Felonies","Act, punishability, dolo and culpa; mistake of fact",
+CH("a3","4","Art. 3 · Felonies","Act, punishability, dolo and culpa; mistake of fact",
 "Art. 3 defines the building block of the whole Code: the <b>felony</b>. Every later article assumes you can say whether there is a felony at all, whether it was committed with <b>dolo</b> (intent) or <b>culpa</b> (fault), and whether a <b>mistake of fact</b> wiped out the intent. Ah Chong, the case Sir loves, lives here.",
 ["Give the three elements of a felony and explain each","State the requisites of dolo and of culpa, and what negates each","Apply the three requisites of mistake of fact (Ah Chong vs. Oanis)","Distinguish intent from motive, and mala in se from mala prohibita"],
 [
@@ -898,7 +993,7 @@ S("a3-2","Element 1 · An act or omission",
  P("An <b>act</b> is any bodily movement that tends to produce some effect in the external world. Reyes stresses that <mark>only the external act is punished</mark>; criminal thoughts, however evil, are not. An <b>omission</b> is the failure to perform a positive duty that the <b>law</b> requires, e.g., failing to help a person in danger (Art. 275), failing to render accounts (Art. 218), or failing to report a conspiracy to commit treason (Art. 116)."),
  K("Omission needs a legal duty","No legal duty to act, no felony by omission. A moral duty alone is not enough.")),
 S("a3-3","Element 2 · Punishable by law",
- P("The act must be <b>punishable</b>. This is where Art. 5 comes in: if the court thinks an act deserves punishment but no law punishes it, the court must <b>acquit</b> (Chapter 6). An act covered by a <b>justifying circumstance</b> (Art. 11) is also not a felony, because the law makes it lawful.")),
+ P("The act must be <b>punishable</b>. This is where Art. 5 comes in: if the court thinks an act deserves punishment but no law punishes it, the court must <b>acquit</b> (Chapter 7). An act covered by a <b>justifying circumstance</b> (Art. 11) is also not a felony, because the law makes it lawful.")),
 S("a3-4","Element 3 · Dolo: freedom, intelligence, intent",
  P("A felony by dolo must be <b>voluntary</b>, and voluntariness has three parts. Learn what <mark>takes each part away</mark>, because those are the defenses later in the Code:"),
  TB(["Requisite","Meaning","What negates it"],[
@@ -939,7 +1034,7 @@ S("a3-8","Intent vs. motive",
 (()=>{const {CH,S,P,K,TR,DS,EX,C,V,CO,RQ,UL,TB,EXAM,DR,G}=window.RH;
 
 // ═══════════════════════ 4 · ART. 4(1) ═══════════════════════
-CH("a4a","4","Art. 4(1) · A wrong different from that intended","Proximate cause, error in personae, aberratio ictus, praeter intentionem",
+CH("a4a","5","Art. 4(1) · A wrong different from that intended","Proximate cause, error in personae, aberratio ictus, praeter intentionem",
 "Once a person commits a felony, he is liable for <b>everything that naturally and logically flows from it</b>, intended or not. This chapter is about the <b>chain of causation</b>: when it holds, and the few things that break it. It is the most common “combination” issue on crim exams.",
 ["State the rationale and the two requisites of Art. 4(1)","Define proximate cause and list what is and is not an efficient intervening cause","Apply the chain to Brobst, Iligan, Mananquil and Garcia","Distinguish error in personae, aberratio ictus and praeter intentionem, and their effects"],
 [
@@ -983,7 +1078,7 @@ S("a4a-5","The three situations: personae, ictus, praeter intentionem",
 ]);
 
 // ═══════════════════════ 5 · ART. 4(2) ═══════════════════════
-CH("a4b","5","Art. 4(2) · Impossible crimes","Punishing the criminal mind",
+CH("a4b","6","Art. 4(2) · Impossible crimes","Punishing the criminal mind",
 "Here the offender does everything, with evil intent, but the crime <b>could never happen</b>: the victim was already dead, the room was empty, the check was worthless, the poison was sugar. The Code still punishes him, for his <b>criminal propensity</b>. This is the Code's most positivist provision.",
 ["Explain why impossible crimes are punished","State and apply all four requisites","Distinguish legal and physical impossibility, and inadequate and ineffectual means","Separate impossible crimes from attempted and frustrated felonies (Balmores, Intod, Jacinto, Domasian)"],
 [
@@ -1019,7 +1114,7 @@ S("a4b-6","Impossible crime vs. attempted and frustrated felony",
 ]);
 
 // ═══════════════════════ 6 · ART. 5 ═══════════════════════
-CH("a5","6","Art. 5 · The duty of the court","Acts not punishable; clearly excessive penalties",
+CH("a5","7","Art. 5 · The duty of the court","Acts not punishable; clearly excessive penalties",
 "Art. 5 tells judges what to do in two uncomfortable situations: when an act <b>deserves punishment but no law punishes it</b>, and when the law's penalty is <b>clearly too harsh</b>. In both, the judge applies the law as written and writes to the President.",
 ["State what the court must do in each paragraph","Explain why the court cannot convict or lower the penalty itself"],
 [
@@ -1038,7 +1133,7 @@ S("a5-3","Paragraph 2 · A clearly excessive penalty",
 ]);
 
 // ═══════════════════════ 7 · ART. 6 ═══════════════════════
-CH("a6","7","Art. 6 · Stages of execution","Attempted, frustrated, consummated",
+CH("a6","8","Art. 6 · Stages of execution","Attempted, frustrated, consummated",
 "Art. 6 measures <b>how far</b> a crime got. It is the article with the most syllabus cases (12) and the most exam problems. Master three things: <b>what an overt act is</b> (attempt starts there), <b>when the subjective phase ends</b> (attempt becomes frustration), and <b>which crimes cannot be frustrated</b> because of their elements.",
 ["Trace the development of a crime from thought to consummation","Explain each element of attempted and of frustrated felony","Apply the subjective/objective phase test, including the homicide wound ladder","Determine the stage by the nature, elements and manner of the crime (theft, robbery, rape, estafa, arson)"],
 [
@@ -1103,7 +1198,7 @@ S("a6-8","Finding the stage: nature, elements and manner",
 (()=>{const {CH,S,P,K,TR,DS,EX,C,V,CO,RQ,UL,TB,EXAM,DR,G}=window.RH;
 
 // ═══════════════════════ 8 · ART. 7 ═══════════════════════
-CH("a7","8","Art. 7 · Light felonies","When they are punishable",
+CH("a7","9","Art. 7 · Light felonies","When they are punishable",
 "A short article with a clear rule and one exception. Learn what a light felony is (Art. 9), why only consummated ones are punished, and why those against <b>persons or property</b> are different.",
 ["State the rule, the exception and the reason for each","Give examples of light felonies"],
 [
@@ -1116,7 +1211,7 @@ S("a7-2","Examples",
 ],[EXAM("“Under Art. 7, light felonies are punishable only when consummated, except those committed against persons or property, which are punishable even when attempted or frustrated.”")]);
 
 // ═══════════════════════ 9 · ART. 8 ═══════════════════════
-CH("a8","9","Art. 8 · Conspiracy and proposal","As crimes in themselves, and as a mode of liability",
+CH("a8","10","Art. 8 · Conspiracy and proposal","As crimes in themselves, and as a mode of liability",
 "Art. 8 defines conspiracy and proposal and says they are crimes <b>only when a law specifically punishes them</b>. But conspiracy has a second life: when the crime is actually committed, it becomes the reason why <b>the act of one is the act of all</b>. Keep the two apart.",
 ["Recite which conspiracies and proposals are punishable","Explain each requisite of conspiracy and of proposal","Distinguish conspiracy as a felony from conspiracy as a mode of liability, and know the proof required"],
 [
@@ -1143,7 +1238,7 @@ S("a8-4","Proposal",
 ]);
 
 // ═══════════════════════ 10 · ART. 9 ═══════════════════════
-CH("a9","10","Art. 9 · Grave, less grave, light","Classifying felonies by their penalty",
+CH("a9","11","Art. 9 · Grave, less grave, light","Classifying felonies by their penalty",
 "Art. 9 sorts felonies by gravity, and gravity is read from the <b>penalty</b>, using the scale in Art. 25. The classification matters elsewhere: complex crimes, light felonies, accessories, and prescription.",
 ["Classify a felony from its penalty, including divided and compound penalties","Resolve the ₱40,000 conflict between Arts. 9 and 26"],
 [
@@ -1156,7 +1251,7 @@ S("a9-2","Reading the penalty",
 ],[EXAM("“Under Art. 9, grave felonies carry the capital penalty or penalties afflictive in any of their periods; less grave felonies, penalties correctional in their maximum period; light felonies, arresto menor or a fine not exceeding ₱40,000, or both.”")]);
 
 // ═══════════════════════ 11 · ART. 10 ═══════════════════════
-CH("a10","11","Art. 10 · Special laws","The RPC as a supplement",
+CH("a10","12","Art. 10 · Special laws","The RPC as a supplement",
 "Special penal laws (drugs, firearms, BP 22, RA 9262) stand on their own. Art. 10 says they are not governed by the RPC, but the RPC fills their gaps <b>unless the special law says otherwise</b>.",
 ["Explain the two clauses and how they are reconciled","Know which RPC rules do and do not apply to special laws"],
 [
@@ -1169,12 +1264,12 @@ S("a10-2","What carries over and what does not",
  K("The exception: special laws using RPC nomenclature","When a special law <b>adopts the RPC's penalties</b> (e.g., reclusion perpetua, prisión mayor), as many amended laws now do, the RPC rules on graduating penalties and on modifying circumstances apply (<i>People v. Simon</i>)."),
  EX("Attempt punished by the special law itself","A passenger about to board a plane with four gold bars strapped to his body was convicted under the Central Bank rule penalizing “any person desiring to export gold” without a license. The rule itself covered the stage before actual export, so the attempt was punishable.")),
 S("a10-3","Intent in special-law offenses",
- P("Crimes under special laws are generally <b>mala prohibita</b>: criminal intent and good faith are immaterial; what matters is the <b>intent to perpetrate the prohibited act</b> (Chapter 3, <i>Bayona</i>)."),
+ P("Crimes under special laws are generally <b>mala prohibita</b>: criminal intent and good faith are immaterial; what matters is the <b>intent to perpetrate the prohibited act</b> (Chapter 4, <i>Bayona</i>)."),
  TR("Possession offenses still need animus possidendi","Illegal possession of a firearm is malum prohibitum, but possession requires the <b>intent to possess</b>. A guard carrying an agency-issued firearm on the way to return it holds it incidentally to his duty (San Beda Q2)."))
 ],[EXAM("“Under Art. 10, offenses under special laws are governed by those laws, but the RPC applies suppletorily unless the special law provides otherwise (Ladonga v. People). Unless the special law adopts RPC penalties, its attempted and frustrated stages are not punishable unless it provides for them.”")]);
 
 // ═══════════════════════ 12 · ART. 11 ═══════════════════════
-CH("a11","12","Art. 11 · Justifying circumstances","When the act itself is lawful",
+CH("a11","13","Art. 11 · Justifying circumstances","When the act itself is lawful",
 "Art. 11 lists six situations in which a person who causes harm <b>commits no crime at all</b>: self-defense, defense of relatives, defense of strangers, avoidance of a greater evil, fulfillment of duty, and obedience to an order. Twenty of your syllabus cases are here. Everything turns on the <b>requisites</b>, especially <b>unlawful aggression</b>.",
 ["Explain why justified acts carry no criminal (and usually no civil) liability","Explain every requisite of each paragraph, with its cases","Apply incomplete justification (Art. 69 / Art. 13(1))","Recognize the facts that defeat a self-defense claim"],
 [
@@ -1303,55 +1398,6 @@ c:{q:"Was there <b>lack of sufficient provocation</b> by the defender?",y:{end:"
 // Samplex. Essays: id, set, src, t (topics), q, iss (issues to spot), a (model answer, IRAC/CLEAR), c (back-page CLEAR line).
 // MCQs: id, src, q, ch (choices), k (key index), why, note.
 window.ESSAYS = [
-// ── MOCK EXAM A (Sir Barry style: syllabus-case facts, mixed and switched) ──
-{id:"m1",set:"Mock exam A",src:"Mock · written for this site",t:["a3","a11"],
-q:"Officers Ramos and Tuazon were ordered to arrest Dado, an escaped convict known to be armed, and to “bring him in dead or alive if he resists.” At 2:00 a.m. they learned Dado was hiding in a boarding house. Ramos kicked the door open and, in the dark, saw a man rising from a bed and reaching under his pillow. Ramos fired, killing him. Tuazon, entering a second room, found a man asleep with his back to the door and fired three shots without saying a word. Neither man was Dado: the first was a boarder who kept a flashlight under his pillow; the second was a vendor. Discuss the criminal liability of Ramos and Tuazon.",
-iss:["Mistake of fact (Ah Chong requisites)","Fault or carelessness: time to verify (Oanis)","Fulfillment of duty (Art. 11(5)): necessary consequence","Incomplete justification → privileged mitigating (Art. 69)","Dolo vs. culpa (deliberate shooting is not reckless imprudence)","Treachery (sleeping victim) → murder"],
-a:"<b>Ramos: not liable (or at most incomplete justification).</b> Under Art. 3, there is no felony by dolo without intent. Mistake of fact excuses if (1) the act would have been lawful had the facts been as believed, (2) the intent was lawful, and (3) the mistake was without fault (<i>U.S. v. Ah Chong</i>). In the dark, a man rising and reaching under his pillow at an officer serving a warrant on an armed fugitive reasonably appears to be reaching for a weapon. Had the facts been as Ramos believed, shooting would have been the <b>necessary consequence of his duty</b> (Art. 11(5); <i>People v. Delima</i>) or self-defense. He had no time to verify. Like Ah Chong, he is not liable.<br><br><b>Tuazon: liable for murder</b>, mitigated by incomplete fulfillment of duty. The man was <b>asleep, with his back to the door</b>. Nothing pressed Tuazon to act at once; he had time to verify identity and effect a bloodless arrest. Even if the man had been Dado, the order allowed force only if he resisted. The mistake was due to his own fault (<i>People v. Oanis</i>), so it does not excuse. Because he shot deliberately, the crime is by <b>dolo</b>, not reckless imprudence; shooting a sleeping victim is <b>treachery</b>, so it is murder. He was on duty (first requisite of Art. 11(5)), but the killing was not its necessary consequence, so he gets the <b>privileged mitigating circumstance</b> of incomplete fulfillment of duty (Art. 69).",
-c:"Ramos: mistake of fact without fault (Ah Chong) → not liable. Tuazon: time to verify, sleeping victim → murder with incomplete fulfillment of duty (Oanis)."},
-
-{id:"m2",set:"Mock exam A",src:"Mock",t:["a2","a10"],
-q:"(a) The M/V Erin, a Liberian-registered merchant vessel en route from Hong Kong to Sydney, anchored for one night off Batangas. Lito, a Chinese crewman, smoked shabu on deck; Paco, another crewman, kept 50 grams of shabu in his locker and never left the ship; Wei, a third crewman, sold some to a fisherman who came alongside. Which of them may be prosecuted in the Philippines? (b) The M/V Bayani, registered in the Philippines but owned by a Panamanian corporation, was on the high seas when Bert, a Filipino seaman, stabbed Kenji, a Japanese seaman. Do Philippine courts have jurisdiction? (c) Would your answer in (b) change if the Bayani had been registered in Panama but owned by a Filipino?",
-iss:["English rule; breach of public order (Wong Cheng)","Mere possession in transit (Look Chaw)","Landing or sale → triable (Look Chaw)","Art. 2(1): Philippine ship = registry, not owner (2000 Bar)"],
-a:"<b>(a)</b> We follow the <b>English rule</b>: crimes aboard a foreign merchant vessel in our waters are triable here unless they affect only the vessel's internal management. <b>Lito</b>: yes. Using a drug within our waters makes it produce its harmful effects here, a breach of public order (<i>People v. Wong Cheng</i>). <b>Paco</b>: no. <b>Mere possession</b> aboard a vessel <b>in transit</b>, never landed or used here, causes none of the effects our laws seek to prevent (<i>U.S. v. Look Chaw</i>). <b>Wei</b>: yes. Selling it to a local brings the drug into our territory, an open violation of our laws (<i>Look Chaw</i>).<br><br><b>(b) Yes.</b> Under Art. 2(1), the RPC applies outside our jurisdiction to those who commit an offense while on a <b>Philippine ship</b>. A Philippine ship is one <b>registered</b> here; the owner's nationality is immaterial.<br><br><b>(c) Yes, the answer changes.</b> A Panamanian-registered ship is not a Philippine ship even if a Filipino owns it; the crime on the high seas is not triable here (2000 Bar; <i>U.S. v. Fowler</i>).",
-c:"English rule: use or sale here = breach of public order (Wong Cheng; Look Chaw); mere possession in transit is not. Art. 2(1) turns on registry, not ownership."},
-
-{id:"m3",set:"Mock exam A",src:"Mock",t:["a4a","a6"],
-q:"During a drinking spree, Nonoy punched Badong, a 60-year-old with a known heart condition, twice in the chest. Badong staggered out of the house in fear and onto the highway, where a speeding jeepney hit him. He was brought to a hospital where he refused a blood transfusion for religious reasons, and he died the next morning. The autopsy listed the cause of death as “cardiac arrest secondary to blunt trauma and blood loss.” Nonoy argues: (1) he only meant to hurt Badong; (2) the jeepney and the refusal of treatment, not his punches, killed Badong. Rule on both arguments.",
-iss:["Art. 4(1) requisites","Proximate cause; chain unbroken (Iligan)","Pre-existing illness not an efficient intervening cause (Garcia)","Victim's refusal of treatment / neglect not efficient","Immediate sense of danger","Praeter intentionem (Art. 13(3))"],
-a:"<b>Both arguments fail; Nonoy is liable for homicide, mitigated by praeter intentionem.</b><br><br><b>Rule.</b> Under Art. 4(1), one who commits an intentional felony is liable for all its <b>direct, natural and logical consequences</b>, even if unintended. The felony must be the <b>proximate cause</b>: the cause that, in natural and continuous sequence, unbroken by an efficient intervening cause, produces the result.<br><br><b>(1) Lack of intent to kill.</b> The punches were an intentional felony (physical injuries). Intent to kill is not required for liability for the death; lack of it only mitigates under Art. 13(3) (no intention to commit so grave a wrong), as in <i>Garcia v. People</i>, where a mauling triggered a fatal heart attack.<br><br><b>(2) Intervening causes.</b> (a) Badong's <b>heart condition</b> is not an efficient intervening cause; the offender takes his victim as he finds him (<i>Garcia</i>). (b) The <b>jeepney</b>: Badong ran onto the highway out of the immediate sense of danger Nonoy created, so being hit was a natural consequence of the assault. As in <i>People v. Iligan</i>, where the victim was hacked and then run over, the felony need not be the immediate cause; it is enough that it started the unbroken chain. (c) The <b>refusal of treatment</b> is neglect by the victim, which Reyes lists as <b>not</b> an efficient intervening cause.",
-c:"Art. 4(1): the punches set off an unbroken chain (Iligan); illness and refusal of treatment are not efficient intervening causes (Garcia) → homicide with Art. 13(3) mitigating."},
-
-{id:"m4",set:"Mock exam A",src:"Mock",t:["a4b","a6"],
-q:"(a) Ading, a collector of Bright Foam, received a ₱50,000 check from a customer, payable to Bright Foam. She deposited it in her boyfriend's account. The check bounced for insufficient funds. Charged with qualified theft, Ading says she committed no crime. (b) Tonyo, wanting to kill his rival Jun, crept to Jun's hut at night and fired five shots through the bamboo wall where Jun usually slept. Jun had left for Manila that afternoon; Jun's goats inside were killed. (c) Pinong abducted a 7-year-old boy and mailed a ransom note to the parents. Police rescued the boy before the note arrived. Pinong argues it is an impossible crime. Discuss.",
-iss:["Impossible crime requisites (Art. 4(2))","Legal/factual impossibility: worthless check (Jacinto)","Physical impossibility: absent victim (Intod)","'No violation of another provision': damage to the goats (malicious mischief?)","Kidnapping is a crime against liberty; consummated (Domasian)"],
-a:"<b>(a) Impossible crime of qualified theft</b> (<i>Jacinto v. People</i>). Theft requires taking personal property with value and with intent to gain. The check was <b>worthless from the start</b>, so the unlawful taking could not produce any gain: this is inherent impossibility. The other requisites are present: the act would be an offense against property, it was done with evil intent, and it violated no other provision. She is liable under Art. 4(2), penalized under Art. 59.<br><br><b>(b) Impossible crime of murder</b> (<i>Intod v. CA</i>). Firing into the place where the victim usually sleeps, with intent to kill, while he is in fact absent, is <b>physical (factual) impossibility</b>, a form of inherent impossibility. <b>Exception:</b> Art. 4(2) applies only if the act constitutes no other felony. Killing the goats may be <b>malicious mischief</b> (damage to property), and if so, Tonyo would be liable for that felony instead. But because the damage was not deliberately caused (it resulted from an act aimed at Jun), the better view following <i>Intod</i> is an impossible crime, with civil liability for the goats.<br><br><b>(c) Not an impossible crime; kidnapping and serious illegal detention</b> (<i>People v. Domasian</i>). An impossible crime covers only offenses against <b>persons or property</b>; kidnapping is a crime against <b>liberty</b>. In any case, the crime was <b>consummated</b> when the boy was deprived of his liberty; the late ransom note only affects the penalty.",
-c:"Worthless check → impossible theft (Jacinto); absent victim → impossible murder (Intod); kidnapping is never an impossible crime and was consummated (Domasian)."},
-
-{id:"m5",set:"Mock exam A",src:"Mock",t:["a6"],
-q:"(a) In a mall supermarket, Eli loaded six boxes of detergent into a cart, wheeled them past the cashiers without paying, and loaded them into a waiting taxi in the parking lot. A guard stopped the taxi before it left. The RTC convicted Eli of frustrated theft. Correct? (b) Fred shot Gino once in the left shoulder with a .45 pistol inside a store; Gino ran and hid in a back room, and Fred fled. Gino recovered after nine days in the hospital. Fred is charged with frustrated murder. (c) Same as (b), except Gino was shot in the chest, fell, and lay still; Fred, thinking him dead, walked away. Gino survived after emergency surgery. (d) Hector, intending to rape Ana, pinned her down and removed her clothes, and his penis touched her labia before she kicked him away. Hector argues it is only frustrated rape.",
-iss:["No frustrated theft; apoderamiento (Valenzuela)","Subjective phase not complete; victim escaped (Sy Pio)","Subjective phase complete; mortal wound (Eduave)","No frustrated rape; slightest penetration (Orita; Campuhan)"],
-a:"<b>(a) Not correct; consummated theft.</b> Theft is produced the moment the offender gains <b>possession</b> of the property with intent to gain; the chance to dispose of it is not an element. There is no frustrated theft (<i>Valenzuela v. People</i>).<br><br><b>(b) Attempted murder.</b> A homicide or murder is frustrated only when the subjective phase is complete, meaning the offender has performed all the acts of execution believing they will cause death. Fred saw Gino run and hide, the wound was not fatal, and Fred did not pursue (<i>People v. Sy Pio</i>). (Murder, if treachery attended the shooting; otherwise homicide.)<br><br><b>(c) Frustrated murder (or homicide).</b> Fred inflicted a <b>mortal wound</b> and believed Gino dead, so the subjective phase was complete. Death did not result only because of the surgery, a cause independent of his will (<i>U.S. v. Eduave</i>).<br><br><b>(d) Consummated rape.</b> Rape is consummated by carnal knowledge, and <b>any penetration</b>, even touching the labia, suffices. There is no frustrated rape (<i>People v. Orita</i>; <i>People v. Campuhan</i>).",
-c:"Theft and rape have no frustrated stage (Valenzuela; Orita). Homicide is frustrated only if the subjective phase is complete (Eduave), not when the victim visibly escapes (Sy Pio)."},
-
-{id:"m6",set:"Mock exam A",src:"Mock",t:["a11"],
-q:"(a) At a card game, Celso accused Dindo of cheating. Dindo swung a wooden pole at Celso; Celso ducked, drew a knife and stabbed Dindo in the arm. Dindo dropped the pole and ran. Celso chased him for 30 meters and stabbed him in the back, killing him. (b) In a crowded, brightly lit church, Lorna's ex-suitor sat beside her and touched her knee. She stabbed him in the neck with a pocket knife. (c) Brothers Ted and Ned arrived at the rice field to see their father lying in the mud, bleeding, with their uncle standing over him holding a bolo. They hacked the uncle to death. It later turned out that their father had started the fight. Discuss the liability of Celso, Lorna, and Ted and Ned.",
-iss:["Two stages; aggression ceased (Alconga)","Unlawful aggression vs. reasonable necessity; place and occasion (Jaurigue)","Defense of relatives; honest belief (Esmedia)","Relative's provocation immaterial if the defender had no part in it","Incomplete justification (Art. 69)"],
-a:"<b>(a) Celso: homicide.</b> The first stabbing was self-defense (Dindo's attack with the pole was unlawful aggression). But when Dindo dropped the pole and <b>ran</b>, the aggression <b>ceased</b>. Pursuing and stabbing him in the back is retaliation, not defense (<i>People v. Alconga</i>). Without unlawful aggression, there is no self-defense, complete or incomplete, for the fatal blow.<br><br><b>(b) Lorna: homicide, with incomplete self-defense (privileged mitigating).</b> Touching her knee is unlawful aggression against her honor. But in a <b>brightly lit, crowded church</b> there was no danger of rape, so stabbing his neck was <b>not reasonably necessary</b>; a slap or a push would do (<i>People v. Jaurigue</i>). With unlawful aggression and lack of provocation present, she gets the privileged mitigating circumstance under Art. 69.<br><br><b>(c) Ted and Ned: justified (defense of relatives, Art. 11(2)).</b> Unlawful aggression may rest on the defender's <b>honest belief</b> as the facts appeared: seeing their wounded father down with the armed uncle over him, they reasonably believed he would strike again (<i>U.S. v. Esmedia</i>). That the father started the fight is immaterial; under ¶2, the relative's own provocation does not bar the defense as long as the <b>defenders had no part in it</b>.",
-c:"Fleeing aggressor = aggression ceased (Alconga); excessive means in a safe setting = incomplete defense (Jaurigue); honest belief + no part in the provocation = defense of relatives (Esmedia)."},
-
-{id:"m7",set:"Mock exam A",src:"Mock",t:["a8","a2","a6"],
-q:"(a) In a hotel in Singapore, Colonel X persuaded Majors Y and Z to join him in seizing a military camp in Manila to topple the government. All three agreed and fixed the date. Upon arrival at NAIA, they were arrested. What crime, if any, may they be charged with? (b) In Manila, Ana asked her friend Bea, for ₱50,000, to kill Ana's husband. Bea refused and reported Ana to the police. Is Ana liable? (c) Carlo agreed with Dino to rob a store. As they approached it, Dino changed his mind and went home; Carlo forced open the back door and was caught inside before taking anything. What are their liabilities?",
-iss:["Conspiracy/proposal punishable only when the law provides (Art. 8)","Conspiracy to commit coup d'état (Art. 136); territoriality (Art. 2); Title Three not in Art. 2(5)","Proposal to commit murder: not punishable","Desistance before overt acts; indeterminate offense / overt acts (Lamahang)"],
-a:"<b>(a)</b> Conspiracy and proposal are punishable only where the law specially provides (Art. 8). Conspiracy to commit <b>coup d'état</b> is punishable under Art. 136. But the agreement was made in <b>Singapore</b>. Coup d'état is a crime against public order (Title Three), not a crime against national security under Art. 2(5), so the RPC cannot reach a conspiracy formed abroad. On arrival they had not yet committed any overt act here. <b>Better answer: no crime triable here</b>, unless they renewed the agreement or performed acts in furtherance of it in the Philippines. (Compare the San Beda question on General Li.)<br><br><b>(b) No.</b> A proposal to commit <b>murder</b> (or parricide) is not punishable: no law provides a penalty for it, and a proposal is only a preparatory act, not an overt act of execution.<br><br><b>(c) Dino: not liable.</b> Conspiracy to commit robbery is not punishable as such, and he desisted before any overt act. <b>Carlo: attempted robbery</b> (robbery with force upon things). He commenced the crime by forcing the door, and here the purpose to rob is clear from the prior agreement and the store's contents, unlike <i>Lamahang</i>, where the purpose was indeterminate. He did not perform all the acts of execution, which was not due to his own desistance. If his purpose cannot be proven, he is liable only for what his acts clearly show, such as attempted trespass (<i>Lamahang</i>).",
-c:"Conspiracy and proposal are crimes only where the law provides (Art. 8: coup d'état, rebellion, treason, sedition); a conspiracy formed abroad to commit coup d'état is not within Art. 2. A proposal to commit murder is not punishable."},
-
-{id:"m8",set:"Mock exam A",src:"Mock",t:["a11","a9","a5"],
-q:"(a) During a typhoon, barangay captain Mario ordered the destruction of a dike on Pedro's fishpond to stop floodwater from submerging a village of 200 houses. The village was saved; Pedro lost ₱800,000 in fish. Is Mario liable? Who pays Pedro? (b) Sgt. Rey ordered Pvt. Lim to “teach a lesson” to a detainee who insulted the battalion, by beating him. The detainee suffered serious physical injuries. Lim invokes obedience to a superior's order. (c) A felony is punishable by a fine of ₱40,000. Is it a grave, less grave or light felony? (d) A judge believes the penalty for a theft of ₱1,000 worth of rice by a starving mother is too harsh. What should he do?",
-iss:["State of necessity: requisites; civil liability of the persons benefited (Art. 11(4); Art. 101)","Obedience: lawful purpose and lawful means; good faith (Beronilla)","Art. 9 vs. Art. 26 (₱40,000 fine)","Art. 5 ¶2: impose the penalty; recommend clemency"],
-a:"<b>(a) Not liable: avoidance of a greater evil (Art. 11(4)).</b> The evil (flooding 200 houses) actually existed; the injury feared was greater than the damage done; and on these facts there was no other practical and less harmful means. Unlike the other justifying circumstances, ¶4 carries <b>civil liability</b>: the villagers <b>benefited</b> must pay Pedro in proportion to the benefit each received (Art. 101).<br><br><b>(b) Lim is liable.</b> Obedience to an order justifies only if the order is for a <b>lawful purpose</b> and the subordinate uses <b>lawful means</b> (Art. 11(6)). An order to beat a detainee is patently unlawful; Lim cannot claim good faith as in <i>Beronilla</i>, where the subordinate obeyed in good faith, without negligence, and unaware of the illegality. Sgt. Rey is liable as principal by inducement (beyond the midterm coverage).<br><br><b>(c) Light felony.</b> Under Art. 9 as amended by RA 10951, light felonies are those punished by arresto menor or a fine <b>not exceeding ₱40,000</b>. Although Art. 26 treats a ₱40,000 fine as correctional, Art. 9 governs the classification of felonies.<br><br><b>(d)</b> Under Art. 5 ¶2, he must <b>impose the penalty</b> prescribed and may not suspend its execution, but he may submit a statement to the Chief Executive, through the DOJ, recommending <b>executive clemency</b>, given the low degree of malice and the slight injury caused.",
-c:"State of necessity justifies, but the persons benefited pay (Art. 101); an unlawful order does not justify; a ₱40,000 fine is a light felony (Art. 9); excessive penalty → impose it and recommend clemency (Art. 5)."},
-
 // ── SAN BEDA 2019 MIDTERM (essay part; Q3 is on penalties, outside your coverage) ──
 {id:"sb1",set:"San Beda 2019 midterm",src:"San Beda Alabang, Crim 1 Midterm (Frias), Q1 (10 pts)",t:["a11"],
 q:"Ric was at a party when he saw his friend Morty on the ground screaming for help because Leo was on top of him and about to stab him. Ric and Leo had a long-standing grudge (Leo had kissed Ric's girlfriend). Ric thought, “Two birds with one stone: I save Morty and get revenge on Leo,” and stabbed Leo in the back, killing him. At trial, it turned out Morty was Ric's long-lost brother. You are Ric's lawyer. Present your defense.",
@@ -1434,6 +1480,205 @@ window.MCQ = [
 {id:"q19",src:"Mock",q:"The only justifying circumstance under which civil liability is incurred:",ch:["self-defense","defense of a stranger","avoidance of a greater evil","obedience to an order"],k:2,why:"Art. 11(4): the persons benefited pay in proportion to the benefit (Art. 101)."},
 {id:"q20",src:"Mock",q:"In Oanis, why was mistake of fact rejected?",ch:["The victim was armed","The officers had time and opportunity to verify the victim's identity","The officers had no arrest order","The victim fired first"],k:1,why:"The victim was asleep; nothing pressed them to act at once; the mistake was due to their fault."}
 ];
+
+// Mock exams in Sir's format (3 Nov briefing): 4 problems + 1 objective/enumeration each; model answers in IRAC.
+window.ESSAYS.unshift(...[
+ {
+  "id": "m1",
+  "set": "Mock exam A",
+  "src": "Mock · written for this site",
+  "t": [
+   "a3",
+   "a11"
+  ],
+  "q": "Officers Ramos and Tuazon were ordered to arrest Dado, an escaped convict known to be armed, and to “bring him in dead or alive if he resists.” At 2:00 a.m. they learned Dado was hiding in a boarding house. Ramos kicked the door open and, in the dark, saw a man rising from a bed and reaching under his pillow. Ramos fired, killing him. Tuazon, entering a second room, found a man asleep with his back to the door and fired three shots without saying a word. Neither man was Dado: the first was a boarder who kept a flashlight under his pillow; the second was a vendor. Discuss the criminal liability of Ramos and Tuazon.",
+  "iss": [
+   "Mistake of fact (Ah Chong requisites)",
+   "Fault or carelessness: time to verify (Oanis)",
+   "Fulfillment of duty (Art. 11(5)): necessary consequence",
+   "Incomplete justification → privileged mitigating (Art. 69)",
+   "Dolo vs. culpa (deliberate shooting is not reckless imprudence)",
+   "Treachery (sleeping victim) → murder"
+  ],
+  "a": "<div class=\"sx-part\">Ramos</div><br><br><b>Issue.</b> Is Ramos liable for killing the boarder he mistook for the armed fugitive?<br><br><b>Rule.</b> There is no felony by dolo without intent. A mistake of fact negates intent if (1) the act would have been lawful had the facts been as he believed, (2) his intention was lawful, and (3) the mistake was without fault or carelessness.<br><br><b>Analysis.</b> (1) Had the man been Dado, an armed fugitive reaching under his pillow at an officer serving an arrest, shooting would be the <b>necessary consequence of duty</b> (or self-defense), so it would be lawful. (2) His intent was to effect a lawful arrest. (3) The room was dark and the man moved toward a hidden object at the moment of entry; there was <b>no time to verify</b>. <b>Why not culpa?</b> He was not careless; he reacted to an apparent, imminent threat, like Ah Chong, who was struck as the intruder forced the door.<br><br><b>Conclusion.</b> Ramos is not criminally liable.<br><br><div class=\"sx-part\">Tuazon</div><br><br><b>Issue.</b> Is Tuazon liable for shooting the sleeping vendor, and for what crime?<br><br><b>Rule.</b> The same three requisites; a mistake due to fault does not excuse. A deliberate shooting is dolo, not reckless imprudence. Fulfillment of duty requires that the injury be the necessary consequence of performing the duty.<br><br><b>Analysis.</b> Requisite (3) fails: the vendor was <b>asleep with his back to the door</b>, so nothing pressed Tuazon to act at once; he had time to verify and make a bloodless arrest (as in Oanis). Requisite (1) also fails: even if the man had been Dado, the order allowed force only if he resisted, and a sleeping man does not resist. <b>Why not reckless imprudence?</b> He fired three shots deliberately; a mistake in identity in a deliberate act is still dolo. <b>Why murder, not homicide?</b> Shooting a sleeping victim ensures the killing without risk to the shooter: treachery. <b>Why mitigated?</b> He was on duty (the first requisite of Art. 11(5)) but the killing was not its necessary consequence, so the justification is incomplete.<br><br><b>Conclusion.</b> Tuazon is liable for murder, with the privileged mitigating circumstance of incomplete fulfillment of duty.",
+  "c": "Ramos: no time to verify, so mistake of fact without fault → not liable. Tuazon: a sleeping victim, time to verify → murder, mitigated by incomplete fulfillment of duty."
+ },
+ {
+  "id": "m2",
+  "set": "Mock exam A",
+  "src": "Mock",
+  "t": [
+   "a2",
+   "a10"
+  ],
+  "q": "(a) The M/V Erin, a Liberian-registered merchant vessel en route from Hong Kong to Sydney, anchored for one night off Batangas. Lito, a Chinese crewman, smoked shabu on deck; Paco, another crewman, kept 50 grams of shabu in his locker and never left the ship; Wei, a third crewman, sold some to a fisherman who came alongside. Which of them may be prosecuted in the Philippines? (b) The M/V Bayani, registered in the Philippines but owned by a Panamanian corporation, was on the high seas when Bert, a Filipino seaman, stabbed Kenji, a Japanese seaman. Do Philippine courts have jurisdiction? (c) Would your answer in (b) change if the Bayani had been registered in Panama but owned by a Filipino?",
+  "iss": [
+   "English rule; breach of public order (Wong Cheng)",
+   "Mere possession in transit (Look Chaw)",
+   "Landing or sale → triable (Look Chaw)",
+   "Art. 2(1): Philippine ship = registry, not owner (2000 Bar)"
+  ],
+  "a": "<div class=\"sx-part\">(a) The three crewmen</div><br><br><b>Issue.</b> Can Philippine courts try crimes aboard a foreign merchant vessel in our waters?<br><br><b>Rule.</b> We follow the English rule: crimes aboard a foreign merchant vessel in our territorial waters are triable here unless they concern only the vessel's internal management. Mere possession of a drug aboard a vessel in transit is not triable, because it produces no effect here; using or landing it is.<br><br><b>Analysis.</b> <b>Lito</b>: smoking shabu in our waters makes the drug produce its effects here, a breach of public order (Wong Cheng). <b>Why not internal management?</b> Drug use is not a shipboard disciplinary matter; it is exactly what our law means to prevent. <b>Paco</b>: the ship was <b>in transit</b> (Hong Kong to Sydney) and he only kept the drug in his locker; mere possession causes no harm here (Look Chaw). <b>Wei</b>: selling to a local fisherman brings the drug into our territory, which is an open violation (Look Chaw).<br><br><b>Conclusion.</b> Lito and Wei may be prosecuted here; Paco may not.<br><br><div class=\"sx-part\">(b) and (c) The high seas</div><br><br><b>Issue.</b> Does the RPC reach a crime committed on the high seas aboard the Bayani?<br><br><b>Rule.</b> Art. 2(1): the Code applies outside Philippine jurisdiction to offenses committed while on a Philippine ship, i.e., one registered in the Philippines.<br><br><b>Analysis.</b> (b) The Bayani is <b>registered here</b>, so it is a Philippine ship; the Panamanian owner and the Japanese victim are irrelevant. (c) If registered in Panama, it is not a Philippine ship even if a Filipino owns it. <b>Why not apply generality?</b> Generality binds people within our territory; on the high seas, only Art. 2's exceptions apply.<br><br><b>Conclusion.</b> (b) Triable here. (c) Not triable here.",
+  "c": "English rule: use or sale in our waters is a breach of public order (Wong Cheng; Look Chaw); mere possession in transit is not. Art. 2(1) turns on registry, not ownership."
+ },
+ {
+  "id": "m3",
+  "set": "Mock exam A",
+  "src": "Mock",
+  "t": [
+   "a4a",
+   "a6"
+  ],
+  "q": "During a drinking spree, Nonoy punched Badong, a 60-year-old with a known heart condition, twice in the chest. Badong staggered out of the house in fear and onto the highway, where a speeding jeepney hit him. He was brought to a hospital where he refused a blood transfusion for religious reasons, and he died the next morning. The autopsy listed the cause of death as “cardiac arrest secondary to blunt trauma and blood loss.” Nonoy argues: (1) he only meant to hurt Badong; (2) the jeepney and the refusal of treatment, not his punches, killed Badong. Rule on both arguments.",
+  "iss": [
+   "Art. 4(1) requisites",
+   "Proximate cause; chain unbroken (Iligan)",
+   "Pre-existing illness not an efficient intervening cause (Garcia)",
+   "Victim's refusal of treatment / neglect not efficient",
+   "Immediate sense of danger",
+   "Praeter intentionem (Art. 13(3))"
+  ],
+  "a": "<b>Issue.</b> Is Nonoy liable for Badong's death, given that he meant only to hurt him and that a jeepney and a refused transfusion intervened?<br><br><b>Rule.</b> Under Art. 4(1), one who commits an intentional felony is liable for all its direct, natural and logical consequences, even unintended ones. The felony must be the proximate cause: the cause that, in natural and continuous sequence, unbroken by an efficient intervening cause, produces the result. The victim's illness, his neglect or refusal of treatment, and other events set in motion by the felony do not break the chain; only a foreign force or the victim's deliberate act does.<br><br><b>Analysis.</b> <b>Intentional felony</b>: two punches to the chest are intentional physical injuries. <b>The heart condition</b> does not break the chain; the offender takes his victim as he finds him (Garcia, where a mauling caused a fatal heart attack). <b>The jeepney</b>: Badong ran onto the highway in fear created by the assault, so being hit was a natural consequence, as in Iligan, where the victim was hacked and then run over. <b>Why not an efficient intervening cause?</b> The jeepney was not a foreign, independent force; the assault put Badong in its path. <b>The refused transfusion</b> is neglect by the victim, which Reyes lists as not an efficient intervening cause. <b>Lack of intent to kill</b> does not remove liability for the death; it only mitigates. <b>Why praeter intentionem applies here</b>: two fist blows do not show intent to kill, so there is a notable disproportion between the means and the result.<br><br><b>Conclusion.</b> Nonoy is liable for homicide, mitigated by lack of intention to commit so grave a wrong (Art. 13(3)).",
+  "c": "Art. 4(1): the punches started an unbroken chain (Iligan); the illness and the refusal of treatment are not efficient intervening causes (Garcia) → homicide, with Art. 13(3) mitigating."
+ },
+ {
+  "id": "m4",
+  "set": "Mock exam A",
+  "src": "Mock",
+  "t": [
+   "a4b",
+   "a6"
+  ],
+  "q": "(a) Ading, a collector of Bright Foam, received a ₱50,000 check from a customer, payable to Bright Foam. She deposited it in her boyfriend's account. The check bounced for insufficient funds. Charged with qualified theft, Ading says she committed no crime. (b) Tonyo, wanting to kill his rival Jun, crept to Jun's hut at night and fired five shots through the bamboo wall where Jun usually slept. Jun had left for Manila that afternoon; Jun's goats inside were killed. (c) Pinong abducted a 7-year-old boy and mailed a ransom note to the parents. Police rescued the boy before the note arrived. Pinong argues it is an impossible crime. Discuss.",
+  "iss": [
+   "Impossible crime requisites (Art. 4(2))",
+   "Legal/factual impossibility: worthless check (Jacinto)",
+   "Physical impossibility: absent victim (Intod)",
+   "'No violation of another provision': damage to the goats (malicious mischief?)",
+   "Kidnapping is a crime against liberty; consummated (Domasian)"
+  ],
+  "a": "<b>Rule.</b> An impossible crime (Art. 4(2)) requires: (1) an act that would be an offense against persons or property, (2) done with evil intent, (3) whose accomplishment is inherently impossible or whose means are inadequate or ineffectual, and (4) that constitutes no other felony.<br><br><div class=\"sx-part\">(a) Ading</div><br><br><b>Issue.</b> Is depositing a worthless check that was meant for the employer qualified theft, or an impossible crime?<br><br><b>Analysis.</b> Theft is an offense against property, and her intent to gain is clear. But the check was <b>unfunded from the start</b>, so nothing of value could be taken: inherent (factual) impossibility, as in Jacinto. <b>Why not consummated qualified theft?</b> The property taken must have value. <b>Why not attempted?</b> The failure was not due to an outside cause intervening; there was never anything to gain.<br><br><b>Conclusion.</b> Impossible crime (of qualified theft).<br><br><div class=\"sx-part\">(b) Tonyo</div><br><br><b>Issue.</b> Is firing into the empty sleeping quarters attempted murder or an impossible crime?<br><br><b>Analysis.</b> Intent to kill is shown by the five shots aimed where Jun slept. Jun's absence made the killing <b>physically impossible</b>, as in Intod. <b>Why not attempted murder?</b> An attempt presupposes a crime that could have been accomplished but was stopped by an outside cause; here it could never have been. <b>The goats</b>: the killing of the goats was not deliberate, so the better view, following Intod, is still an impossible crime, with civil liability for the goats. If the problem treats the damage as malicious mischief, the fourth requisite fails and he is liable for that felony instead.<br><br><b>Conclusion.</b> Impossible crime of murder.<br><br><div class=\"sx-part\">(c) Pinong</div><br><br><b>Issue.</b> Is the kidnapping an impossible crime because the ransom note arrived after the rescue?<br><br><b>Analysis.</b> <b>Why not an impossible crime?</b> (1) Kidnapping is a crime against <b>liberty</b>, not against persons or property, so requisite 1 fails. (2) Nothing was impossible: the crime was <b>consummated</b> the moment the boy was deprived of his liberty (Domasian). The late ransom note bears only on the penalty.<br><br><b>Conclusion.</b> Kidnapping and serious illegal detention.",
+  "c": "Worthless check → impossible theft (Jacinto); absent victim → impossible murder (Intod); kidnapping is never an impossible crime and was consummated anyway (Domasian)."
+ },
+ {
+  "id": "e1",
+  "set": "Mock exam A",
+  "src": "Mock · objective / enumeration",
+  "t": [
+   "a2",
+   "a4b",
+   "readings",
+   "a6",
+   "a3"
+  ],
+  "q": "Answer briefly.\n(1) Enumerate the five cases in which the RPC applies outside Philippine jurisdiction.\n(2) Give the four requisites of an impossible crime.\n(3) Give the three justifications of punishment discussed by Cavanaugh, and one RPC provision reflecting the reductivist view.\n(4) True or false, with a reason: “Theft may be committed in the frustrated stage.”\n(5) Give the three requisites of mistake of fact.",
+  "iss": [
+   "Art. 2 (1)–(5)",
+   "Art. 4(2) requisites",
+   "Reductivism, retributivism, denunciation",
+   "Valenzuela",
+   "Ah Chong requisites"
+  ],
+  "a": "<b>(1)</b> Offenses committed while on a Philippine ship or airship; forging or counterfeiting Philippine coins, currency notes, or government obligations and securities; introducing those obligations and securities into the Philippines; offenses by public officers or employees in the exercise of their functions; crimes against national security and the law of nations (Title One, Book Two).<br><b>(2)</b> The act would be an offense against persons or property; it was done with evil intent; its accomplishment is inherently impossible or the means are inadequate or ineffectual; it constitutes no other felony.<br><b>(3)</b> Reductivism (deterrence, incapacitation, reform); retributivism (deserved, proportionate punishment); denunciation (society's condemnation). Reductivist provision: Art. 4(2), which punishes the dangerous offender though no harm resulted.<br><b>(4)</b> False. Theft is consummated upon taking with intent to gain; disposal is not an element, so there is no frustrated theft (Valenzuela).<br><b>(5)</b> The act would have been lawful had the facts been as the accused believed; his intention was lawful; the mistake was without fault or carelessness on his part.",
+  "c": "Exact lists earn full points: practice them in the Reyes elements deck."
+ },
+ {
+  "id": "m5",
+  "set": "Mock exam B",
+  "src": "Mock",
+  "t": [
+   "a6"
+  ],
+  "q": "(a) In a mall supermarket, Eli loaded six boxes of detergent into a cart, wheeled them past the cashiers without paying, and loaded them into a waiting taxi in the parking lot. A guard stopped the taxi before it left. The RTC convicted Eli of frustrated theft. Correct? (b) Fred shot Gino once in the left shoulder with a .45 pistol inside a store; Gino ran and hid in a back room, and Fred fled. Gino recovered after nine days in the hospital. Fred is charged with frustrated murder. (c) Same as (b), except Gino was shot in the chest, fell, and lay still; Fred, thinking him dead, walked away. Gino survived after emergency surgery. (d) Hector, intending to rape Ana, pinned her down and removed her clothes, and his penis touched her labia before she kicked him away. Hector argues it is only frustrated rape.",
+  "iss": [
+   "No frustrated theft; apoderamiento (Valenzuela)",
+   "Subjective phase not complete; victim escaped (Sy Pio)",
+   "Subjective phase complete; mortal wound (Eduave)",
+   "No frustrated rape; slightest penetration (Orita; Campuhan)"
+  ],
+  "a": "<b>Rule.</b> A felony is consummated when all its elements are present; frustrated when the offender performs all the acts of execution but the felony is not produced for causes independent of his will; attempted when he begins by overt acts but does not perform all the acts of execution, for a cause other than his own spontaneous desistance (Art. 6). The stage depends on each crime's elements.<br><br><div class=\"sx-part\">(a) Eli</div><br><br><b>Issue.</b> Is taking detergent past the cashiers into a taxi, then being stopped, frustrated or consummated theft?<br><br><b>Analysis.</b> Theft's elements are complete upon <b>taking</b>, that is, gaining possession with intent to gain. Eli had the boxes in his possession and loaded them into the taxi. <b>Why not frustrated?</b> Being able to dispose of the goods is not an element of theft, so being stopped in the parking lot does not leave any act undone (Valenzuela).<br><br><b>Conclusion.</b> Consummated theft; the RTC erred.<br><br><div class=\"sx-part\">(b) Fred, first version</div><br><br><b>Issue.</b> Is a non-fatal shoulder wound, after which the victim runs and hides, frustrated or attempted murder?<br><br><b>Analysis.</b> Frustration requires that all the acts of execution be performed; in homicide or murder, this generally means a <b>mortal wound</b> (or a subjective phase completed in the offender's mind). The shoulder wound was not fatal, and Fred <b>saw Gino escape</b>, so he knew he had not finished (Sy Pio). <b>Why not frustrated?</b> Not all the acts of execution were performed.<br><br><b>Conclusion.</b> Attempted murder (if treachery attended the shooting; otherwise attempted homicide).<br><br><div class=\"sx-part\">(c) Fred, second version</div><br><br><b>Issue.</b> Is a chest wound that would have killed but for surgery frustrated murder?<br><br><b>Analysis.</b> The chest wound was <b>mortal</b>, and Fred left believing Gino dead: the subjective phase was complete (Eduave). Death was prevented only by surgery, a cause independent of his will. <b>Why not attempted?</b> He had performed the last act needed to kill.<br><br><b>Conclusion.</b> Frustrated murder (or homicide).<br><br><div class=\"sx-part\">(d) Hector</div><br><br><b>Issue.</b> Is touching the labia, before the victim kicks him away, frustrated or consummated rape?<br><br><b>Analysis.</b> Rape is consummated by carnal knowledge, and any penetration, even touching the labia, suffices (Orita; Campuhan). <b>Why not frustrated?</b> Rape has no frustrated stage: before penetration, not all the acts of execution are done (attempt); upon penetration, the crime is complete.<br><br><b>Conclusion.</b> Consummated rape.",
+  "c": "Theft and rape have no frustrated stage (Valenzuela; Orita). Homicide is frustrated only when the subjective phase is complete (Eduave), not when the victim visibly escapes (Sy Pio)."
+ },
+ {
+  "id": "m6",
+  "set": "Mock exam B",
+  "src": "Mock",
+  "t": [
+   "a11"
+  ],
+  "q": "(a) At a card game, Celso accused Dindo of cheating. Dindo swung a wooden pole at Celso; Celso ducked, drew a knife and stabbed Dindo in the arm. Dindo dropped the pole and ran. Celso chased him for 30 meters and stabbed him in the back, killing him. (b) In a crowded, brightly lit church, Lorna's ex-suitor sat beside her and touched her knee. She stabbed him in the neck with a pocket knife. (c) Brothers Ted and Ned arrived at the rice field to see their father lying in the mud, bleeding, with their uncle standing over him holding a bolo. They hacked the uncle to death. It later turned out that their father had started the fight. Discuss the liability of Celso, Lorna, and Ted and Ned.",
+  "iss": [
+   "Two stages; aggression ceased (Alconga)",
+   "Unlawful aggression vs. reasonable necessity; place and occasion (Jaurigue)",
+   "Defense of relatives; honest belief (Esmedia)",
+   "Relative's provocation immaterial if the defender had no part in it",
+   "Incomplete justification (Art. 69)"
+  ],
+  "a": "<b>Rule.</b> Self-defense requires (1) unlawful aggression, which must still exist when the defense is made; (2) reasonable necessity of the means; and (3) lack of sufficient provocation. Without unlawful aggression there is no defense at all; with it and a majority of the requisites, the defense is incomplete (privileged mitigating, Art. 69). Defense of relatives requires (1) and (2), and if the relative provoked, that the defender had no part in it.<br><br><div class=\"sx-part\">(a) Celso</div><br><br><b>Issue.</b> Is Celso justified in the fatal stab after chasing Dindo?<br><br><b>Analysis.</b> The first stab was defense against an actual attack with the pole. But when Dindo <b>dropped the pole and ran</b>, the aggression ceased. <b>Why not self-defense for the fatal blow?</b> There was nothing left to repel; chasing him 30 meters and stabbing his back is retaliation (Alconga). <b>Why not incomplete self-defense?</b> That too requires unlawful aggression at the time.<br><br><b>Conclusion.</b> Celso is liable for homicide.<br><br><div class=\"sx-part\">(b) Lorna</div><br><br><b>Issue.</b> Is stabbing the ex-suitor's neck in a lit, crowded church justified as defense of honor?<br><br><b>Analysis.</b> Touching her knee is unlawful aggression against her honor, and she gave no provocation. But the <b>means</b> were unreasonable: in a brightly lit, crowded church there was no real danger of rape, and a slap or a push would have sufficed (Jaurigue). <b>Why not complete self-defense?</b> Requisite 2 fails. <b>Why not homicide with no mitigation?</b> Unlawful aggression plus the majority of the requisites make it incomplete self-defense.<br><br><b>Conclusion.</b> Homicide, with the privileged mitigating circumstance of incomplete self-defense.<br><br><div class=\"sx-part\">(c) Ted and Ned</div><br><br><b>Issue.</b> Are the brothers justified in killing the uncle, though their father started the fight?<br><br><b>Analysis.</b> Their father is a relative under ¶2. As things appeared, with their father down and bleeding and the uncle standing over him with a bolo, they <b>honestly and reasonably believed</b> the attack would continue; unlawful aggression may rest on that belief (Esmedia). <b>Why does the father's provocation not matter?</b> Under ¶2, the relative's provocation bars the defense only if the defenders took part in it, and they did not.<br><br><b>Conclusion.</b> Ted and Ned are justified (defense of relatives).",
+  "c": "Fleeing aggressor = aggression ceased (Alconga); excessive means in a safe setting = incomplete defense (Jaurigue); honest belief + no part in the provocation = defense of relatives (Esmedia)."
+ },
+ {
+  "id": "m7",
+  "set": "Mock exam B",
+  "src": "Mock",
+  "t": [
+   "a8",
+   "a2",
+   "a6"
+  ],
+  "q": "(a) In a hotel in Singapore, Colonel X persuaded Majors Y and Z to join him in seizing a military camp in Manila to topple the government. All three agreed and fixed the date. Upon arrival at NAIA, they were arrested. What crime, if any, may they be charged with? (b) In Manila, Ana asked her friend Bea, for ₱50,000, to kill Ana's husband. Bea refused and reported Ana to the police. Is Ana liable? (c) Carlo agreed with Dino to rob a store. As they approached it, Dino changed his mind and went home; Carlo forced open the back door and was caught inside before taking anything. What are their liabilities?",
+  "iss": [
+   "Conspiracy/proposal punishable only when the law provides (Art. 8)",
+   "Conspiracy to commit coup d'état (Art. 136); territoriality (Art. 2); Title Three not in Art. 2(5)",
+   "Proposal to commit murder: not punishable",
+   "Desistance before overt acts; indeterminate offense / overt acts (Lamahang)"
+  ],
+  "a": "<b>Rule.</b> Conspiracy and proposal are punishable only where the law specially provides a penalty (Art. 8), as in treason, coup d'état, rebellion and sedition. Penal laws are territorial; outside the Philippines, the RPC applies only in Art. 2's five cases. An attempt requires overt acts directly connected to a specific crime (Art. 6).<br><br><div class=\"sx-part\">(a) Colonel X and the majors</div><br><br><b>Issue.</b> Can they be prosecuted here for conspiring in Singapore to stage a coup?<br><br><b>Analysis.</b> Conspiracy to commit coup d'état <b>is</b> punishable (Art. 136). But the agreement was made in <b>Singapore</b>. <b>Why not Art. 2(5)?</b> It covers crimes against national security and the law of nations (Title One); coup d'état is a crime against public order (Title Three). On arrival they had committed no act here. If the problem shows they renewed the agreement or took steps in the Philippines, the conspiracy would be committed here.<br><br><b>Conclusion.</b> No crime triable here on these facts.<br><br><div class=\"sx-part\">(b) Ana</div><br><br><b>Issue.</b> Is Ana liable for proposing that Bea kill her husband?<br><br><b>Analysis.</b> <b>Why not proposal?</b> No law punishes a proposal to commit murder or parricide. <b>Why not attempted parricide?</b> An attempt requires that the offender commence the crime <b>directly</b> by overt acts; an inducement that is refused is only a proposal.<br><br><b>Conclusion.</b> Ana is not criminally liable.<br><br><div class=\"sx-part\">(c) Carlo and Dino</div><br><br><b>Issue.</b> What are the liabilities of a conspirator who withdraws and of one who breaks the door?<br><br><b>Analysis.</b> <b>Dino</b>: conspiracy to rob is not a crime by itself, and he withdrew before any overt act. <b>Carlo</b> forced the back door, an overt act. <b>Why attempted robbery and not attempted trespass, as in Lamahang?</b> In Lamahang the purpose was indeterminate; here the prior agreement to rob shows the specific crime intended. He did not complete the acts of execution, for a reason other than desistance. If the purpose to rob cannot be proven, he is liable only for what the acts show (attempted trespass).<br><br><b>Conclusion.</b> Dino: not liable. Carlo: attempted robbery.",
+  "c": "Conspiracy and proposal are crimes only where the law provides (Art. 8: coup d'état, rebellion, treason, sedition); a conspiracy formed abroad to commit coup d'état is outside Art. 2. A proposal to commit murder is not punishable."
+ },
+ {
+  "id": "m8",
+  "set": "Mock exam B",
+  "src": "Mock",
+  "t": [
+   "a11",
+   "a9",
+   "a5"
+  ],
+  "q": "(a) During a typhoon, barangay captain Mario ordered the destruction of a dike on Pedro's fishpond to stop floodwater from submerging a village of 200 houses. The village was saved; Pedro lost ₱800,000 in fish. Is Mario liable? Who pays Pedro? (b) Sgt. Rey ordered Pvt. Lim to “teach a lesson” to a detainee who insulted the battalion, by beating him. The detainee suffered serious physical injuries. Lim invokes obedience to a superior's order. (c) A felony is punishable by a fine of ₱40,000. Is it a grave, less grave or light felony? (d) A judge believes the penalty for a theft of ₱1,000 worth of rice by a starving mother is too harsh. What should he do?",
+  "iss": [
+   "State of necessity: requisites; civil liability of the persons benefited (Art. 11(4); Art. 101)",
+   "Obedience: lawful purpose and lawful means; good faith (Beronilla)",
+   "Art. 9 vs. Art. 26 (₱40,000 fine)",
+   "Art. 5 ¶2: impose the penalty; recommend clemency"
+  ],
+  "a": "<div class=\"sx-part\">(a) Mario</div><br><br><b>Issue.</b> Is destroying the dike justified, and who pays for the fish?<br><br><b>Rule.</b> Art. 11(4): the evil sought to be avoided must actually exist; the injury feared must be greater than that done; and there must be no other practical and less harmful means. The persons benefited are civilly liable in proportion to the benefit (Art. 101).<br><br><b>Analysis.</b> The flood was real and imminent; 200 homes outweigh one fishpond; on the facts there was no less harmful option. <b>Why not self-defense?</b> Pedro was not an aggressor; the harm fell on a third person's property to avoid a different evil.<br><br><b>Conclusion.</b> Mario is not liable; the villagers who benefited pay Pedro proportionately.<br><br><div class=\"sx-part\">(b) Pvt. Lim</div><br><br><b>Issue.</b> Does obedience to his sergeant's order justify the beating?<br><br><b>Rule.</b> Art. 11(6) requires an order from a superior, for a lawful purpose, carried out by lawful means.<br><br><b>Analysis.</b> An order to beat a detainee has no lawful purpose. <b>Why not the good-faith exception in Beronilla?</b> That protects a subordinate who did not know, and could not have known, that the order was illegal; this order was illegal on its face.<br><br><b>Conclusion.</b> Lim is liable for serious physical injuries.<br><br><div class=\"sx-part\">(c) The ₱40,000 fine</div><br><br><b>Issue.</b> Is a felony punished by a ₱40,000 fine light or less grave?<br><br><b>Rule.</b> Art. 9: light felonies are those punished by arresto menor or a fine not exceeding ₱40,000.<br><br><b>Analysis.</b> <b>Why not less grave, since Art. 26 calls ₱40,000 correctional?</b> Art. 26 classifies fines; Art. 9 classifies felonies, and it prevails for this purpose.<br><br><b>Conclusion.</b> Light felony.<br><br><div class=\"sx-part\">(d) The judge</div><br><br><b>Issue.</b> May the judge lower the penalty for the starving mother?<br><br><b>Rule.</b> Art. 5 ¶2: the court must impose the penalty and may not suspend its execution, but it may recommend executive clemency when the penalty is clearly excessive given the malice and the injury.<br><br><b>Analysis.</b> <b>Why not just lower it?</b> Courts apply the law as written (dura lex sed lex).<br><br><b>Conclusion.</b> Impose the penalty and recommend executive clemency through the DOJ.",
+  "c": "State of necessity justifies, but the persons benefited pay (Art. 101); an unlawful order does not justify; a ₱40,000 fine is a light felony (Art. 9); an excessive penalty must still be imposed, with a recommendation for clemency (Art. 5)."
+ },
+ {
+  "id": "e2",
+  "set": "Mock exam B",
+  "src": "Mock · objective / enumeration",
+  "t": [
+   "a6",
+   "a11",
+   "readings",
+   "a8",
+   "a9"
+  ],
+  "q": "Answer briefly.\n(1) Give the elements of an attempted felony.\n(2) Enumerate the relatives who may be defended under Art. 11(2).\n(3) Under RA 9344, what three things does restorative justice seek?\n(4) In which RPC felonies is conspiracy itself punishable? In which is proposal punishable?\n(5) Give two differences between justifying and exempting circumstances.\n(6) Classify a felony punished by a fine of ₱40,000. Explain.",
+  "iss": [
+   "Art. 6 attempt elements",
+   "Art. 11(2) list",
+   "Reparation, reconciliation, reassurance",
+   "Arts. 115, 136, 141, 186",
+   "Act vs. actor; civil liability",
+   "Art. 9 vs. Art. 26"
+  ],
+  "a": "<b>(1)</b> The offender commences the commission of the felony directly by overt acts; he does not perform all the acts of execution; his act is not stopped by his own spontaneous desistance; the non-performance is due to a cause or accident other than his spontaneous desistance.<br><b>(2)</b> Spouse; ascendants; descendants; legitimate, natural or adopted brothers and sisters; relatives by affinity in the same degrees; relatives by consanguinity within the fourth civil degree.<br><b>(3)</b> Reparation for the victim; reconciliation of the offender, the offended and the community; reassurance to the offender that he can be reintegrated into society.<br><b>(4)</b> Conspiracy: treason (Art. 115); coup d'état, rebellion, insurrection (Art. 136); sedition (Art. 141); monopolies and combinations in restraint of trade (Art. 186). Proposal: treason (Art. 115); coup d'état, rebellion, insurrection (Art. 136).<br><b>(5)</b> Justifying circumstances affect the act (there is no crime), while exempting circumstances affect the actor (there is a crime, but no criminal liability); justifying circumstances generally carry no civil liability (except ¶4), while exempting circumstances generally do.<br><b>(6)</b> Light felony: Art. 9 defines light felonies as those punished by a fine not exceeding ₱40,000; it prevails over Art. 26 (which classifies the fine as correctional) for classifying felonies.",
+  "c": "Do the objective question first on Saturday: it frees up time for the four problems."
+ }
+]);
 </script>
 <script>// Diagram library for the textbook. Each entry returns HTML; interactive ones also get an init(el).
 window.VIZ=(function(){
@@ -1443,8 +1688,15 @@ const fig=(cap,inner)=>`<figure class="vz"><div class="vz-in">${inner}</div><fig
 const chip=(t,tone="")=>`<span class="vz-chip ${tone}">${t}</span>`;
 const V={};
 
-V.examclock=()=>fig("Two hours, about eight problems: budget about 14 minutes each.",
- `<div class="vz-bar3"><div style="flex:3" class="t-blue">Spot issues · 3 min</div><div style="flex:10" class="t-green">Write C-L-E-A-R · 10 min</div><div style="flex:1.2" class="t-gold">Check</div></div>`);
+V.examclock=()=>fig("Two hours, five questions: about 24 minutes each (Sir's suggestion). Do the objective/enumeration question first.",
+ `<div class="vz-bar3"><div style="flex:1" class="t-blue">Objective / enumeration<br><small>~15 min</small></div><div style="flex:1.3" class="t-green">Problem 1<br><small>~25</small></div><div style="flex:1.3" class="t-green">Problem 2<br><small>~25</small></div><div style="flex:1.3" class="t-green">Problem 3<br><small>~25</small></div><div style="flex:1.3" class="t-green">Problem 4<br><small>~25</small></div><div style="flex:.4" class="t-gold">Check<br><small>~5</small></div></div>
+ <div class="vz-time"><div style="flex:4" class="t-mute">Read & mark the facts · 4</div><div style="flex:3" class="t-blue">Outline issues · 3</div><div style="flex:15" class="t-green">Write I-R-A-C · 15</div><div style="flex:2" class="t-gold">Re-read · 2</div></div><div class="vz-note" style="text-align:center">Inside each problem (about 24 minutes)</div>`);
+V.kit=()=>fig("What to bring on Saturday (tick them off on the Today page).",
+ `<div class="vz-grid">${[["Blue book or notebook inserts","Write only on the right-hand pages"],["1/4 index card (3 × 5 in)","Name <b>surname first</b>"],["Envelope",""],["Stapler",""],["Sign pen or fountain pen","Blue or black ink; bring a spare"]].map(r=>`<div class="vz-row" style="grid-template-columns:1fr 1fr"><div><b>${r[0]}</b></div><div class="vz-case" style="text-align:left;font-style:normal">${r[1]}</div></div>`).join("")}</div>`);
+V.punish=()=>fig("Four answers to “why punish?”, and where each shows up in our law.",
+ `<div class="vz-2">${box("Reductivism (looks forward)","Punish to <b>reduce future crime</b>: deterrence, incapacitation, reform.<br><small>RPC: Art. 4(2) impossible crimes; Art. 6 attempts.</small>","t-blue")}${box("Retributivism (looks back)","Punish because it is <b>deserved</b>, in proportion to the crime.<br><small>RPC: fixed penalties; Art. 5 ¶2 proportionality.</small>","t-green")}${box("Denunciation","Punishment <b>expresses</b> society's condemnation and reaffirms its values.","t-gold")}${box("Restorative justice","<b>Repair the harm</b>; involve the victim, offender and community; reintegrate.<br><small>Law: RA 9344 diversion; civil liability.</small>","t-mute")}</div>`);
+V.colonial=()=>fig("Rossabi: the layers of Philippine criminal law and procedure.",
+ `<div class="vz-tl">${[["Indigenous","Customary law; tolerated, then nullified","t-mute"],["Spanish · 1521–1898","Laws of the Indies (1680); gobernadorcillo; Penal Code of 1887; Church–State union; juez de paz","t-gold"],["American · 1898–1946","Common law and precedent; General Order No. 58 (1900); Organic Act (1902); separation of Church and State","t-blue"],["Independence · 1946–","American procedure kept and revised (1985 Rules); the Spanish-rooted RPC (1932) as substantive law","t-green"]].map(r=>`<div class="vz-st ${r[2]}"><b>${r[0]}</b><small>${r[1]}</small></div>`).join("")}</div>`);
 
 V.checklist=()=>fig("Run every problem through these checks, in order.",
  `<ol class="vz-steps">${[["Jurisdiction","Art. 2: where? which vessel? which office?"],["Is there a felony?","Art. 3: act + punishable + dolo/culpa; mistake of fact? special law?"],["Different result?","Art. 4(1): proximate cause; personae / ictus / praeter"],["Impossible crime?","Art. 4(2): persons or property; impossibility; no other felony"],["Stage","Art. 6: overt act? subjective phase? desistance? no frustrated theft or rape"],["Light felony?","Art. 7: only if consummated, unless against persons or property"],["Conspiracy / proposal","Art. 8: a crime by itself, or a mode of liability?"],["Classification / special law","Arts. 9–10, if asked"],["Justified?","Art. 11: unlawful aggression first; complete or incomplete; civil liability"]].map((s,i)=>`<li><b>${s[0]}</b><span>${s[1]}</span></li>`).join("")}</ol>`);
@@ -1596,6 +1848,8 @@ const strip=s=>String(s).replace(/<[^>]+>/g,"");
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 const KEY="crimdesk1:";
 const store={get(k,d){try{const v=localStorage.getItem(KEY+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v));}catch(e){}}};
+const KIT=["Blue book or notebook inserts","1/4 index card (3 × 5 in), name written <b>surname first</b>","Envelope","Stapler","Sign pen or fountain pen, <b>blue or black</b> (bring a spare)"];
+let kit=store.get("kit",{});
 let srs=store.get("srs",{}),fix=store.get("fix",{}),read=store.get("read2",{}),stats=store.get("stats",{rev:0,streak:0,best:0,days:{}}),sxdone=store.get("sx",{}),notes=store.get("notes",{});
 const save=()=>{store.set("srs",srs);store.set("fix",fix);store.set("stats",stats);store.set("read2",read);store.set("sx",sxdone);};
 
@@ -1704,12 +1958,12 @@ function openSec(secId){const o=SEC_OF[secId];if(!o)return;go("review",{ch:o.t.k
 
 // ---------- TODAY ----------
 const PLAN=[
-{d:"2026-11-02",lbl:"Mon 2 Nov",x:"Chapters 0–3: the exam method, Intro & Art. 1, Art. 2, Art. 3. Codal cloze: Arts. 1–3. Re-read <i>Ah Chong</i> (twice).",ch:"a2"},
-{d:"2026-11-03",lbl:"Tue 3 Nov",x:"Class: <b>note what Sir says about the exam</b>. Then Chapters 4–6 (Art. 4(1), 4(2), 5) and both gates. Elements deck: Arts. 3–4.",ch:"a4a"},
-{d:"2026-11-04",lbl:"Wed 4 Nov",x:"Chapter 7 (<b>Art. 6</b>, 12 cases) and Chapters 8–11 (Arts. 7–10). Cases drill: Art. 6, Facts → ruling. Commute: elements deck.",ch:"a6"},
-{d:"2026-11-05",lbl:"Thu 5 Nov",x:"Chapter 12 (<b>Art. 11</b>, 20 cases). Codal cloze: Art. 11, word for word. Mock exam A, Q1–4, timed.",ch:"a11"},
-{d:"2026-11-06",lbl:"Fri 6 Nov",x:"<b>Full mock</b>: Mock A Q5–8 + San Beda, under exam conditions (14 minutes each). Clear the fix list and all due cards. Sleep by 1:00 a.m.",go:"samplex"},
-{d:"2026-11-07",lbl:"Sat 7 Nov",x:"Morning: fix list → due codal cards → skim the doctrines in Cases → Browse. Rest after lunch. <b>Exam 2:00–4:00 p.m.</b> Conclusion first.",go:"today"}];
+{d:"2026-11-02",lbl:"Mon 2 Nov",x:"Started: Chapters 0, 1, 3 and 4 (exam method, Intro & Art. 1, Art. 2, Art. 3). Codal cloze: Arts. 1–3.",ch:"a2"},
+{d:"2026-11-03",lbl:"Tue 3 Nov",x:"Read the <b>updated Chapter 0</b> (Sir's format, IRAC, the confusable pairs) and the <b>new Chapter 2, Introductory readings</b>. Then finish Art. 2 and Art. 3. Elements deck: the readings lists.",ch:"method"},
+{d:"2026-11-04",lbl:"Wed 4 Nov",x:"Chapters 5–8: Art. 4(1), Art. 4(2), Art. 5 and <b>Art. 6</b> (12 cases). Gates for Arts. 4 and 6. Cases drill: Facts → ruling & why.",ch:"a4a"},
+{d:"2026-11-05",lbl:"Thu 5 Nov",x:"Chapters 9–12 (Arts. 7–10), then Chapter 13, <b>Art. 11</b> (20 cases). Codal cloze: Art. 11, word for word. Practice writing on the right-hand pages only.",ch:"a11"},
+{d:"2026-11-06",lbl:"Fri 6 Nov",x:"<b>Mock exam A under exam conditions</b>: 5 questions, 2 hours, IRAC, right-hand pages only. Check against the model answers, then Mock B's problems. Clear the fix list. Pack the exam kit. Sleep by 1:00 a.m.",go:"samplex"},
+{d:"2026-11-07",lbl:"Sat 7 Nov",x:"Morning: fix list → the readings and elements lists → the confusable pairs (Chapter 0). Bring the kit. <b>Exam 2:00–4:00 p.m.</b> Do the objective question first.",ch:"method"}];
 function countdown(){const ms=EXAM-now();if(ms<=0)return"Exam day";const d=Math.floor(ms/DAY),h=Math.floor(ms%DAY/36e5),m=Math.floor(ms%36e5/6e4);return `<b>${d}d ${h}h ${m}m</b> to the midterm`;}
 V.today=m=>{
   const all=Object.keys(CARDS),seen=all.filter(i=>srs[i]).length,due=all.filter(isDue).length,fx=Object.keys(fix).length;
@@ -1722,6 +1976,8 @@ V.today=m=>{
   <h1>Your Crim 1 textbook, Arts. 1–11</h1><p class="hero-p">Every article explained from the codal and Reyes, with each syllabus case placed where its doctrine is taught, plus drills to make it stick. Saturday, 7 November, 2:00–4:00 p.m. · ${countdown()}.</p>
   <div class="cd-row"><button class="cd-btn pri lg" data-open="${lastO?lastO.s.id:TOPICS[1].sec[0].id}">${lastO?`Continue reading: ${esc(lastO.t.n.split(" · ")[0])} → ${esc(lastO.s.t)}`:"Start reading: Chapter 1"}</button><button class="cd-btn lg" id="start">▶ Drill session</button></div>
   <div class="hero-prog"><div class="pg"><i style="width:${readSec/totalSec*100}%"></i></div><span>${readSec} of ${totalSec} sections read</span></div></div></section>
+  <div class="cd-card kit"><div class="cd-row" style="justify-content:space-between"><div><div class="mono">Exam kit · Saturday</div><b class="disp" style="font-size:1.1rem">Pack these, then tick them off</b></div><span class="cd-muted" style="font-size:.85rem">5 questions · 24 min each · IRAC · right-hand pages only</span></div>
+  <div class="kit-list">${KIT.map((k,i)=>`<label><input type="checkbox" data-kit="${i}" ${kit[i]?"checked":""}><span>${k}</span></label>`).join("")}</div></div>
   <h2 class="sec-h">Contents</h2>
   <div class="toc-grid">${TOPICS.map(t=>{const p=chProg(t);return `<button class="toc-card ${p.r===p.n&&p.n?"done":""}" data-ch="${t.k}"><span class="toc-num">${t.num}</span><span class="toc-body"><b>${esc(t.n)}</b><small>${esc(t.s)}</small><span class="pg sm"><i style="width:${p.p*100}%"></i></span><small>${p.r}/${p.n} sections${t.sec.reduce((n,s)=>n+s.b.filter(b=>b.k==="case").length,0)?` · ${t.sec.reduce((n,s)=>n+s.b.filter(b=>b.k==="case").length,0)} case cards`:""}</small></span></button>`;}).join("")}</div>
   <h2 class="sec-h">How to use this desk</h2>
@@ -1735,6 +1991,7 @@ V.today=m=>{
   <h2 class="sec-h">Study plan</h2><div class="cd-plan">${PLAN.map(p=>`<div class="cd-day ${p.d===todayKey?"today":""}"><b>${p.lbl}${p.d===todayKey?' <span class="today-tag">today</span>':""}</b><div>${p.x} <button class="cd-btn sm" ${p.ch?`data-ch="${p.ch}"`:`data-go="${p.go}"`}>Open</button></div></div>`).join("")}</div>
   <p class="cd-muted legend">Progress is saved in this browser only. Case hooks: <span class="hk hk-g">liable</span> <span class="hk hk-r">acquitted / justified</span> <span class="hk hk-y">modified</span> <span class="hk hk-b">principle</span></p>`;
   $("#start",m).onclick=()=>drill(buildRound(all,25),"Session","today",all);
+  m.onchange=e=>{const k=e.target.closest("[data-kit]");if(k){kit[k.dataset.kit]=k.checked;store.set("kit",kit);}};
   m.onclick=e=>{const o=e.target.closest("[data-open]");if(o)return openSec(o.dataset.open);const c=e.target.closest("[data-ch]");if(c)return go("review",{ch:c.dataset.ch});const g=e.target.closest("[data-go]");if(g)return go(g.dataset.go);const sx=e.target.closest("[data-sx]");if(sx)go("samplex",sx.dataset.sx);};
 };
 
@@ -1818,14 +2075,14 @@ document.addEventListener("keydown",e=>{
 // ---------- CODAL DRILL ----------
 V.codal=m=>{
   const sel=store.get("codalSel",{deck:"codal",arts:[]});const arts=CODAL.map(a=>a.a);
-  const artOf=c=>c.deck==="codal"?c.art:(Object.keys(ART_TOPIC).find(a=>ART_TOPIC[a]===c.t)||(c.t==="a4b"?"4":""));
+  const artOf=c=>c.deck==="codal"?c.art:c.t==="readings"?"R":(Object.keys(ART_TOPIC).find(a=>ART_TOPIC[a]===c.t)||(c.t==="a4b"?"4":""));
   const pool=()=>{const ids=sel.deck==="both"?DECK.codal.concat(DECK.elements):DECK[sel.deck];return sel.arts.length?ids.filter(i=>sel.arts.includes(artOf(CARDS[i]))):ids;};
   function draw(){const p=pool(),d=p.filter(isDue).length,s=p.filter(i=>srs[i]).length;
     m.innerHTML=`<div class="cd-card"><div class="mono">Anki-style cloze</div><h2 style="margin:4px 0">Codal & elements drill</h2><p class="cd-muted">One blank per card, shown inside its own paragraph or list. Flip, then grade yourself honestly; misses come back until you get them right twice.</p>
-    <div style="margin:10px 0"><span class="cd-muted">Deck: </span>${[["codal","Codal (verbatim)"],["elements","Reyes elements"],["both","Both"]].map(([k,l])=>`<button class="cd-chip ${sel.deck===k?"on":""}" data-deck="${k}">${l}</button>`).join("")}</div>
-    <div><span class="cd-muted">Articles: </span><button class="cd-chip ${!sel.arts.length?"on":""}" data-art="">All</button>${arts.map(a=>`<button class="cd-chip ${sel.arts.includes(a)?"on":""}" data-art="${a}">Art. ${a}</button>`).join("")}</div>
+    <div style="margin:10px 0"><span class="cd-muted">Deck: </span>${[["codal","Codal (verbatim)"],["elements","Elements & readings lists"],["both","Both"]].map(([k,l])=>`<button class="cd-chip ${sel.deck===k?"on":""}" data-deck="${k}">${l}</button>`).join("")}</div>
+    <div><span class="cd-muted">Articles: </span><button class="cd-chip ${!sel.arts.length?"on":""}" data-art="">All</button>${arts.concat("R").map(a=>`<button class="cd-chip ${sel.arts.includes(a)?"on":""}" data-art="${a}">${a==="R"?"Intro readings":"Art. "+a}</button>`).join("")}</div>
     <div class="cd-row" style="margin-top:12px"><button class="cd-btn pri" id="go">▶ Start (${Math.min(20,p.length)} cards)</button><span class="cd-muted">${p.length} cards · ${s} seen · ${d} due</span></div></div>
-    <div class="cd-card"><div class="mono">Read the codal first</div>${(sel.arts.length?sel.arts:arts).map(a=>codalHTML(a)).join("")}</div>`;
+    <div class="cd-card"><div class="mono">Read the codal first</div>${(sel.arts.length?sel.arts:arts).filter(a=>a!=="R").map(a=>codalHTML(a)).join("")}</div>`;
     m.onclick=e=>{const dk=e.target.closest("[data-deck]");if(dk){sel.deck=dk.dataset.deck;store.set("codalSel",sel);draw();}const ar=e.target.closest("[data-art]");if(ar){const a=ar.dataset.art;sel.arts=!a?[]:(sel.arts.includes(a)?sel.arts.filter(x=>x!==a):sel.arts.concat(a));store.set("codalSel",sel);draw();}if(e.target.id==="go"){const P=pool();drill(buildRound(P,20),"Codal drill","codal",P);}};}
   draw();
 };
@@ -1853,18 +2110,18 @@ V.samplex=(m,openId)=>{
   function draw(){let body="";
     if(sel.view==="essays"){body=ESSAYS.filter(e=>e.set===sel.set).map((e,i)=>`<div class="cd-card" id="sx-${e.id}"><div class="cd-row" style="justify-content:space-between"><span class="mono">${esc(e.src)}</span><span>${sxdone[e.id]==="ok"?'<span class="hk hk-r">got it</span>':sxdone[e.id]==="miss"?'<span class="hk hk-g">redo</span>':""}</span></div>
       <div class="disp" style="font-size:1.05rem;margin:4px 0">Q${i+1}. ${e.t.map(t=>esc(TOPIC_NAME[t].split(" · ")[0])).join(" + ")}</div><div class="sx-q">${e.q}</div>
-      <textarea class="cd-in" data-note="${e.id}" placeholder="Outline your answer (C-L-E-A-R). Saved on this device." style="margin-top:10px">${esc(notes[e.id]||"")}</textarea>
-      <div class="cd-row" style="margin-top:8px"><button class="cd-btn sm" data-timer="${e.id}">⏱ 14:00</button><button class="cd-btn sm pri" data-rev="${e.id}">Show issues & model answer</button></div>
+      <textarea class="cd-in" data-note="${e.id}" placeholder="Outline in IRAC: Issue → Rule → Analysis (why this element, why not the other) → Conclusion. Saved on this device." style="margin-top:10px">${esc(notes[e.id]||"")}</textarea>
+      <div class="cd-row" style="margin-top:8px"><button class="cd-btn sm" data-timer="${e.id}">⏱ 24:00</button><button class="cd-btn sm pri" data-rev="${e.id}">Show issues & model answer</button></div>
       <div class="sx-a" data-ans="${e.id}" hidden><div class="mono">Issues: tick the ones you spotted</div><div class="sx-iss">${e.iss.map(x=>`<label><input type="checkbox"> ${x}</label>`).join("")}</div>
-      <div class="mono" style="margin-top:10px">Model answer</div><div>${linkCases(e.a)}</div><div class="tb-exam"><div class="mono">Back-page CLEAR</div>${e.c}</div>
+      <div class="mono" style="margin-top:10px">Model answer</div><div>${linkCases(e.a)}</div><div class="tb-exam"><div class="mono">In one line</div>${e.c}</div>
       <div class="cd-row"><button class="cd-btn sm" data-mark="ok:${e.id}">✓ Got it</button><button class="cd-btn sm" data-mark="miss:${e.id}">✗ Missed issues → redo list</button></div></div></div>`).join("");}
     else body=MCQ.map((q,i)=>`<div class="cd-card" data-mcq="${q.id}"><div class="mono">${esc(q.src)}</div><div style="margin:6px 0"><b>${i+1}.</b> ${q.q}</div>${q.ch.map((c,j)=>`<button class="mc-ch" data-ch="${j}">(${"ABCD"[j]}) ${c}</button>`).join("")}<div class="mc-why" hidden><p><b>Answer: (${"ABCD"[q.k]})</b> ${q.why}</p>${q.note?`<p class="cd-muted">Note: ${q.note}</p>`:""}</div></div>`).join("");
     m.innerHTML=`<div class="cd-card"><div class="cd-row" style="justify-content:space-between"><h2 style="margin:0">Samplex</h2><div>${[["essays","Problems"],["mcq","MCQ"]].map(([k,l])=>`<button class="cd-chip ${sel.view===k?"on":""}" data-view="${k}">${l}</button>`).join("")}</div></div>
-    ${sel.view==="essays"?`<div style="margin-top:8px">${sets.map(s=>`<button class="cd-chip ${sel.set===s?"on":""}" data-set="${esc(s)}">${esc(s)} (${ESSAYS.filter(e=>e.set===s).length})</button>`).join("")}</div><p class="cd-muted" style="font-size:.9rem;margin:6px 0 0">Mock exam A is built in his style: syllabus-case facts, mixed and switched. Write first, then compare. About 14 minutes each.</p>`:`<p class="cd-muted" style="margin:6px 0 0">San Beda midterm MCQs (keys checked against Reyes) + mock items.</p>`}</div>${body}`;
+    ${sel.view==="essays"?`<div style="margin-top:8px">${sets.map(s=>`<button class="cd-chip ${sel.set===s?"on":""}" data-set="${esc(s)}">${esc(s)} (${ESSAYS.filter(e=>e.set===s).length})</button>`).join("")}</div><p class="cd-muted" style="font-size:.9rem;margin:6px 0 0">Each mock follows Sir\'s format: <b>4 problems + 1 objective/enumeration question</b>, 2 hours, about 24 minutes each. Write in IRAC on the right-hand pages only, then compare. Model answers show the “why, and why not” analysis he looks for.</p>`:`<p class="cd-muted" style="margin:6px 0 0">San Beda midterm MCQs (keys checked against Reyes) + mock items.</p>`}</div>${body}`;
     m.onclick=e=>{const v=e.target.closest("[data-view]");if(v){sel.view=v.dataset.view;store.set("sxSel",sel);draw();return;}const s=e.target.closest("[data-set]");if(s){sel.set=s.dataset.set;store.set("sxSel",sel);draw();return;}
       const r=e.target.closest("[data-rev]");if(r){const a=$(`[data-ans="${r.dataset.rev}"]`,m);a.hidden=!a.hidden;return;}
       const mk=e.target.closest("[data-mark]");if(mk){const[k,id]=mk.dataset.mark.split(":");sxdone[id]=k;save();draw();const el=$("#sx-"+id,m);if(el)el.scrollIntoView({block:"start"});return;}
-      const tm=e.target.closest("[data-timer]");if(tm){if(timer)clearInterval(timer);let left=14*60;timer=setInterval(()=>{left--;if(!tm.isConnected){clearInterval(timer);return;}tm.textContent=`⏱ ${Math.floor(left/60)}:${String(left%60).padStart(2,"0")}`;if(left<=0){clearInterval(timer);tm.textContent="⏱ Time!";tm.style.color="var(--red)";}},1000);return;}
+      const tm=e.target.closest("[data-timer]");if(tm){if(timer)clearInterval(timer);let left=24*60;timer=setInterval(()=>{left--;if(!tm.isConnected){clearInterval(timer);return;}tm.textContent=`⏱ ${Math.floor(left/60)}:${String(left%60).padStart(2,"0")}`;if(left<=0){clearInterval(timer);tm.textContent="⏱ Time!";tm.style.color="var(--red)";}},1000);return;}
       const ch=e.target.closest("[data-ch]");if(ch){const box=ch.closest("[data-mcq]"),q=MCQ.find(x=>x.id===box.dataset.mcq);$$(".mc-ch",box).forEach((b,j)=>{b.classList.toggle("ok",j===q.k);b.classList.toggle("no",j===+ch.dataset.ch&&j!==q.k);});$(".mc-why",box).hidden=false;}};
     $$("[data-note]",m).forEach(t=>t.oninput=()=>{notes[t.dataset.note]=t.value;store.set("notes",notes);});
     if(openId){const el=$("#sx-"+openId,m);if(el)el.scrollIntoView({block:"start"});openId=null;}}

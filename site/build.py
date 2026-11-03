@@ -6,7 +6,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 src, data, dist = ROOT / "src", ROOT / "data", ROOT / "dist"
 dist.mkdir(exist_ok=True)
 
-order = ["cases.js", "cases_verified.js", "codal.js", "rh.js", "reviewer.js", "reviewer2.js", "reviewer3.js", "samplex.js"]
+order = ["cases.js", "cases_verified.js", "codal.js", "rh.js", "reviewer.js", "reviewer2.js", "reviewer3.js", "samplex.js", "samplex_mock.js"]
 datajs = "\n".join((data / f).read_text(encoding="utf-8") for f in order)
 
 # --- validation (node evaluates the data and checks references) ---

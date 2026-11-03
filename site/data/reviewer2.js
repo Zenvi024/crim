@@ -1,7 +1,7 @@
 (()=>{const {CH,S,P,K,TR,DS,EX,C,V,CO,RQ,UL,TB,EXAM,DR,G}=window.RH;
 
 // ═══════════════════════ 4 · ART. 4(1) ═══════════════════════
-CH("a4a","4","Art. 4(1) · A wrong different from that intended","Proximate cause, error in personae, aberratio ictus, praeter intentionem",
+CH("a4a","5","Art. 4(1) · A wrong different from that intended","Proximate cause, error in personae, aberratio ictus, praeter intentionem",
 "Once a person commits a felony, he is liable for <b>everything that naturally and logically flows from it</b>, intended or not. This chapter is about the <b>chain of causation</b>: when it holds, and the few things that break it. It is the most common “combination” issue on crim exams.",
 ["State the rationale and the two requisites of Art. 4(1)","Define proximate cause and list what is and is not an efficient intervening cause","Apply the chain to Brobst, Iligan, Mananquil and Garcia","Distinguish error in personae, aberratio ictus and praeter intentionem, and their effects"],
 [
@@ -45,7 +45,7 @@ S("a4a-5","The three situations: personae, ictus, praeter intentionem",
 ]);
 
 // ═══════════════════════ 5 · ART. 4(2) ═══════════════════════
-CH("a4b","5","Art. 4(2) · Impossible crimes","Punishing the criminal mind",
+CH("a4b","6","Art. 4(2) · Impossible crimes","Punishing the criminal mind",
 "Here the offender does everything, with evil intent, but the crime <b>could never happen</b>: the victim was already dead, the room was empty, the check was worthless, the poison was sugar. The Code still punishes him, for his <b>criminal propensity</b>. This is the Code's most positivist provision.",
 ["Explain why impossible crimes are punished","State and apply all four requisites","Distinguish legal and physical impossibility, and inadequate and ineffectual means","Separate impossible crimes from attempted and frustrated felonies (Balmores, Intod, Jacinto, Domasian)"],
 [
@@ -81,7 +81,7 @@ S("a4b-6","Impossible crime vs. attempted and frustrated felony",
 ]);
 
 // ═══════════════════════ 6 · ART. 5 ═══════════════════════
-CH("a5","6","Art. 5 · The duty of the court","Acts not punishable; clearly excessive penalties",
+CH("a5","7","Art. 5 · The duty of the court","Acts not punishable; clearly excessive penalties",
 "Art. 5 tells judges what to do in two uncomfortable situations: when an act <b>deserves punishment but no law punishes it</b>, and when the law's penalty is <b>clearly too harsh</b>. In both, the judge applies the law as written and writes to the President.",
 ["State what the court must do in each paragraph","Explain why the court cannot convict or lower the penalty itself"],
 [
@@ -100,7 +100,7 @@ S("a5-3","Paragraph 2 · A clearly excessive penalty",
 ]);
 
 // ═══════════════════════ 7 · ART. 6 ═══════════════════════
-CH("a6","7","Art. 6 · Stages of execution","Attempted, frustrated, consummated",
+CH("a6","8","Art. 6 · Stages of execution","Attempted, frustrated, consummated",
 "Art. 6 measures <b>how far</b> a crime got. It is the article with the most syllabus cases (12) and the most exam problems. Master three things: <b>what an overt act is</b> (attempt starts there), <b>when the subjective phase ends</b> (attempt becomes frustration), and <b>which crimes cannot be frustrated</b> because of their elements.",
 ["Trace the development of a crime from thought to consummation","Explain each element of attempted and of frustrated felony","Apply the subjective/objective phase test, including the homicide wound ladder","Determine the stage by the nature, elements and manner of the crime (theft, robbery, rape, estafa, arson)"],
 [

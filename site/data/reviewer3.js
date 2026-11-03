@@ -1,7 +1,7 @@
 (()=>{const {CH,S,P,K,TR,DS,EX,C,V,CO,RQ,UL,TB,EXAM,DR,G}=window.RH;
 
 // ═══════════════════════ 8 · ART. 7 ═══════════════════════
-CH("a7","8","Art. 7 · Light felonies","When they are punishable",
+CH("a7","9","Art. 7 · Light felonies","When they are punishable",
 "A short article with a clear rule and one exception. Learn what a light felony is (Art. 9), why only consummated ones are punished, and why those against <b>persons or property</b> are different.",
 ["State the rule, the exception and the reason for each","Give examples of light felonies"],
 [
@@ -14,7 +14,7 @@ S("a7-2","Examples",
 ],[EXAM("“Under Art. 7, light felonies are punishable only when consummated, except those committed against persons or property, which are punishable even when attempted or frustrated.”")]);
 
 // ═══════════════════════ 9 · ART. 8 ═══════════════════════
-CH("a8","9","Art. 8 · Conspiracy and proposal","As crimes in themselves, and as a mode of liability",
+CH("a8","10","Art. 8 · Conspiracy and proposal","As crimes in themselves, and as a mode of liability",
 "Art. 8 defines conspiracy and proposal and says they are crimes <b>only when a law specifically punishes them</b>. But conspiracy has a second life: when the crime is actually committed, it becomes the reason why <b>the act of one is the act of all</b>. Keep the two apart.",
 ["Recite which conspiracies and proposals are punishable","Explain each requisite of conspiracy and of proposal","Distinguish conspiracy as a felony from conspiracy as a mode of liability, and know the proof required"],
 [
@@ -41,7 +41,7 @@ S("a8-4","Proposal",
 ]);
 
 // ═══════════════════════ 10 · ART. 9 ═══════════════════════
-CH("a9","10","Art. 9 · Grave, less grave, light","Classifying felonies by their penalty",
+CH("a9","11","Art. 9 · Grave, less grave, light","Classifying felonies by their penalty",
 "Art. 9 sorts felonies by gravity, and gravity is read from the <b>penalty</b>, using the scale in Art. 25. The classification matters elsewhere: complex crimes, light felonies, accessories, and prescription.",
 ["Classify a felony from its penalty, including divided and compound penalties","Resolve the ₱40,000 conflict between Arts. 9 and 26"],
 [
@@ -54,7 +54,7 @@ S("a9-2","Reading the penalty",
 ],[EXAM("“Under Art. 9, grave felonies carry the capital penalty or penalties afflictive in any of their periods; less grave felonies, penalties correctional in their maximum period; light felonies, arresto menor or a fine not exceeding ₱40,000, or both.”")]);
 
 // ═══════════════════════ 11 · ART. 10 ═══════════════════════
-CH("a10","11","Art. 10 · Special laws","The RPC as a supplement",
+CH("a10","12","Art. 10 · Special laws","The RPC as a supplement",
 "Special penal laws (drugs, firearms, BP 22, RA 9262) stand on their own. Art. 10 says they are not governed by the RPC, but the RPC fills their gaps <b>unless the special law says otherwise</b>.",
 ["Explain the two clauses and how they are reconciled","Know which RPC rules do and do not apply to special laws"],
 [
@@ -67,12 +67,12 @@ S("a10-2","What carries over and what does not",
  K("The exception: special laws using RPC nomenclature","When a special law <b>adopts the RPC's penalties</b> (e.g., reclusion perpetua, prisión mayor), as many amended laws now do, the RPC rules on graduating penalties and on modifying circumstances apply (<i>People v. Simon</i>)."),
  EX("Attempt punished by the special law itself","A passenger about to board a plane with four gold bars strapped to his body was convicted under the Central Bank rule penalizing “any person desiring to export gold” without a license. The rule itself covered the stage before actual export, so the attempt was punishable.")),
 S("a10-3","Intent in special-law offenses",
- P("Crimes under special laws are generally <b>mala prohibita</b>: criminal intent and good faith are immaterial; what matters is the <b>intent to perpetrate the prohibited act</b> (Chapter 3, <i>Bayona</i>)."),
+ P("Crimes under special laws are generally <b>mala prohibita</b>: criminal intent and good faith are immaterial; what matters is the <b>intent to perpetrate the prohibited act</b> (Chapter 4, <i>Bayona</i>)."),
  TR("Possession offenses still need animus possidendi","Illegal possession of a firearm is malum prohibitum, but possession requires the <b>intent to possess</b>. A guard carrying an agency-issued firearm on the way to return it holds it incidentally to his duty (San Beda Q2)."))
 ],[EXAM("“Under Art. 10, offenses under special laws are governed by those laws, but the RPC applies suppletorily unless the special law provides otherwise (Ladonga v. People). Unless the special law adopts RPC penalties, its attempted and frustrated stages are not punishable unless it provides for them.”")]);
 
 // ═══════════════════════ 12 · ART. 11 ═══════════════════════
-CH("a11","12","Art. 11 · Justifying circumstances","When the act itself is lawful",
+CH("a11","13","Art. 11 · Justifying circumstances","When the act itself is lawful",
 "Art. 11 lists six situations in which a person who causes harm <b>commits no crime at all</b>: self-defense, defense of relatives, defense of strangers, avoidance of a greater evil, fulfillment of duty, and obedience to an order. Twenty of your syllabus cases are here. Everything turns on the <b>requisites</b>, especially <b>unlawful aggression</b>.",
 ["Explain why justified acts carry no criminal (and usually no civil) liability","Explain every requisite of each paragraph, with its cases","Apply incomplete justification (Art. 69 / Art. 13(1))","Recognize the facts that defeat a self-defense claim"],
 [

@@ -7,6 +7,8 @@ const strip=s=>String(s).replace(/<[^>]+>/g,"");
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 const KEY="crimdesk1:";
 const store={get(k,d){try{const v=localStorage.getItem(KEY+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v));}catch(e){}}};
+const KIT=["Blue book or notebook inserts","1/4 index card (3 × 5 in), name written <b>surname first</b>","Envelope","Stapler","Sign pen or fountain pen, <b>blue or black</b> (bring a spare)"];
+let kit=store.get("kit",{});
 let srs=store.get("srs",{}),fix=store.get("fix",{}),read=store.get("read2",{}),stats=store.get("stats",{rev:0,streak:0,best:0,days:{}}),sxdone=store.get("sx",{}),notes=store.get("notes",{});
 const save=()=>{store.set("srs",srs);store.set("fix",fix);store.set("stats",stats);store.set("read2",read);store.set("sx",sxdone);};
 
@@ -115,12 +117,12 @@ function openSec(secId){const o=SEC_OF[secId];if(!o)return;go("review",{ch:o.t.k
 
 // ---------- TODAY ----------
 const PLAN=[
-{d:"2026-11-02",lbl:"Mon 2 Nov",x:"Chapters 0–3: the exam method, Intro & Art. 1, Art. 2, Art. 3. Codal cloze: Arts. 1–3. Re-read <i>Ah Chong</i> (twice).",ch:"a2"},
-{d:"2026-11-03",lbl:"Tue 3 Nov",x:"Class: <b>note what Sir says about the exam</b>. Then Chapters 4–6 (Art. 4(1), 4(2), 5) and both gates. Elements deck: Arts. 3–4.",ch:"a4a"},
-{d:"2026-11-04",lbl:"Wed 4 Nov",x:"Chapter 7 (<b>Art. 6</b>, 12 cases) and Chapters 8–11 (Arts. 7–10). Cases drill: Art. 6, Facts → ruling. Commute: elements deck.",ch:"a6"},
-{d:"2026-11-05",lbl:"Thu 5 Nov",x:"Chapter 12 (<b>Art. 11</b>, 20 cases). Codal cloze: Art. 11, word for word. Mock exam A, Q1–4, timed.",ch:"a11"},
-{d:"2026-11-06",lbl:"Fri 6 Nov",x:"<b>Full mock</b>: Mock A Q5–8 + San Beda, under exam conditions (14 minutes each). Clear the fix list and all due cards. Sleep by 1:00 a.m.",go:"samplex"},
-{d:"2026-11-07",lbl:"Sat 7 Nov",x:"Morning: fix list → due codal cards → skim the doctrines in Cases → Browse. Rest after lunch. <b>Exam 2:00–4:00 p.m.</b> Conclusion first.",go:"today"}];
+{d:"2026-11-02",lbl:"Mon 2 Nov",x:"Started: Chapters 0, 1, 3 and 4 (exam method, Intro & Art. 1, Art. 2, Art. 3). Codal cloze: Arts. 1–3.",ch:"a2"},
+{d:"2026-11-03",lbl:"Tue 3 Nov",x:"Read the <b>updated Chapter 0</b> (Sir's format, IRAC, the confusable pairs) and the <b>new Chapter 2, Introductory readings</b>. Then finish Art. 2 and Art. 3. Elements deck: the readings lists.",ch:"method"},
+{d:"2026-11-04",lbl:"Wed 4 Nov",x:"Chapters 5–8: Art. 4(1), Art. 4(2), Art. 5 and <b>Art. 6</b> (12 cases). Gates for Arts. 4 and 6. Cases drill: Facts → ruling & why.",ch:"a4a"},
+{d:"2026-11-05",lbl:"Thu 5 Nov",x:"Chapters 9–12 (Arts. 7–10), then Chapter 13, <b>Art. 11</b> (20 cases). Codal cloze: Art. 11, word for word. Practice writing on the right-hand pages only.",ch:"a11"},
+{d:"2026-11-06",lbl:"Fri 6 Nov",x:"<b>Mock exam A under exam conditions</b>: 5 questions, 2 hours, IRAC, right-hand pages only. Check against the model answers, then Mock B's problems. Clear the fix list. Pack the exam kit. Sleep by 1:00 a.m.",go:"samplex"},
+{d:"2026-11-07",lbl:"Sat 7 Nov",x:"Morning: fix list → the readings and elements lists → the confusable pairs (Chapter 0). Bring the kit. <b>Exam 2:00–4:00 p.m.</b> Do the objective question first.",ch:"method"}];
 function countdown(){const ms=EXAM-now();if(ms<=0)return"Exam day";const d=Math.floor(ms/DAY),h=Math.floor(ms%DAY/36e5),m=Math.floor(ms%36e5/6e4);return `<b>${d}d ${h}h ${m}m</b> to the midterm`;}
 V.today=m=>{
   const all=Object.keys(CARDS),seen=all.filter(i=>srs[i]).length,due=all.filter(isDue).length,fx=Object.keys(fix).length;
@@ -133,6 +135,8 @@ V.today=m=>{
   <h1>Your Crim 1 textbook, Arts. 1–11</h1><p class="hero-p">Every article explained from the codal and Reyes, with each syllabus case placed where its doctrine is taught, plus drills to make it stick. Saturday, 7 November, 2:00–4:00 p.m. · ${countdown()}.</p>
   <div class="cd-row"><button class="cd-btn pri lg" data-open="${lastO?lastO.s.id:TOPICS[1].sec[0].id}">${lastO?`Continue reading: ${esc(lastO.t.n.split(" · ")[0])} → ${esc(lastO.s.t)}`:"Start reading: Chapter 1"}</button><button class="cd-btn lg" id="start">▶ Drill session</button></div>
   <div class="hero-prog"><div class="pg"><i style="width:${readSec/totalSec*100}%"></i></div><span>${readSec} of ${totalSec} sections read</span></div></div></section>
+  <div class="cd-card kit"><div class="cd-row" style="justify-content:space-between"><div><div class="mono">Exam kit · Saturday</div><b class="disp" style="font-size:1.1rem">Pack these, then tick them off</b></div><span class="cd-muted" style="font-size:.85rem">5 questions · 24 min each · IRAC · right-hand pages only</span></div>
+  <div class="kit-list">${KIT.map((k,i)=>`<label><input type="checkbox" data-kit="${i}" ${kit[i]?"checked":""}><span>${k}</span></label>`).join("")}</div></div>
   <h2 class="sec-h">Contents</h2>
   <div class="toc-grid">${TOPICS.map(t=>{const p=chProg(t);return `<button class="toc-card ${p.r===p.n&&p.n?"done":""}" data-ch="${t.k}"><span class="toc-num">${t.num}</span><span class="toc-body"><b>${esc(t.n)}</b><small>${esc(t.s)}</small><span class="pg sm"><i style="width:${p.p*100}%"></i></span><small>${p.r}/${p.n} sections${t.sec.reduce((n,s)=>n+s.b.filter(b=>b.k==="case").length,0)?` · ${t.sec.reduce((n,s)=>n+s.b.filter(b=>b.k==="case").length,0)} case cards`:""}</small></span></button>`;}).join("")}</div>
   <h2 class="sec-h">How to use this desk</h2>
@@ -146,6 +150,7 @@ V.today=m=>{
   <h2 class="sec-h">Study plan</h2><div class="cd-plan">${PLAN.map(p=>`<div class="cd-day ${p.d===todayKey?"today":""}"><b>${p.lbl}${p.d===todayKey?' <span class="today-tag">today</span>':""}</b><div>${p.x} <button class="cd-btn sm" ${p.ch?`data-ch="${p.ch}"`:`data-go="${p.go}"`}>Open</button></div></div>`).join("")}</div>
   <p class="cd-muted legend">Progress is saved in this browser only. Case hooks: <span class="hk hk-g">liable</span> <span class="hk hk-r">acquitted / justified</span> <span class="hk hk-y">modified</span> <span class="hk hk-b">principle</span></p>`;
   $("#start",m).onclick=()=>drill(buildRound(all,25),"Session","today",all);
+  m.onchange=e=>{const k=e.target.closest("[data-kit]");if(k){kit[k.dataset.kit]=k.checked;store.set("kit",kit);}};
   m.onclick=e=>{const o=e.target.closest("[data-open]");if(o)return openSec(o.dataset.open);const c=e.target.closest("[data-ch]");if(c)return go("review",{ch:c.dataset.ch});const g=e.target.closest("[data-go]");if(g)return go(g.dataset.go);const sx=e.target.closest("[data-sx]");if(sx)go("samplex",sx.dataset.sx);};
 };
 
@@ -229,14 +234,14 @@ document.addEventListener("keydown",e=>{
 // ---------- CODAL DRILL ----------
 V.codal=m=>{
   const sel=store.get("codalSel",{deck:"codal",arts:[]});const arts=CODAL.map(a=>a.a);
-  const artOf=c=>c.deck==="codal"?c.art:(Object.keys(ART_TOPIC).find(a=>ART_TOPIC[a]===c.t)||(c.t==="a4b"?"4":""));
+  const artOf=c=>c.deck==="codal"?c.art:c.t==="readings"?"R":(Object.keys(ART_TOPIC).find(a=>ART_TOPIC[a]===c.t)||(c.t==="a4b"?"4":""));
   const pool=()=>{const ids=sel.deck==="both"?DECK.codal.concat(DECK.elements):DECK[sel.deck];return sel.arts.length?ids.filter(i=>sel.arts.includes(artOf(CARDS[i]))):ids;};
   function draw(){const p=pool(),d=p.filter(isDue).length,s=p.filter(i=>srs[i]).length;
     m.innerHTML=`<div class="cd-card"><div class="mono">Anki-style cloze</div><h2 style="margin:4px 0">Codal & elements drill</h2><p class="cd-muted">One blank per card, shown inside its own paragraph or list. Flip, then grade yourself honestly; misses come back until you get them right twice.</p>
-    <div style="margin:10px 0"><span class="cd-muted">Deck: </span>${[["codal","Codal (verbatim)"],["elements","Reyes elements"],["both","Both"]].map(([k,l])=>`<button class="cd-chip ${sel.deck===k?"on":""}" data-deck="${k}">${l}</button>`).join("")}</div>
-    <div><span class="cd-muted">Articles: </span><button class="cd-chip ${!sel.arts.length?"on":""}" data-art="">All</button>${arts.map(a=>`<button class="cd-chip ${sel.arts.includes(a)?"on":""}" data-art="${a}">Art. ${a}</button>`).join("")}</div>
+    <div style="margin:10px 0"><span class="cd-muted">Deck: </span>${[["codal","Codal (verbatim)"],["elements","Elements & readings lists"],["both","Both"]].map(([k,l])=>`<button class="cd-chip ${sel.deck===k?"on":""}" data-deck="${k}">${l}</button>`).join("")}</div>
+    <div><span class="cd-muted">Articles: </span><button class="cd-chip ${!sel.arts.length?"on":""}" data-art="">All</button>${arts.concat("R").map(a=>`<button class="cd-chip ${sel.arts.includes(a)?"on":""}" data-art="${a}">${a==="R"?"Intro readings":"Art. "+a}</button>`).join("")}</div>
     <div class="cd-row" style="margin-top:12px"><button class="cd-btn pri" id="go">▶ Start (${Math.min(20,p.length)} cards)</button><span class="cd-muted">${p.length} cards · ${s} seen · ${d} due</span></div></div>
-    <div class="cd-card"><div class="mono">Read the codal first</div>${(sel.arts.length?sel.arts:arts).map(a=>codalHTML(a)).join("")}</div>`;
+    <div class="cd-card"><div class="mono">Read the codal first</div>${(sel.arts.length?sel.arts:arts).filter(a=>a!=="R").map(a=>codalHTML(a)).join("")}</div>`;
     m.onclick=e=>{const dk=e.target.closest("[data-deck]");if(dk){sel.deck=dk.dataset.deck;store.set("codalSel",sel);draw();}const ar=e.target.closest("[data-art]");if(ar){const a=ar.dataset.art;sel.arts=!a?[]:(sel.arts.includes(a)?sel.arts.filter(x=>x!==a):sel.arts.concat(a));store.set("codalSel",sel);draw();}if(e.target.id==="go"){const P=pool();drill(buildRound(P,20),"Codal drill","codal",P);}};}
   draw();
 };
@@ -264,18 +269,18 @@ V.samplex=(m,openId)=>{
   function draw(){let body="";
     if(sel.view==="essays"){body=ESSAYS.filter(e=>e.set===sel.set).map((e,i)=>`<div class="cd-card" id="sx-${e.id}"><div class="cd-row" style="justify-content:space-between"><span class="mono">${esc(e.src)}</span><span>${sxdone[e.id]==="ok"?'<span class="hk hk-r">got it</span>':sxdone[e.id]==="miss"?'<span class="hk hk-g">redo</span>':""}</span></div>
       <div class="disp" style="font-size:1.05rem;margin:4px 0">Q${i+1}. ${e.t.map(t=>esc(TOPIC_NAME[t].split(" · ")[0])).join(" + ")}</div><div class="sx-q">${e.q}</div>
-      <textarea class="cd-in" data-note="${e.id}" placeholder="Outline your answer (C-L-E-A-R). Saved on this device." style="margin-top:10px">${esc(notes[e.id]||"")}</textarea>
-      <div class="cd-row" style="margin-top:8px"><button class="cd-btn sm" data-timer="${e.id}">⏱ 14:00</button><button class="cd-btn sm pri" data-rev="${e.id}">Show issues & model answer</button></div>
+      <textarea class="cd-in" data-note="${e.id}" placeholder="Outline in IRAC: Issue → Rule → Analysis (why this element, why not the other) → Conclusion. Saved on this device." style="margin-top:10px">${esc(notes[e.id]||"")}</textarea>
+      <div class="cd-row" style="margin-top:8px"><button class="cd-btn sm" data-timer="${e.id}">⏱ 24:00</button><button class="cd-btn sm pri" data-rev="${e.id}">Show issues & model answer</button></div>
       <div class="sx-a" data-ans="${e.id}" hidden><div class="mono">Issues: tick the ones you spotted</div><div class="sx-iss">${e.iss.map(x=>`<label><input type="checkbox"> ${x}</label>`).join("")}</div>
-      <div class="mono" style="margin-top:10px">Model answer</div><div>${linkCases(e.a)}</div><div class="tb-exam"><div class="mono">Back-page CLEAR</div>${e.c}</div>
+      <div class="mono" style="margin-top:10px">Model answer</div><div>${linkCases(e.a)}</div><div class="tb-exam"><div class="mono">In one line</div>${e.c}</div>
       <div class="cd-row"><button class="cd-btn sm" data-mark="ok:${e.id}">✓ Got it</button><button class="cd-btn sm" data-mark="miss:${e.id}">✗ Missed issues → redo list</button></div></div></div>`).join("");}
     else body=MCQ.map((q,i)=>`<div class="cd-card" data-mcq="${q.id}"><div class="mono">${esc(q.src)}</div><div style="margin:6px 0"><b>${i+1}.</b> ${q.q}</div>${q.ch.map((c,j)=>`<button class="mc-ch" data-ch="${j}">(${"ABCD"[j]}) ${c}</button>`).join("")}<div class="mc-why" hidden><p><b>Answer: (${"ABCD"[q.k]})</b> ${q.why}</p>${q.note?`<p class="cd-muted">Note: ${q.note}</p>`:""}</div></div>`).join("");
     m.innerHTML=`<div class="cd-card"><div class="cd-row" style="justify-content:space-between"><h2 style="margin:0">Samplex</h2><div>${[["essays","Problems"],["mcq","MCQ"]].map(([k,l])=>`<button class="cd-chip ${sel.view===k?"on":""}" data-view="${k}">${l}</button>`).join("")}</div></div>
-    ${sel.view==="essays"?`<div style="margin-top:8px">${sets.map(s=>`<button class="cd-chip ${sel.set===s?"on":""}" data-set="${esc(s)}">${esc(s)} (${ESSAYS.filter(e=>e.set===s).length})</button>`).join("")}</div><p class="cd-muted" style="font-size:.9rem;margin:6px 0 0">Mock exam A is built in his style: syllabus-case facts, mixed and switched. Write first, then compare. About 14 minutes each.</p>`:`<p class="cd-muted" style="margin:6px 0 0">San Beda midterm MCQs (keys checked against Reyes) + mock items.</p>`}</div>${body}`;
+    ${sel.view==="essays"?`<div style="margin-top:8px">${sets.map(s=>`<button class="cd-chip ${sel.set===s?"on":""}" data-set="${esc(s)}">${esc(s)} (${ESSAYS.filter(e=>e.set===s).length})</button>`).join("")}</div><p class="cd-muted" style="font-size:.9rem;margin:6px 0 0">Each mock follows Sir\'s format: <b>4 problems + 1 objective/enumeration question</b>, 2 hours, about 24 minutes each. Write in IRAC on the right-hand pages only, then compare. Model answers show the “why, and why not” analysis he looks for.</p>`:`<p class="cd-muted" style="margin:6px 0 0">San Beda midterm MCQs (keys checked against Reyes) + mock items.</p>`}</div>${body}`;
     m.onclick=e=>{const v=e.target.closest("[data-view]");if(v){sel.view=v.dataset.view;store.set("sxSel",sel);draw();return;}const s=e.target.closest("[data-set]");if(s){sel.set=s.dataset.set;store.set("sxSel",sel);draw();return;}
       const r=e.target.closest("[data-rev]");if(r){const a=$(`[data-ans="${r.dataset.rev}"]`,m);a.hidden=!a.hidden;return;}
       const mk=e.target.closest("[data-mark]");if(mk){const[k,id]=mk.dataset.mark.split(":");sxdone[id]=k;save();draw();const el=$("#sx-"+id,m);if(el)el.scrollIntoView({block:"start"});return;}
-      const tm=e.target.closest("[data-timer]");if(tm){if(timer)clearInterval(timer);let left=14*60;timer=setInterval(()=>{left--;if(!tm.isConnected){clearInterval(timer);return;}tm.textContent=`⏱ ${Math.floor(left/60)}:${String(left%60).padStart(2,"0")}`;if(left<=0){clearInterval(timer);tm.textContent="⏱ Time!";tm.style.color="var(--red)";}},1000);return;}
+      const tm=e.target.closest("[data-timer]");if(tm){if(timer)clearInterval(timer);let left=24*60;timer=setInterval(()=>{left--;if(!tm.isConnected){clearInterval(timer);return;}tm.textContent=`⏱ ${Math.floor(left/60)}:${String(left%60).padStart(2,"0")}`;if(left<=0){clearInterval(timer);tm.textContent="⏱ Time!";tm.style.color="var(--red)";}},1000);return;}
       const ch=e.target.closest("[data-ch]");if(ch){const box=ch.closest("[data-mcq]"),q=MCQ.find(x=>x.id===box.dataset.mcq);$$(".mc-ch",box).forEach((b,j)=>{b.classList.toggle("ok",j===q.k);b.classList.toggle("no",j===+ch.dataset.ch&&j!==q.k);});$(".mc-why",box).hidden=false;}};
     $$("[data-note]",m).forEach(t=>t.oninput=()=>{notes[t.dataset.note]=t.value;store.set("notes",notes);});
     if(openId){const el=$("#sx-"+openId,m);if(el)el.scrollIntoView({block:"start"});openId=null;}}
