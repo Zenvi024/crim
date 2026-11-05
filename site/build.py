@@ -6,7 +6,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 src, data, dist = ROOT / "src", ROOT / "data", ROOT / "dist"
 dist.mkdir(exist_ok=True)
 
-order = ["cases.js", "cases_verified.js", "codal.js", "rh.js", "reviewer.js", "reviewer2.js", "reviewer3.js", "samplex.js", "samplex_mock.js"]
+order = ["cases.js", "cases_verified.js", "codal.js", "rh.js", "reviewer.js", "reviewer2.js", "reviewer3.js", "maxims.js", "samplex.js", "samplex_mock.js"]
 datajs = "\n".join((data / f).read_text(encoding="utf-8") for f in order)
 
 # --- validation (node evaluates the data and checks references) ---
@@ -20,6 +20,7 @@ w.TOPICS.forEach(t=>{if(!t.sec||!t.sec.length)err.push('chapter without sections
 C.forEach(c=>{if(!caseRefs.has(c.id))err.push('case not placed in textbook: '+c.id)});
 w.ELEMENTS.forEach(e=>{if(!T.has(e.t))err.push('element topic '+e.id+' '+e.t)});
 w.ESSAYS.forEach(e=>e.t.forEach(t=>{if(!T.has(t))err.push('essay topic '+e.id)}));
+const G=new Set(w.MAX_GROUPS.map(g=>g.g));w.MAXIMS.forEach(x=>{if(!T.has(x.t))err.push('maxim topic '+x.id);if(!G.has(x.g))err.push('maxim group '+x.id)});if(new Set(w.MAXIMS.map(x=>x.id)).size!==w.MAXIMS.length)err.push('dup maxim');
 w.MCQ.forEach(q=>{if(q.k<0||q.k>=q.ch.length)err.push('mcq key '+q.id)});
 const syl=['bull','vanwilsem','wongcheng','lookchaw','ahsing','lollo','ahchong','oanis','magsumbol','gervero','iligan','mananquil','brobst','garcia','balmores','intod','domasian','jacinto','eduave','orita','campuhan','adiao','valenzuela','lamahang','salvilla','borinaga','sypio','ravelo','kalalo','boholst','alconga','mack','sumicad','genosa','luague','delacruz','jaurigue','apolinar','bumanglag','narvaez','chuahiong','pelayo','esmedia','normahernandez','dudley','ty','delima','belbes','beronilla'];
 syl.forEach(i=>{if(!ids.has(i))err.push('syllabus case missing '+i)});
@@ -27,7 +28,7 @@ const nsec=w.TOPICS.reduce((n,t)=>n+t.sec.length,0);
 const cl=w.CODAL.reduce((n,a)=>n+a.p.join('').split('[[').length-1,0);
 const el=w.ELEMENTS.reduce((n,e)=>n+e.i.length,0);
 if(err.length){console.error(err.join('\n'));process.exit(1)}
-console.log(JSON.stringify({cases:C.length,syllabus:syl.length,codalCloze:cl,elementCards:el,caseCards:C.length*4,topics:T.size,sections:nsec,placedCases:caseRefs.size,essays:w.ESSAYS.length,mcq:w.MCQ.length}));
+console.log(JSON.stringify({cases:C.length,syllabus:syl.length,codalCloze:cl,elementCards:el,caseCards:C.length*4,topics:T.size,sections:nsec,placedCases:caseRefs.size,maxims:w.MAXIMS.length,essays:w.ESSAYS.length,mcq:w.MCQ.length}));
 """
 vz = re.findall(r"^V\.(\w+)=", (src / "viz.js").read_text(encoding="utf-8"), re.M)
 res = subprocess.run(["node", "-e", check % json.dumps(vz)], input=datajs, capture_output=True, text=True)

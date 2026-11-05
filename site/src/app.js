@@ -26,11 +26,13 @@ const hook=c=>`<span class="hk hk-${c.hc}" title="${HC[c.hc]}">${esc(c.h)}</span
 const CASE_SEC={};TOPICS.forEach(t=>t.sec.forEach(s=>s.b.forEach(b=>{if(b.k==="case"&&!CASE_SEC[b.id])CASE_SEC[b.id]=s.id;})));
 
 // ---------- cards ----------
-const CARDS={},DECK={codal:[],elements:[],cases:[]};
+const CARDS={},DECK={codal:[],elements:[],cases:[],latin:[]};
 CODAL.forEach(ar=>ar.p.forEach((para,pi)=>{let bi=0;para.replace(/\[\[(.+?)\]\]/g,()=>{const id=`c-${ar.a}-${pi}-${bi}`;CARDS[id]={id,deck:"codal",art:ar.a,t:ART_TOPIC[ar.a],ar,pi,bi};DECK.codal.push(id);bi++;return"";});}));
 ELEMENTS.forEach(L=>L.i.forEach((_,ii)=>{const id=`e-${L.id}-${ii}`;CARDS[id]={id,deck:"elements",t:L.t,L,ii};DECK.elements.push(id);}));
 const DIRS={cr:"Case → doctrine",fc:"Facts → case",dc:"Doctrine → case",fr:"Facts → ruling & why"};
 CASES.forEach(c=>Object.keys(DIRS).forEach(d=>{const id=`k-${c.id}-${d}`;CARDS[id]={id,deck:"cases",t:c.t,c,dir:d};DECK.cases.push(id);}));
+MAXIMS.forEach(x=>["lm","ml"].forEach(d=>{const id=`l-${x.id}-${d}`;CARDS[id]={id,deck:"latin",t:x.t,x,dir:d};DECK.latin.push(id);}));
+const maximCard=x=>`<div class="mx-card"><div class="mx-la">${x.la}${x.sp?' <span class="mx-sp">Spanish</span>':""}</div><div class="mx-lit">“${x.lit.replace(/^“|”$/g,"")}”</div><div class="mx-m"><span class="lbl">Meaning</span> ${x.m}</div><div class="mx-app"><span class="lbl">Application</span> ${x.app}</div><div class="mx-src">${esc(x.src)}</div></div>`;
 
 // ---------- SRS ----------
 const now=()=>Date.now(),DAY=864e5;
@@ -96,6 +98,7 @@ function block(b){
    case"exam":return `<div class="tb-exam"><div class="mono">On the exam, write</div><div>${b.x}</div></div>`;
    case"drill":return `<div class="tb-drill"><div class="tb-drill-t">Change one fact <span class="cd-muted">tap to reveal</span></div>${b.x.map(([q,a])=>`<details><summary>${q}</summary><div class="ans">${a}</div></details>`).join("")}</div>`;
    case"gate":return gateHTML(b.id);
+   case"maxims":return `<div class="mx-grid">${MAXIMS.filter(x=>x.g===b.g).map(maximCard).join("")}</div>`;
   }return"";
 }
 
@@ -122,7 +125,7 @@ const PLAN=[
 {d:"2026-11-04",lbl:"Wed 4 Nov",x:"Chapters 5–8: Art. 4(1), Art. 4(2), Art. 5 and <b>Art. 6</b> (12 cases). Gates for Arts. 4 and 6. Cases drill: Facts → ruling & why.",ch:"a4a"},
 {d:"2026-11-05",lbl:"Thu 5 Nov",x:"Chapters 9–12 (Arts. 7–10), then Chapter 13, <b>Art. 11</b> (20 cases). Codal cloze: Art. 11, word for word. Practice writing on the right-hand pages only.",ch:"a11"},
 {d:"2026-11-06",lbl:"Fri 6 Nov",x:"<b>Mock exam A under exam conditions</b>: 5 questions, 2 hours, IRAC, right-hand pages only. Check against the model answers, then Mock B's problems. Clear the fix list. Pack the exam kit. Sleep by 1:00 a.m.",go:"samplex"},
-{d:"2026-11-07",lbl:"Sat 7 Nov",x:"Morning: fix list → the readings and elements lists → the confusable pairs (Chapter 0). Bring the kit. <b>Exam 2:00–4:00 p.m.</b> Do the objective question first.",ch:"method"}];
+{d:"2026-11-07",lbl:"Sat 7 Nov",x:"Morning: fix list → the readings and elements lists → the confusable pairs (Chapter 0) → Latin maxims (Appendix A). Bring the kit. <b>Exam 2:00–4:00 p.m.</b> Do the objective question first.",ch:"method"}];
 function countdown(){const ms=EXAM-now();if(ms<=0)return"Exam day";const d=Math.floor(ms/DAY),h=Math.floor(ms%DAY/36e5),m=Math.floor(ms%36e5/6e4);return `<b>${d}d ${h}h ${m}m</b> to the midterm`;}
 V.today=m=>{
   const all=Object.keys(CARDS),seen=all.filter(i=>srs[i]).length,due=all.filter(isDue).length,fx=Object.keys(fix).length;
@@ -144,7 +147,7 @@ V.today=m=>{
   <div class="cd-grid" style="margin-top:16px">
    <div class="cd-card"><div class="mono">Due now</div><div class="cd-stat">${due}</div><div class="cd-muted">cards across decks</div></div>
    <div class="cd-card"><div class="mono">Fix list</div><div class="cd-stat">${fx}</div><div class="cd-muted">missed; get each right twice</div></div>
-   <div class="cd-card"><div class="mono">Cards seen</div><div class="cd-stat">${seen}<small>/${all.length}</small></div><div class="cd-muted">codal ${deckStat("codal")} · elements ${deckStat("elements")} · cases ${deckStat("cases")}</div></div>
+   <div class="cd-card"><div class="mono">Cards seen</div><div class="cd-stat">${seen}<small>/${all.length}</small></div><div class="cd-muted">latin ${deckStat("latin")} · codal ${deckStat("codal")} · elements ${deckStat("elements")} · cases ${deckStat("cases")}</div></div>
    <div class="cd-card"><div class="mono">Streak</div><div class="cd-stat">${stats.streak}</div><div class="cd-muted">best ${stats.best} · ${stats.rev} reviews</div></div></div>
   ${sxMiss.length?`<div class="cd-card"><div class="mono">Samplex to redo</div>${sxMiss.map(id=>{const e=ESSAYS.find(x=>x.id===id);return e?`<button class="cd-chip" data-sx="${id}">${esc(e.set)} · ${esc(e.src.split("·")[0])}</button>`:"";}).join("")}</div>`:""}
   <h2 class="sec-h">Study plan</h2><div class="cd-plan">${PLAN.map(p=>`<div class="cd-day ${p.d===todayKey?"today":""}"><b>${p.lbl}${p.d===todayKey?' <span class="today-tag">today</span>':""}</b><div>${p.x} <button class="cd-btn sm" ${p.ch?`data-ch="${p.ch}"`:`data-go="${p.go}"`}>Open</button></div></div>`).join("")}</div>
@@ -191,6 +194,8 @@ function drill(ids,title,back,pool){if(!ids.length){alert("No cards match that f
 function exitDrill(){document.body.classList.remove("focus");const b=D&&D.back;D=null;go(b||"today");}
 function cardFront(c){
   if(c.deck==="codal"){let bi=0;const para=c.ar.p[c.pi].replace(/\[\[(.+?)\]\]/g,(m,x)=>{const r=bi===c.bi?'<span class="dr-blank">?</span>':x;bi++;return r;});return `<div class="dr-kind mono">Codal · Art. ${c.art} · ${esc(c.ar.t)}</div><div class="dr-front tb-codal" style="margin-top:12px">${para}</div>`;}
+  if(c.deck==="latin"){const x=c.x;if(c.dir==="lm")return `<div class="dr-kind mono">Latin → meaning · ${esc((MAX_GROUPS.find(g=>g.g===x.g)||{}).t||"")}</div><div class="dr-name">${x.la}</div><div class="dr-cue">What does it mean, and where does it apply?</div>`;
+    const hide=s=>s.replace(new RegExp(x.la.split(/[ ,(/]/)[0].replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),"gi"),"▢▢▢");return `<div class="dr-kind mono">Meaning → Latin · ${esc((MAX_GROUPS.find(g=>g.g===x.g)||{}).t||"")}</div><div class="dr-front" style="margin-top:12px;text-align:center;font-size:1.08rem">“${x.lit.replace(/^“|”$/g,"")}”</div><div class="dr-front cd-muted" style="margin-top:8px;text-align:center">${hide(x.m)}</div><div class="dr-cue" style="margin-top:10px">Name the maxim or term.</div>`;}
   if(c.deck==="elements")return `<div class="dr-kind mono">Reyes · ${esc(TOPIC_NAME[c.t]||"")}</div><div class="disp" style="font-size:1.2rem;text-align:center;margin:8px 0">${esc(c.L.n)}</div><${c.L.o?"ol":"ul"} class="dr-items">${c.L.i.map((x,j)=>`<li>${j===c.ii?'<span class="dr-blank">?</span>':x}</li>`).join("")}</${c.L.o?"ol":"ul"}><div class="dr-cue">What is missing?</div>`;
   const k=c.c,lbl=`<div class="dr-kind mono">${DIRS[c.dir]} · ${esc(TOPIC_NAME[k.t]||"")}</div>`;
   if(c.dir==="cr")return `${lbl}<div class="dr-name">${esc(k.n)}</div><div class="dr-cue">State the doctrine, the ruling, and the fact that decided it.</div>`;
@@ -201,6 +206,7 @@ function cardFront(c){
 }
 function cardBack(c){
   if(c.deck==="codal"){let bi=0;const para=c.ar.p[c.pi].replace(/\[\[(.+?)\]\]/g,(m,x)=>{const r=bi===c.bi?`<span class="dr-fill">${x}</span>`:x;bi++;return r;});return `<div class="tb-codal">${para}</div>`;}
+  if(c.deck==="latin")return maximCard(c.x);
   if(c.deck==="elements")return `<div><span class="dr-fill">${c.L.i[c.ii]}</span></div>`;
   const k=c.c,head=`<div class="disp" style="font-style:italic;font-size:1.2rem;text-align:center">${esc(k.n)}${hook(k)}</div><div class="cd-muted" style="text-align:center;font-size:.85rem">${esc(k.c)}</div>`;
   if(c.dir==="fc"||c.dir==="dc")return `${head}<p><b>Doctrine:</b> ${k.d}</p><p class="cd-muted">${k.r}</p>${c.dir==="dc"?`<details><summary>Facts</summary>${k.f}</details>`:""}`;
@@ -235,10 +241,10 @@ document.addEventListener("keydown",e=>{
 V.codal=m=>{
   const sel=store.get("codalSel",{deck:"codal",arts:[]});const arts=CODAL.map(a=>a.a);
   const artOf=c=>c.deck==="codal"?c.art:c.t==="readings"?"R":(Object.keys(ART_TOPIC).find(a=>ART_TOPIC[a]===c.t)||(c.t==="a4b"?"4":""));
-  const pool=()=>{const ids=sel.deck==="both"?DECK.codal.concat(DECK.elements):DECK[sel.deck];return sel.arts.length?ids.filter(i=>sel.arts.includes(artOf(CARDS[i]))):ids;};
+  const pool=()=>{const ids=sel.deck==="both"?DECK.codal.concat(DECK.elements,DECK.latin):(DECK[sel.deck]||DECK.codal);return sel.arts.length?ids.filter(i=>sel.arts.includes(artOf(CARDS[i]))):ids;};
   function draw(){const p=pool(),d=p.filter(isDue).length,s=p.filter(i=>srs[i]).length;
     m.innerHTML=`<div class="cd-card"><div class="mono">Anki-style cloze</div><h2 style="margin:4px 0">Codal & elements drill</h2><p class="cd-muted">One blank per card, shown inside its own paragraph or list. Flip, then grade yourself honestly; misses come back until you get them right twice.</p>
-    <div style="margin:10px 0"><span class="cd-muted">Deck: </span>${[["codal","Codal (verbatim)"],["elements","Elements & readings lists"],["both","Both"]].map(([k,l])=>`<button class="cd-chip ${sel.deck===k?"on":""}" data-deck="${k}">${l}</button>`).join("")}</div>
+    <div style="margin:10px 0"><span class="cd-muted">Deck: </span>${[["codal","Codal (verbatim)"],["elements","Elements & readings lists"],["latin","Latin maxims"],["both","All three"]].map(([k,l])=>`<button class="cd-chip ${sel.deck===k?"on":""}" data-deck="${k}">${l}</button>`).join("")}</div>
     <div><span class="cd-muted">Articles: </span><button class="cd-chip ${!sel.arts.length?"on":""}" data-art="">All</button>${arts.concat("R").map(a=>`<button class="cd-chip ${sel.arts.includes(a)?"on":""}" data-art="${a}">${a==="R"?"Intro readings":"Art. "+a}</button>`).join("")}</div>
     <div class="cd-row" style="margin-top:12px"><button class="cd-btn pri" id="go">▶ Start (${Math.min(20,p.length)} cards)</button><span class="cd-muted">${p.length} cards · ${s} seen · ${d} due</span></div></div>
     <div class="cd-card"><div class="mono">Read the codal first</div>${(sel.arts.length?sel.arts:arts).filter(a=>a!=="R").map(a=>codalHTML(a)).join("")}</div>`;
@@ -293,6 +299,7 @@ const btext=b=>[b.t,b.x&&(Array.isArray(b.x)?b.x.flat().join(" "):b.x),b.items&&
 TOPICS.forEach(T=>{IDX.push({k:"Chapter",t:`${T.num} · ${T.n}`,x:strip(T.lead),go:()=>go("review",{ch:T.k})});T.sec.forEach((s,i)=>{const x=strip(s.b.filter(b=>b.k!=="case").map(btext).join(" "));IDX.push({k:"Reviewer",t:`${T.num}.${i+1} ${s.t}`,x,go:()=>openSec(s.id)});});});
 CODAL.forEach(a=>IDX.push({k:"Codal",t:`Art. ${a.a}. ${a.t}`,x:strip(a.p.join(" ").replace(/\[\[|\]\]/g,"")),go:()=>go("codal")}));
 CASES.forEach(c=>IDX.push({k:"Case",t:c.n,x:strip([c.h,c.f,c.r,c.w,c.d,(c.k||[]).join(" ")].join(" ")),go:()=>openCase(c.id)}));
+MAXIMS.forEach(x=>IDX.push({k:"Latin",t:strip(x.la),x:strip(x.lit+" "+x.m+" "+x.app),go:()=>go("review",{ch:"latin"})}));
 ELEMENTS.forEach(L=>IDX.push({k:"Elements",t:L.n,x:strip(L.i.join(" · ")),go:()=>go("codal")}));
 ESSAYS.forEach(e=>IDX.push({k:"Samplex",t:e.set+" · "+e.src,x:strip(e.q+" "+e.a),go:()=>go("samplex",e.id)}));
 V.search=(m,q)=>{
