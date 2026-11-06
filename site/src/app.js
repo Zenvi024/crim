@@ -9,8 +9,9 @@ const KEY="crimdesk1:";
 const store={get(k,d){try{const v=localStorage.getItem(KEY+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v));}catch(e){}}};
 const KIT=["Blue book or notebook inserts","1/4 index card (3 × 5 in), name written <b>surname first</b>","Envelope","Stapler","Sign pen or fountain pen, <b>blue or black</b> (bring a spare)"];
 let kit=store.get("kit",{});
+let buried=store.get("buried",{});
 let srs=store.get("srs",{}),fix=store.get("fix",{}),read=store.get("read2",{}),stats=store.get("stats",{rev:0,streak:0,best:0,days:{}}),sxdone=store.get("sx",{}),notes=store.get("notes",{});
-const save=()=>{store.set("srs",srs);store.set("fix",fix);store.set("stats",stats);store.set("read2",read);store.set("sx",sxdone);};
+const save=()=>{store.set("srs",srs);store.set("fix",fix);store.set("stats",stats);store.set("read2",read);store.set("sx",sxdone);store.set("buried",buried);};
 
 // ---------- topics / cases ----------
 const TOPIC={},TOPIC_NAME={};TOPICS.forEach(t=>{TOPIC[t.k]=t;TOPIC_NAME[t.k]=t.n;});
@@ -50,6 +51,7 @@ function grade(id,g){
   save();
 }
 function buildRound(ids,n=20){
+  ids=ids.filter(i=>!buried[i]);
   const due=ids.filter(isDue).sort((a,b)=>srs[a].due-srs[b].due),fresh=ids.filter(i=>!srs[i]),later=ids.filter(i=>srs[i]&&!isDue(i)).sort((a,b)=>srs[a].due-srs[b].due),fx=ids.filter(i=>i in fix);
   return shuffle([...new Set([...fx,...due,...shuffle(fresh),...later])].slice(0,n));
 }
@@ -128,7 +130,7 @@ const PLAN=[
 {d:"2026-11-07",lbl:"Sat 7 Nov",x:"Morning: fix list → the readings and elements lists → the confusable pairs (Chapter 0) → Latin maxims (Appendix A). Bring the kit. <b>Exam 2:00–4:00 p.m.</b> Do the objective question first.",ch:"method"}];
 function countdown(){const ms=EXAM-now();if(ms<=0)return"Exam day";const d=Math.floor(ms/DAY),h=Math.floor(ms%DAY/36e5),m=Math.floor(ms%36e5/6e4);return `<b>${d}d ${h}h ${m}m</b> to the midterm`;}
 V.today=m=>{
-  const all=Object.keys(CARDS),seen=all.filter(i=>srs[i]).length,due=all.filter(isDue).length,fx=Object.keys(fix).length;
+  const all=Object.keys(CARDS),seen=all.filter(i=>srs[i]).length,due=all.filter(i=>isDue(i)&&!buried[i]).length,fx=Object.keys(fix).filter(i=>!buried[i]).length,nb=Object.keys(buried).length;
   const todayKey=new Date().toLocaleDateString("en-CA",{timeZone:"Asia/Manila"});
   const totalSec=TOPICS.reduce((n,t)=>n+t.sec.length,0),readSec=Object.keys(read).filter(k=>read[k]&&SEC_OF[k]).length;
   const last=store.get("lastSec",null);const lastO=last&&SEC_OF[last];
@@ -146,13 +148,14 @@ V.today=m=>{
   <div class="how"><div><span>1</span><b>Read</b> a chapter in the Reviewer. The codal comes first, then the explanation, then the cases right where they apply. Mark each section read.</div><div><span>2</span><b>Drill</b> the same day: codal cloze for the exact words, the elements deck for requisites, and the cases for facts → ruling.</div><div><span>3</span><b>Apply</b> in the Samplex: write first, then compare with the model answer. Misses go to your redo list.</div></div>
   <div class="cd-grid" style="margin-top:16px">
    <div class="cd-card"><div class="mono">Due now</div><div class="cd-stat">${due}</div><div class="cd-muted">cards across decks</div></div>
-   <div class="cd-card"><div class="mono">Fix list</div><div class="cd-stat">${fx}</div><div class="cd-muted">missed; get each right twice</div></div>
+   <div class="cd-card"><div class="mono">Fix list</div><div class="cd-stat">${fx}</div><div class="cd-muted">missed; get each right twice</div>${nb?`<div class="cd-muted" style="margin-top:6px;font-size:.85rem">${nb} buried · <button class="cd-btn sm" data-unbury="all">Restore</button></div>`:""}</div>
    <div class="cd-card"><div class="mono">Cards seen</div><div class="cd-stat">${seen}<small>/${all.length}</small></div><div class="cd-muted">latin ${deckStat("latin")} · codal ${deckStat("codal")} · elements ${deckStat("elements")} · cases ${deckStat("cases")}</div></div>
    <div class="cd-card"><div class="mono">Streak</div><div class="cd-stat">${stats.streak}</div><div class="cd-muted">best ${stats.best} · ${stats.rev} reviews</div></div></div>
   ${sxMiss.length?`<div class="cd-card"><div class="mono">Samplex to redo</div>${sxMiss.map(id=>{const e=ESSAYS.find(x=>x.id===id);return e?`<button class="cd-chip" data-sx="${id}">${esc(e.set)} · ${esc(e.src.split("·")[0])}</button>`:"";}).join("")}</div>`:""}
   <h2 class="sec-h">Study plan</h2><div class="cd-plan">${PLAN.map(p=>`<div class="cd-day ${p.d===todayKey?"today":""}"><b>${p.lbl}${p.d===todayKey?' <span class="today-tag">today</span>':""}</b><div>${p.x} <button class="cd-btn sm" ${p.ch?`data-ch="${p.ch}"`:`data-go="${p.go}"`}>Open</button></div></div>`).join("")}</div>
   <p class="cd-muted legend">Progress is saved in this browser only. Case hooks: <span class="hk hk-g">liable</span> <span class="hk hk-r">acquitted / justified</span> <span class="hk hk-y">modified</span> <span class="hk hk-b">principle</span></p>`;
   $("#start",m).onclick=()=>drill(buildRound(all,25),"Session","today",all);
+  m.addEventListener("click",e=>{const u=e.target.closest("[data-unbury]");if(u){buried={};save();go(tab);}});
   m.onchange=e=>{const k=e.target.closest("[data-kit]");if(k){kit[k.dataset.kit]=k.checked;store.set("kit",kit);}};
   m.onclick=e=>{const o=e.target.closest("[data-open]");if(o)return openSec(o.dataset.open);const c=e.target.closest("[data-ch]");if(c)return go("review",{ch:c.dataset.ch});const g=e.target.closest("[data-go]");if(g)return go(g.dataset.go);const sx=e.target.closest("[data-sx]");if(sx)go("samplex",sx.dataset.sx);};
 };
@@ -221,8 +224,8 @@ function renderDrill(){
   <div class="dr-shell"><div class="dr-bar"><span>${D.i+1} / ${D.q.length}${id in fix?' · <span style="color:var(--red)">fix list</span>':""}</span><span>🔥 ${stats.streak}</span></div>
   <div class="cd-card dr-card" id="card">${cardFront(c)}${D.flipped?`<div class="dr-ans">${cardBack(c)}</div>`:'<button class="cd-btn dr-show" id="flip">Show answer (Space)</button>'}</div>
   ${D.flipped?`<div class="dr-grades"><button class="g1" data-g="1">Again<small>1 · ← swipe</small></button><button class="g2" data-g="2">Hard<small>2</small></button><button class="g3" data-g="3">Good<small>3 · swipe →</small></button><button class="g4" data-g="4">Easy<small>4 · swipe ↑</small></button></div>`:""}
-  <div class="cd-row" style="margin-top:10px;justify-content:space-between"><button class="cd-btn sm" id="prev" ${D.hist.length?"":"disabled"}>← Previous</button><span class="cd-muted" style="font-size:.8rem">Space flip · 1–4 grade · ← back · Esc exit</span></div></div>`;
-  $("#exit",m).onclick=exitDrill;$("#prev",m).onclick=undo;const f=$("#flip",m);if(f)f.onclick=flip;
+  <div class="cd-row" style="margin-top:10px;justify-content:space-between"><span class="cd-row"><button class="cd-btn sm" id="prev" ${D.hist.length?"":"disabled"}>← Previous</button><button class="cd-btn sm bury" id="bury" title="Hide this card from future rounds (B)">⊘ Bury</button></span><span class="cd-muted" style="font-size:.8rem">Space flip · 1–4 grade · B bury · ← back · Esc exit</span></div>${D.note?`<div class="dr-note">${D.note}</div>`:""}</div>`;
+  D.note="";$("#exit",m).onclick=exitDrill;$("#prev",m).onclick=undo;$("#bury",m).onclick=bury;const f=$("#flip",m);if(f)f.onclick=flip;
   $$(".dr-grades button",m).forEach(b=>b.onclick=()=>doGrade(+b.dataset.g));
   const card=$("#card",m);let sx=0,sy=0,st=0;
   card.addEventListener("touchstart",e=>{const t=e.touches[0];sx=t.clientX;sy=t.clientY;st=Date.now();},{passive:true});
@@ -230,11 +233,12 @@ function renderDrill(){
 }
 function flip(){if(!D||D.flipped)return;D.flipped=true;renderDrill();}
 function doGrade(g){if(!D||!D.flipped)return;const id=D.q[D.i];D.hist.push({i:D.i,id,s:srs[id]?{...srs[id]}:null,f:id in fix?fix[id]:undefined,streak:stats.streak,best:stats.best,rev:stats.rev,qlen:D.q.length});grade(id,g);if(g===1&&!D.requeued.has(id)){D.requeued.add(id);D.q.push(id);}D.i++;D.flipped=false;renderDrill();}
-function undo(){if(!D||!D.hist.length)return;const h=D.hist.pop();if(h.s)srs[h.id]=h.s;else delete srs[h.id];if(h.f===undefined)delete fix[h.id];else fix[h.id]=h.f;stats.streak=h.streak;stats.best=h.best;stats.rev=h.rev;D.q.length=h.qlen;D.requeued.delete(h.id);D.i=h.i;D.flipped=true;save();renderDrill();}
+function bury(){if(!D||D.i>=D.q.length)return;const id=D.q[D.i];D.hist.push({type:"bury",i:D.i,id,f:id in fix?fix[id]:undefined,q:D.q.slice()});buried[id]=1;delete fix[id];D.q=D.q.slice(0,D.i+1).concat(D.q.slice(D.i+1).filter(x=>x!==id));D.i++;D.flipped=false;D.note="Card buried; it won't come back. Press ← Previous to undo.";save();renderDrill();}
+function undo(){if(!D||!D.hist.length)return;const h=D.hist.pop();if(h.type==="bury"){delete buried[h.id];if(h.f!==undefined)fix[h.id]=h.f;D.q=h.q;D.i=h.i;D.flipped=false;save();renderDrill();return;}if(h.s)srs[h.id]=h.s;else delete srs[h.id];if(h.f===undefined)delete fix[h.id];else fix[h.id]=h.f;stats.streak=h.streak;stats.best=h.best;stats.rev=h.rev;D.q.length=h.qlen;D.requeued.delete(h.id);D.i=h.i;D.flipped=true;save();renderDrill();}
 document.addEventListener("keydown",e=>{
   if(!D){if(e.key==="Escape")$$(".md-bg").forEach(x=>x.remove());return;}
   if(e.target.matches("input,textarea"))return;
-  if(e.key===" "){e.preventDefault();flip();}else if(/^[1-4]$/.test(e.key))doGrade(+e.key);else if(e.key==="ArrowLeft")undo();else if(e.key==="Escape"){if($(".md-bg"))$$(".md-bg").forEach(x=>x.remove());else exitDrill();}
+  if(e.key===" "){e.preventDefault();flip();}else if(/^[1-4]$/.test(e.key))doGrade(+e.key);else if(e.key==="ArrowLeft")undo();else if(e.key==="b"||e.key==="B")bury();else if(e.key==="Escape"){if($(".md-bg"))$$(".md-bg").forEach(x=>x.remove());else exitDrill();}
 });
 
 // ---------- CODAL DRILL ----------
@@ -246,9 +250,9 @@ V.codal=m=>{
     m.innerHTML=`<div class="cd-card"><div class="mono">Anki-style cloze</div><h2 style="margin:4px 0">Codal & elements drill</h2><p class="cd-muted">One blank per card, shown inside its own paragraph or list. Flip, then grade yourself honestly; misses come back until you get them right twice.</p>
     <div style="margin:10px 0"><span class="cd-muted">Deck: </span>${[["codal","Codal (verbatim)"],["elements","Elements & readings lists"],["latin","Latin maxims"],["both","All three"]].map(([k,l])=>`<button class="cd-chip ${sel.deck===k?"on":""}" data-deck="${k}">${l}</button>`).join("")}</div>
     <div><span class="cd-muted">Articles: </span><button class="cd-chip ${!sel.arts.length?"on":""}" data-art="">All</button>${arts.concat("R").map(a=>`<button class="cd-chip ${sel.arts.includes(a)?"on":""}" data-art="${a}">${a==="R"?"Intro readings":"Art. "+a}</button>`).join("")}</div>
-    <div class="cd-row" style="margin-top:12px"><button class="cd-btn pri" id="go">▶ Start (${Math.min(20,p.length)} cards)</button><span class="cd-muted">${p.length} cards · ${s} seen · ${d} due</span></div></div>
+    <div class="cd-row" style="margin-top:12px"><button class="cd-btn pri" id="go">▶ Start (${Math.min(20,p.length)} cards)</button><span class="cd-muted">${p.length} cards · ${s} seen · ${d} due${p.filter(i=>buried[i]).length?` · ${p.filter(i=>buried[i]).length} buried <button class="cd-btn sm" id="unb">Restore</button>`:""}</span></div></div>
     <div class="cd-card"><div class="mono">Read the codal first</div>${(sel.arts.length?sel.arts:arts).filter(a=>a!=="R").map(a=>codalHTML(a)).join("")}</div>`;
-    m.onclick=e=>{const dk=e.target.closest("[data-deck]");if(dk){sel.deck=dk.dataset.deck;store.set("codalSel",sel);draw();}const ar=e.target.closest("[data-art]");if(ar){const a=ar.dataset.art;sel.arts=!a?[]:(sel.arts.includes(a)?sel.arts.filter(x=>x!==a):sel.arts.concat(a));store.set("codalSel",sel);draw();}if(e.target.id==="go"){const P=pool();drill(buildRound(P,20),"Codal drill","codal",P);}};}
+    m.onclick=e=>{const dk=e.target.closest("[data-deck]");if(dk){sel.deck=dk.dataset.deck;store.set("codalSel",sel);draw();}const ar=e.target.closest("[data-art]");if(ar){const a=ar.dataset.art;sel.arts=!a?[]:(sel.arts.includes(a)?sel.arts.filter(x=>x!==a):sel.arts.concat(a));store.set("codalSel",sel);draw();}if(e.target.id==="go"){const P=pool();drill(buildRound(P,20),"Codal drill","codal",P);}if(e.target.id==="unb"){pool().forEach(i=>delete buried[i]);save();draw();}};}
   draw();
 };
 
@@ -259,9 +263,10 @@ V.cases=m=>{
   function draw(){const L=filtered();
     m.innerHTML=`<div class="cd-card"><div class="cd-row" style="justify-content:space-between"><h2 style="margin:0">Cases <span class="cd-muted" style="font-size:1rem">${CASES.length}</span></h2><div>${[["browse","Browse"],["drill","Drill"]].map(([k,l])=>`<button class="cd-chip ${sel.view===k?"on":""}" data-view="${k}">${l}</button>`).join("")}</div></div>
     <div style="margin-top:8px"><button class="cd-chip ${!sel.topics.length?"on":""}" data-tp="">All</button>${tps.map(t=>`<button class="cd-chip ${sel.topics.includes(t)?"on":""}" data-tp="${t}">${esc(TOPIC_NAME[t].split(" · ")[0])}</button>`).join("")}</div>
-    ${sel.view==="drill"?`<div style="margin-top:6px"><span class="cd-muted">Direction: </span>${Object.entries(DIRS).concat([["mix","Mixed"]]).map(([k,l])=>`<button class="cd-chip ${sel.dir===k?"on":""}" data-dir="${k}">${l}</button>`).join("")}</div><p class="cd-muted" style="font-size:.9rem">“Facts → ruling & why” is the crim mode: say who won, which element was met or failed, and the fact that decided it.</p><button class="cd-btn pri" id="go">▶ Start (${Math.min(20,L.length)} cases)</button>`:`<input class="cd-in" id="q" placeholder="Filter by name, hook, fact…" value="${esc(sel.q)}" style="margin-top:8px">`}</div>
+    ${sel.view==="drill"?`<div style="margin-top:6px"><span class="cd-muted">Direction: </span>${Object.entries(DIRS).concat([["mix","Mixed"]]).map(([k,l])=>`<button class="cd-chip ${sel.dir===k?"on":""}" data-dir="${k}">${l}</button>`).join("")}</div><p class="cd-muted" style="font-size:.9rem">“Facts → ruling & why” is the crim mode: say who won, which element was met or failed, and the fact that decided it.</p><button class="cd-btn pri" id="go">▶ Start (${Math.min(20,L.length)} cases)</button>${(()=>{const nb=L.flatMap(c=>Object.keys(DIRS).map(d=>`k-${c.id}-${d}`)).filter(i=>buried[i]).length;return nb?` <span class="cd-muted">${nb} buried card${nb>1?"s":""} <button class="cd-btn sm" id="unb">Restore</button></span>`:"";})()}`:`<input class="cd-in" id="q" placeholder="Filter by name, hook, fact…" value="${esc(sel.q)}" style="margin-top:8px">`}</div>
     ${sel.view==="browse"?`<div class="cs-list">${L.map(c=>`<div class="cd-card cs-item hc-${c.hc}" data-case="${c.id}"><span class="nm">${esc(c.n)}</span>${hook(c)}<div class="cd-muted" style="font-size:.85rem">${esc(c.c)} · ${esc(TOPIC_NAME[c.t])} · ${esc(c.g)}</div><div style="margin-top:4px">${c.d}</div></div>`).join("")}</div>`:""}`;
     m.onclick=e=>{const v=e.target.closest("[data-view]");if(v){sel.view=v.dataset.view;store.set("caseSel",sel);draw();return;}const tp=e.target.closest("[data-tp]");if(tp){const t=tp.dataset.tp;sel.topics=!t?[]:(sel.topics.includes(t)?sel.topics.filter(x=>x!==t):sel.topics.concat(t));store.set("caseSel",sel);draw();return;}const dr=e.target.closest("[data-dir]");if(dr){sel.dir=dr.dataset.dir;store.set("caseSel",sel);draw();return;}
+      if(e.target.id==="unb"){filtered().forEach(c=>Object.keys(DIRS).forEach(d=>delete buried[`k-${c.id}-${d}`]));save();draw();return;}
       if(e.target.id==="go"){const cs=filtered();let ids;if(sel.dir==="mix"){const ks=Object.keys(DIRS);ids=cs.map(c=>{const pref=ks.map(d=>`k-${c.id}-${d}`);const due=pref.filter(isDue);return due[0]||pref[Math.floor(Math.random()*ks.length)];});}else ids=cs.map(c=>`k-${c.id}-${sel.dir}`);drill(buildRound(ids,20),"Cases · "+(sel.dir==="mix"?"Mixed":DIRS[sel.dir]),"cases",ids);}};
     const q=$("#q",m);if(q)q.oninput=()=>{sel.q=q.value;store.set("caseSel",sel);const pos=q.selectionStart;draw();const q2=$("#q",m);q2.focus();q2.setSelectionRange(pos,pos);};}
   draw();
