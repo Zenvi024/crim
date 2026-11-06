@@ -50,8 +50,12 @@ garcia:{n:"Garcia v. People",c:"597 SCRA 392, G.R. No. 171951 (28 Aug. 2009, Qui
 f:"In <b>Aparri, Cagayan</b>, on 26 Sept. 1999, <b>Amado Garcia</b> and friends were drinking and singing at a <b>videoke</b> next to the house of <b>Manuel K. Chy</b>, who twice asked them to quiet down. Garcia, irate, said in Ilocano, “This Manny is arrogant, I will lay a hand on him,” and two days later, “I will not let him live long.” On 29 Sept. 1999, he mauled Chy. Chy was later found unconscious on his kitchen floor and was dead on arrival; the autopsy showed <b>myocardial infarction</b>. Chy had a heart condition.",
 r:"<b>Homicide affirmed</b>, with the mitigating circumstance of <b>lack of intention to commit so grave a wrong</b>; the award for loss of earning capacity was modified.",
 k:["Videoke noise complaints","Threats in Ilocano before the mauling","Myocardial infarction","Art. 4(1) plus Art. 13(3)"]},
-balmores:{c:"85 Phil. 493, G.R. No. L-1896 (16 Feb. 1950, Ozaeta, J.)",
+balmores:{c:"85 Phil. 493, G.R. No. L-1896 (16 Feb. 1950, Ozaeta, J.)",x:"Sir Barry disagrees with this ruling: a forgery so crude it could never succeed can be argued to be an impossible crime. State the ruling, then the counterargument.",
 r:"<b>Conviction for attempted estafa through falsification of a security affirmed.</b> (One justice dissented on the ground that he pleaded guilty without counsel.)"},
-agao:{c:"G.R. No. 248049, 4 Oct. 2022 (en banc)"}
+agao:{c:"G.R. No. 248049, 4 Oct. 2022 (en banc)"},
+borinaga:{x:"Its holding (frustrated murder although no wound was inflicted) is no longer followed: under the mortal-wound rule applied in Kalalo and later cases, a blow that inflicts no wound is only an attempt. Know both the ruling and why it is criticized."},
+normahernandez:{x:"A common critique, useful for “why / why not” questions: the evil avoided was speculative (she might have come to love him), and less harmful means existed (breaking off the engagement earlier). Be ready to argue both sides."},
+esmedia:{x:"Careful: some summaries call the second killing “murder.” The Court imposed 14 years, 8 months and 1 day of reclusion temporal for Ciriaco's death, which is homicide."},
+iligan:{x:"Careful: some summaries say Iligan was convicted of murder. The Court convicted him of homicide; treachery was not proven."}
 };
 window.CASES.forEach(c=>{const f=FIX[c.id];if(f)Object.keys(f).forEach(k=>{if(f[k]==="")delete c[k];else c[k]=f[k];});});})();

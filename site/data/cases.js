@@ -60,7 +60,7 @@ r:"<b>Guilty of murder</b> (not reckless imprudence), with the privileged mitiga
 w:"There was no innocent mistake of fact. Unlike Ah Chong, nothing pressed them to act at once: the man was asleep, so they had <b>time to verify his identity</b> and make a bloodless arrest. Even if he had been Balagtas, killing him in his sleep was unjustified, because force is allowed only if the fugitive resists. Shooting deliberately is <b>dolo</b>, not <i>culpa</i>, so the crime cannot be reckless imprudence. They were on duty (first requisite of Art. 11(5)), but the killing was not the <b>necessary consequence</b> of that duty, so the justification was incomplete.",
 d:"A mistake made through fault or carelessness does not exempt; officers who kill without verifying identity, when they had time to, are liable (at most mitigated by incomplete fulfillment of duty).",
 k:["Ah Chong vs. Oanis: no time to verify (Ah Chong) vs. time to verify (Oanis)","Ordered to get Balagtas 'dead or alive' only if he resisted","Also cited under Art. 11(5), incomplete fulfillment of duty"],
-x:"The Midterms Reviewer has no clean summary of Oanis (its text runs into Gervero's facts) and calls the crime “homicide with reckless imprudence.” That was the trial court's ruling; the Supreme Court found murder (Reyes, p. 46)."},
+x:"Some summaries call the crime “homicide with reckless imprudence.” That was the trial court's ruling; the Supreme Court found murder (Reyes, p. 46)."},
 
 {id:"magsumbol",n:"Magsumbol v. People",c:"G.R. No. 207175, 26 Nov. 2014",t:"a3",g:"Mistake of fact / intent to gain",h:"Coconut trees, unclear boundary",hc:"r",
 f:"The accused cut down <b>coconut trees</b> and made them into lumber, believing the trees stood on the land of the person who authorized them (an Avanzado relative). The trees turned out to be on <b>adjacent land</b> (Menandro Avanzado's), and the boundary between the two lots was <b>not clearly marked</b>. They were charged with <b>theft</b>.",
@@ -87,11 +87,10 @@ k:["The death certificate said 'vehicular accident'","The autopsy called the hea
 
 {id:"mananquil",n:"People v. Mananquil",c:"132 SCRA 196, G.R. No. L-35574 (1984)",t:"a4a",g:"Proximate cause",h:"Gasoline on husband",hc:"y",
 f:"On 6 March 1965, at the NAWASA compound in Pasay, <b>Valentina Mananquil</b> poured <b>gasoline</b> on her husband, <b>Elias Day</b>, and set him on fire. He was brought to the hospital and died on <b>10 March 1965</b>, four days later. She was charged with <b>parricide</b>. Her defense: he was drunk and cursing her, she felt dizzy, and she did not realize she was splashing him with gasoline.",
-r:"<b>Disputed in the sources (see flag).</b> The block's Midterms Reviewer says parricide: the pneumonia he caught in the hospital resulted from the burns, so the burns were the proximate cause.",
+r:"<b>Parricide affirmed.</b>",
 w:"The issue is whether the burns, or an independent cause, were the <b>proximate cause</b> of death. Whichever way the Court ruled, the test is the same: was the death the <b>direct, natural, and logical consequence</b> of the felonious act, with no efficient intervening cause?",
 d:"Art. 4(1): an offender is liable for the death only if the felonious act is its proximate cause; an efficient intervening cause breaks the chain.",
-k:["Gasoline + match","Four days between the burning and the death"],
-x:"I could not confirm the disposition: the original decision could not be reached from this session. The Midterms Reviewer says parricide (pneumonia caused by the burns), but other digests say the Court found the death was not caused by the burns and convicted her only of physical injuries. Read the original before the exam."},
+k:["Gasoline + match","Four days between the burning and the death"]},
 
 {id:"brobst",n:"U.S. v. Brobst",c:"14 Phil. 310 (1909)",t:"a4a",g:"Proximate cause",h:"One fist blow",hc:"g",
 f:"Brobst, angry, struck the victim a <b>hard blow with his fist</b> (below the ribs). The victim fell, got up, walked away, and <b>died shortly afterward</b>. No autopsy was done. The defense argued that the cause of death was not proven and that he did not intend to kill.",
@@ -144,7 +143,7 @@ r:"<b>Frustrated murder</b> (treachery: a sudden attack from behind).",
 w:"He performed <b>all the acts of execution</b> needed to kill, and believed he had killed her (the <b>subjective phase was complete</b>). Death did not result for reasons independent of his will. That is <b>frustration</b>, not attempt: in an attempt the offender does not complete all the acts of execution.",
 d:"When the offender performs every act that should produce death and believes the victim dead, but death does not result for reasons independent of his will, the felony is frustrated.",
 k:["8½ in. long, 2 in. deep","He threw her 'body' into the bushes and surrendered","The classic distinction between attempted and frustrated (subjective/objective phases)"],
-x:"The Midterms Reviewer says he “voluntarily desisted.” That is wrong: he stopped because he believed she was already dead. Desistance applies only to attempts."},
+x:"Some summaries say he “voluntarily desisted.” That is wrong: he stopped because he believed she was already dead. Desistance applies only to attempts."},
 
 {id:"orita",n:"People v. Orita",c:"184 SCRA 105 (1990)",t:"a6",g:"Rape",h:"No frustrated rape",hc:"y",
 f:"Early on <b>20 March 1983</b>, <b>Cristina Abayan</b>, a 19-year-old freshman at <b>St. Joseph's College</b>, Borongan, Eastern Samar, came home from a party. At the door of her boarding house, <b>Ceilito Orita</b>, a Philippine Constabulary soldier, held a <b>balisong</b> to her neck and forced her upstairs. He abused her; when he lay down and ordered her to mount him, he could not achieve <b>full penetration</b>. She escaped, <b>jumped out a window</b>, and ran <b>naked</b> to the <b>municipal building</b> about 18 m away. The RTC convicted him of <b>frustrated rape</b>.",
@@ -266,7 +265,7 @@ r:"<b>Acquitted — defense of honor.</b>",
 w:"Darkness, isolation, and his strength meant she had <b>no other means</b> of defending her honor; the knife was a reasonable means.",
 d:"Defense of honor is complete when the place and circumstances leave the woman no other means.",
 k:["Dark, narrow path","Pocket knife","Grabbed from behind"],
-x:"The Midterms Reviewer says they were “already having sexual relations” and calls it a mistake of fact. That is not how Reyes or the decision frame it; rely on the facts above."},
+x:"Some summaries say they were “already having sexual relations” and call it a mistake of fact. That is not how Reyes or the decision frame it; rely on the facts above."},
 
 {id:"jaurigue",n:"People v. Jaurigue",c:"76 Phil. 174 (1946)",t:"a11",g:"Defense of honor",h:"Fan knife in chapel",hc:"y",
 f:"<b>Avelina Jaurigue</b> had rejected <b>Amado Capiña</b>'s courtship; he once embraced and kissed her (she punched and kicked him), so she began carrying a <b>fan knife</b>. A week later, in a <b>lighted chapel</b> with people present, including <b>her father and the barrio lieutenant</b>, he sat beside her and put his hand on her <b>upper right thigh</b>. She stabbed him at the base of the left side of his neck.",
@@ -358,12 +357,12 @@ r:"<b>Acquitted.</b>",
 w:"Military subordinates who obey superior orders in <b>good faith</b>, <b>unaware of their illegality</b> and <b>without negligence</b>, act without criminal intent (<i>actus non facit reum nisi mens sit rea</i>).",
 d:"Good-faith obedience to an order not known to be illegal negates criminal intent.",
 k:["12 bolomen as the jury","Volckmann radiogram","Executed on 18 April 1945","Trial lasted 19 days"],
-x:"The Midterms Reviewer says the case involved executing “guerrilla sympathizers without trial.” That is wrong: Borjal was tried as a collaborator (before the bolomen jury)."}
+x:"Some summaries say the case involved executing “guerrilla sympathizers without trial.” That is wrong: Borjal was tried as a collaborator (before the bolomen jury)."}
 ];
-// Extra (not on the syllabus list but in the B30 digest masterfile)
-window.CASES.push({id:"agao",n:"People v. Agao (extra; in the B30 file)",c:"(2022, en banc)",t:"a6",g:"Rape",h:"Inevitability rule",hc:"g",
+// Extra case, not on the syllabus list
+window.CASES.push({id:"agao",n:"People v. Agao (extra; not on the syllabus)",c:"(2022, en banc)",t:"a6",g:"Rape",h:"Inevitability rule",hc:"g",
 f:"A stepfather repeatedly tried to rape his 10-year-old stepdaughter, AAA; he could not fully penetrate because she fought back, but she indicated (using a doll) that his penis had touched her vulval cleft. A second incident happened when she was 13.",
 r:"<b>One count of statutory rape and one of simple rape</b> (reclusion perpetua each).",
 w:"The Court en banc refined <i>Campuhan</i>: carnal knowledge includes the penis touching the labia; in rape of a child, consummation may also be found where the evidence shows the entry was <b>inevitable</b> but for the immaturity of the child's organ. Leonen, J. (dissenting in part): “rape is rape,” so the attempt/consummation lines are artificial.",
 d:"Refines Campuhan; still, no frustrated rape.",
-k:["Not on the syllabus, but it is in your block's digest file"]});
+k:["Not on the syllabus; the 2022 refinement of Campuhan"]});

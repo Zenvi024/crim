@@ -32,7 +32,7 @@ ELEMENTS.forEach(L=>L.i.forEach((_,ii)=>{const id=`e-${L.id}-${ii}`;CARDS[id]={i
 const DIRS={cr:"Case → doctrine",fc:"Facts → case",dc:"Doctrine → case",fr:"Facts → ruling & why"};
 CASES.forEach(c=>Object.keys(DIRS).forEach(d=>{const id=`k-${c.id}-${d}`;CARDS[id]={id,deck:"cases",t:c.t,c,dir:d};DECK.cases.push(id);}));
 MAXIMS.forEach(x=>["lm","ml"].forEach(d=>{const id=`l-${x.id}-${d}`;CARDS[id]={id,deck:"latin",t:x.t,x,dir:d};DECK.latin.push(id);}));
-const maximCard=x=>`<div class="mx-card"><div class="mx-la">${x.la}${x.sp?' <span class="mx-sp">Spanish</span>':""}</div><div class="mx-lit">“${x.lit.replace(/^“|”$/g,"")}”</div><div class="mx-m"><span class="lbl">Meaning</span> ${x.m}</div><div class="mx-app"><span class="lbl">Application</span> ${x.app}</div><div class="mx-src">${esc(x.src)}</div></div>`;
+const maximCard=x=>`<div class="mx-card"><div class="mx-la">${x.la}${x.sp?' <span class="mx-sp">Spanish</span>':""}</div><div class="mx-lit">“${x.lit.replace(/^“|”$/g,"")}”</div><div class="mx-m"><span class="lbl">Meaning</span> ${x.m}</div><div class="mx-app"><span class="lbl">Application</span> ${x.app}</div></div>`;
 
 // ---------- SRS ----------
 const now=()=>Date.now(),DAY=864e5;
