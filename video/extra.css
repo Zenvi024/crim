@@ -1,0 +1,14 @@
+.cname{font-size:84px;max-width:1250px}
+.fact{display:flex;align-items:center;gap:18px;font-size:46px;line-height:1.22;margin-top:26px}
+.fact .tn{flex:none;transform:scale(1.25)}
+.rulebox{border:2px solid var(--court);background:linear-gradient(180deg,var(--court-a),var(--bg2) 60%)}
+.rule{font-size:56px;line-height:1.25;font-weight:600;margin-top:12px}
+.rule b{color:var(--court)}
+.pcard{justify-content:flex-start;padding:34px 38px}
+.pcard .kicker.sm{font-size:22px}
+.pill.court{font-size:34px;padding:10px 26px;align-self:flex-start}
+.verdict{white-space:normal;text-align:center;max-width:460px;font-size:38px}
+.rc{font-size:46px;padding:26px 30px;line-height:1.25}
+.rc .rn{font-size:56px}
+#sc-recap .rc{font-size:40px;padding:18px 28px}
+#sc-title .banner{font-size:44px}
